@@ -10,15 +10,34 @@ let rightHTML = `
 <div class="card">
     <h1>featured</h1>
 </div>  
+
+<div class="card">
+<img src="images/the escape.gif" alt="gif of giant isopod cralling away with text above it that reads "the escape"">
+</div>  
 `;
 
 let navHTML = 
 '<h1>nav</h1>' +
-'<ul> <li><a href="' + relativePath + '/index.html">home</a></li>';
+'<ul> <li><a href="' + relativePath + '/index.html">home</a></li>' +
+'<li><a href="' + relativePath + '/blog.html">blog</a></li>' +
+'<li><a href="' + relativePath + '/flags.html">flags</a></li>' +
+'<li><a href="' + relativePath + '/FOTD.html">FOTD</a></li>' +
+'<li><a href="' + relativePath + '/FFF.html">flag fact friday</a></li>' +
+'<li><a href="' + relativePath + '/torrents.html">torrents</a></li>' +
+'<li><a href="' + relativePath + '/terraria.html">terraria</a></li>' +
+'</ul>';
 
-let headHTML = `<h2>zwiebel<h2>`;
+let headHTML = `<a href="index.html"><h2>iceopod<h2></a>`;
 
 let footHTML = '<span>this site was started</span> <abbr class="timeago" title="2023-01-23T15:33+13:00">Jan 23rd, 15:33</abbr>'
+
+document.head.innerHTML +=  `
+<title>iceopod</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400&display=swap" rel="stylesheet">
+`;
 
 if (document.getElementById("rightHTML")) {
   document.getElementById("rightHTML").innerHTML = rightHTML;
@@ -32,6 +51,7 @@ if (document.getElementById("headHTML")) {
 if (document.getElementById("footHTML")) {
   document.getElementById("footHTML").innerHTML = footHTML;
 }
+
 
 
 // -------------visit counter----------------//
