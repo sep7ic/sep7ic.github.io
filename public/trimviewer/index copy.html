@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<style>
+    html, body {
+        height: 100%;
+        width: 100%;
+        background-color: #333a45;
+        image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges;          /* Firefox                        */
+    image-rendering: -o-crisp-edges;            /* Opera                          */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+    image-rendering: pixelated;                 /* Universal support since 2021   */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+    }
+    .initCONT {
+        position: relative;
+    }
+
+    .VIEW img{
+        width: 22%;
+    }
+    #HELMETtypeIMG {
+        z-index: 50;
+        position:absolute;
+        top: 9vw; 
+        left:31vw;
+    }
+    #HELMETtrimIMG {
+        position:absolute;
+        z-index: 51;
+        top: 9vw; 
+        left:31vw;
+        }
+    #CHESTPLATEtypeIMG {
+        z-index: 40;
+        position:absolute;
+        top: 14vw; 
+        left:31vw;
+    }
+    .initCONT {
+        background-image: url("container.png");
+        background-repeat: no-repeat;
+  background-size:contain;
+        margin: auto;
+  height: 100%;
+  width: 50%;
+    }
+    .HELMform  {
+        position: absolute;
+        top: 15vw; 
+        left:1vw;
+    }
+</style>
+<body>
+<div class="initCONT">
+    <form class="HELMform" id="HELMform">
+        <select name="armourtrim" id="HELMETtrim">
+            <option value="coast">coast</option>
+            <option value="dune">dune</option>
+            <option value="eye">eye</option>
+            <option value="rib">rib</option>
+            <option value="sentry">sentry</option>
+            <option value="snout">snout</option>
+            <option value="spire">spire</option>
+            <option value="tide">tide</option>
+            <option value="vex">vex</option>
+            <option value="ward">ward</option>
+            <option value="wild">wild</option>
+        </select>
+
+        <select name="armourpeice" id="HELMETtype">
+            <option value="iron"></option>
+            <option value="gold"></option>
+            <option value="diamond"></option>
+            <option value="netherite" style="background-image: url('images/icons/armour/helmets/netherite.png');">TEAH</option>
+        </select>
+        
+        <select name="trimore" id="HELMETore">
+            <option value="transparent, #273130, #364544, #404e4e, #535f5f, #708080, #9daaaa, #bfc9c8, #bfc9c8">iron</option>
+            <option value="transparent, #3d180b, #4c2010, #5f2b18, #6d3420, #793c28, #9a472c, #9a472c, #e3826c">copper</option>
+            <option value="transparent, #572300, #712d00, #803503, #a0450a, #b16712, #deb12d, #deb12d, #deb12d">gold</option>
+            <option value="transparent, #051636, #091e45, #0c285a, #112e63, #123365, #21497b, #1c4d9c, #416e97">lapis</option>
+            <option value="transparent, #023d0e, #035013, #09631b, #0e7222, #107b24, #11a036, #0ec754, #82f6ad">emerald</option>
+            <option value="transparent, #013c47, #04515f, #076578, #0c788d, #1d969a, #2cbaa8, #2cbaa8, #cbfff5">diamond</option>
+            <option value="transparent, #090707, #100c0c, #1a1616, #231e1e, #2f2727, #312e31, #443a3b, #5a575a">netherite</option>
+            <option value="transparent, #1d0502, #360803, #520d06, #650b01, #781101, #971607, #bd2008, #bd2008">Redstone</option>
+            <option value="transparent, #17063b, #240c53, #361c6a, #422776, #523687, #6c49aa, #9a5cc6, #c98ff3">amethyst</option>
+            <option value="transparent, #2a2822, #45433c, #656156, #908e80, #b6ad96, #e3dbc4, #f6eadf, #f2efed">quartz</option>    
+        </select>
+    </form>
+<div class="VIEW">
+    <div id="helmetBOX">
+        <img src="images/armour/helmets/iron.webp" id="HELMETtypeIMG">
+        <img src="images/armour/helmets/iron.webp" id="HELMETtrimIMG">
+    </div>
+    <div id="chestplateBOX">
+        <img src="images/armour/chestplates/diamond.webp" id="CHESTPLATEtypeIMG">
+    </div>
+    </div>
+
+</div>
+    <script src='gradientmaps.js'></script>
+    <script src='ddslick.min.js'></script>
+</body>
+
+<script>
+var HELMET2sel = document.getElementById("HELMETtype");
+function HELMET2onChange() {
+    var HELMET2value = HELMET2sel.value;
+    var HELMET2source = "images/armour/helmets/"
+    console.log(HELMET2value);
+    document.getElementById("HELMETtypeIMG").src = HELMET2source + HELMET2value + '.webp';
+}
+HELMET2sel.onchange = HELMET2onChange;
+HELMET2onChange();
+</script>
+<script>
+var HELMET1sel = document.getElementById("HELMETtrim");
+function HELMET1onChange() {
+    var HELMET1value = HELMET1sel.value;
+    var HELMET1source = "images/trims/"
+    console.log(HELMET1value);
+    document.getElementById("HELMETtrimIMG").src = HELMET1source + HELMET1value + '.png';
+}
+HELMET1sel.onchange = HELMET1onChange;
+HELMET1onChange();
+</script>
+<script>
+    var HELMET3sel = document.getElementById("HELMETore");
+    function HELMET3onChange() {
+        var HELMET3value = HELMET3sel.value;
+        var HELMET3pickedORE = HELMET3value;
+        console.log(HELMET3value);
+        HELMET3targ = document.getElementById("HELMETtrimIMG")
+        GradientMaps.applyGradientMap(HELMET3targ, HELMET3pickedORE);
+    }
+    HELMET3sel.onchange = HELMET3onChange;
+    HELMET3onChange();
+</script>
+
+</html>

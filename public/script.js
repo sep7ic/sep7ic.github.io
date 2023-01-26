@@ -4,10 +4,31 @@ if ( url.includes("FOTW/"))( url.includes("more/")); {
 relativePath = "..";
 }
 
-let rightHTML = `
-<div class="card" id="navHTML"></div>
+let rightHTML = 
+'<div class="card">' +
+  '<h1>nav</h1>' +
+  '<ul> <li><a href="' + relativePath + '/index.html">home</a></li>' +
+  '<li><a href="' + relativePath + '/blog.html">blog</a></li>' +
+  '<li><a href="' + relativePath + '/about.html">about</a></li>' +
+  '<li><a href="' + relativePath + '/roly.html">roly</a></li>' +
+  '</ul>' +
+'</div>' +
+'<div class="card">' +
+  '<h1>flags</h1>' +
+  '<ul> <li><a href="' + relativePath + '/flags.html">flags</a></li>' +
+  '<li><a href="' + relativePath + '/FOTD.html">FOTD</a></li>' +
+  '<li><a href="' + relativePath + '/FFF.html">flag fact friday</a></li>' +
+  '<li><a href="' + relativePath + '/WTF.html">WTF!</a></li>' +
+  '</ul>' +
+'</div>' +
+'<div class="card">' +
+  '<h1>games</h1>' +
+  '<ul> <li><a href="' + relativePath + '/terraria.html">terraria</a></li>' +
+  '<li><a href="' + relativePath + '/torrents.html">torrents</a></li>' +
+  '</ul>' +
+'</div>' +
 
-<div class="card">
+`<div class="card">
     <h1>featured</h1>
 </div>  
 
@@ -15,17 +36,6 @@ let rightHTML = `
 <img src="images/the escape.gif" alt="gif of giant isopod cralling away with text above it that reads "the escape"">
 </div>  
 `;
-
-let navHTML = 
-'<h1>nav</h1>' +
-'<ul> <li><a href="' + relativePath + '/index.html">home</a></li>' +
-'<li><a href="' + relativePath + '/blog.html">blog</a></li>' +
-'<li><a href="' + relativePath + '/flags.html">flags</a></li>' +
-'<li><a href="' + relativePath + '/FOTD.html">FOTD</a></li>' +
-'<li><a href="' + relativePath + '/FFF.html">flag fact friday</a></li>' +
-'<li><a href="' + relativePath + '/torrents.html">torrents</a></li>' +
-'<li><a href="' + relativePath + '/terraria.html">terraria</a></li>' +
-'</ul>';
 
 let headHTML = `<a href="index.html"><h2>iceopod<h2></a>`;
 

@@ -128,3 +128,31 @@ td img {
   image-rendering: optimize-contrast;
   -ms-interpolation-mode: nearest-neighbor;
 }
+
+.rightcolumn .card {
+  padding: 0;
+}
+
+.rightcolumn .card h1 {
+  margin: 0px;
+}
+
+ul {
+  margin-top: 0;
+  list-style: none;
+  padding-left: 0;
+}
+li {
+  border-bottom: solid var(--bg) 1px;
+  padding: 5px;
+}
+.rightcolumn .card a {
+  color: var(--text);
+  display:block
+}
+li:hover {
+  background-color: #efeff1;
+}
+li:last-child {
+  border-bottom: none;
+}
