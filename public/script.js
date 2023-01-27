@@ -4,62 +4,63 @@ if ( url.includes("FOTW/"))( url.includes("more/")); {
 relativePath = "..";
 }
 
-let rightHTML = 
-'<div class="card">' +
-  '<h1>nav</h1>' +
-  '<ul> <li><a href="' + relativePath + '/index.html">home</a></li>' +
-  '<li><a href="' + relativePath + '/blog.html">blog</a></li>' +
-  '<li><a href="' + relativePath + '/about.html">about</a></li>' +
-  '<li><a href="' + relativePath + '/roly.html">roly</a></li>' +
-  '</ul>' +
-'</div>' +
-'<div class="card">' +
-  '<h1>flags</h1>' +
-  '<ul> <li><a href="' + relativePath + '/flags.html">flags</a></li>' +
-  '<li><a href="' + relativePath + '/FOTD.html">FOTD</a></li>' +
-  '<li><a href="' + relativePath + '/FFF.html">flag fact friday</a></li>' +
-  '<li><a href="' + relativePath + '/WTF.html">WTF!</a></li>' +
-  '</ul>' +
-'</div>' +
-'<div class="card">' +
-  '<h1>games</h1>' +
-  '<ul> <li><a href="' + relativePath + '/terraria.html">terraria</a></li>' +
-  '<li><a href="' + relativePath + '/torrents.html">torrents</a></li>' +
-  '</ul>' +
-'</div>' +
-
-`<div class="card">
-    <h1>featured</h1>
-</div>  
-
-<div class="card">
-<img src="images/the escape.gif" alt="gif of giant isopod cralling away with text above it that reads "the escape"">
-</div>  
+let navbar = `
+  <div class="dropdown">
+    <button class="dropbtn">About 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">About</a>
+      <a href="#">uh</a>
+      <a href="#">me?</a>
+      <a href="#"></a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Flags 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Flags</a>
+      <a href="#">FOTD</a>
+      <a href="#">FFF</a>
+      <a href="#">WTF</a>
+      <a href="#"></a>
+    </div>
+  </div>
 `;
 
-let headHTML = `<a href="index.html"><h2>iceopod<h2></a>`;
+let headera = `<a href="index.html"><h1>SEP<h1></a>`;
 
-let footHTML = '<span>this site was started</span> <abbr class="timeago" title="2023-01-23T15:33+13:00">Jan 23rd, 15:33</abbr>'
+let flags = `
+<div id="flagsright">
+<img src="style/flags/NZ.png">
+<img src="style/flags/fern.png">
+<img src="style/flags/maori.png">
+</div>
+
+<div id="flagsleft">
+<img src="style/flags/UK.png">
+<img src="style/flags/de.png">
+<img src="style/flags/scotland.png">
+</div>
+`;
+
+let footer = '<span>this site was started</span> <abbr class="timeago" title="2023-01-23T15:33+13:00">Jan 23rd, 15:33</abbr>'
 
 document.head.innerHTML +=  `
-<title>iceopod</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400&display=swap" rel="stylesheet">
+<title>sep</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 `;
 
-if (document.getElementById("rightHTML")) {
-  document.getElementById("rightHTML").innerHTML = rightHTML;
+if (document.getElementById("navbar")) {
+  document.getElementById("navbar").innerHTML = navbar;
 }
-if (document.getElementById("navHTML")) {
-  document.getElementById("navHTML").innerHTML = navHTML;
+if (document.getElementById("header")) {
+  document.getElementById("header").innerHTML = header;
 }
-if (document.getElementById("headHTML")) {
-  document.getElementById("headHTML").innerHTML = headHTML;
-}
-if (document.getElementById("footHTML")) {
-  document.getElementById("footHTML").innerHTML = footHTML;
+if (document.getElementById("flags")) {
+  document.getElementById("flags").innerHTML = flags;
 }
 
 
