@@ -13,13 +13,13 @@
 }
 
 body {
+  margin-top: 30px;
   background-color: rgb(61, 61, 61);
-  font-family: 'Helvetica Neue', Helvetica, Verdana, sans-serif;
+  font-family: "MS Gothic";
   background-image: url("https://preview.redd.it/c3du8b2ttoo51.png?auto=webp&s=436d95c8601206d52599b26cf7125a77f0dffe0a");
   background-repeat: repeat-x;
   background-attachment: fixed;
   background-size: auto 100%;
-  background-blend-mode: lighten;
   color: var(--text);
 
   font-smooth: never;
@@ -52,7 +52,7 @@ image-rendering: optimize-contrast;
   border: solid var(--border) var(--bordersize);
 }
 .content {
-  padding: 10px;
+  padding: 30px;
 }
 /*---RESPONSIVE---*/
 @media screen and (max-width: 800px) {
@@ -68,21 +68,26 @@ image-rendering: optimize-contrast;
 
 /*---HEADER---*/
 .header {
-  height: 300px;
-  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3cf06a29-04a0-4466-9f83-ab6b9658149f/ddkvakk-90738275-eff6-40fe-b717-e0f58a25081d.png/v1/fill/w_1920,h_1920,q_80,strp/1_bit_pixel_art_background_by_archipics_by_archipics_ddkvakk-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTkyMCIsInBhdGgiOiJcL2ZcLzNjZjA2YTI5LTA0YTAtNDQ2Ni05ZjgzLWFiNmI5NjU4MTQ5ZlwvZGRrdmFray05MDczODI3NS1lZmY2LTQwZmUtYjcxNy1lMGY1OGEyNTA4MWQucG5nIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.LumKrdejLWJlGZxdJ5WAYbIzhewoLzkwghc0Xuf9n68");
-  background-size: cover;
-  background-position: 50%;
+  width: 100%;
+  margin: 10px 0 10px 0;
+  height: 15vh;
+  display:inline-flex;
+  align-items:center;
 }
-.header h1 {
-  font-family: pixelwar;
-  color: var(--text);
-  font-size: 100px;
+#header pre {
   margin: 0;
-  text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+#header img {
+  height: 90%;
 }
 
 /*---NAVBAR---*/
 .navbar {
+  padding-left: 17px;
   overflow: hidden;
   background-color: var(--navbg);
   border: solid var(--border) var(--bordersize);
@@ -117,7 +122,6 @@ image-rendering: optimize-contrast;
   position: absolute;
   background-color: var(--contbg);
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   border: solid var(--border) var(--bordersize);
 }
@@ -139,12 +143,17 @@ image-rendering: optimize-contrast;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% calc(100% - 20px), 0% 100%, 0% 0%); 
 }
 
-
-
+/*---TEXT---*/
+p {
+  line-height: 1.3em;
+}
+hr {
+  border-width: 1px;
+}
 
 
 .flags {
-  position: relative  
+  position: relative;
 }
 .flags img{
   width: 50%;
@@ -153,11 +162,39 @@ image-rendering: optimize-contrast;
   position:absolute;
   top: 0%;
   left: 80%;
-  
 }
 #flagsleft {
   position:absolute;
   top: 0%;
   right: 80%;
   text-align: right;
+}
+
+
+
+
+
+#statuscafe {
+  padding: .5em;
+  border: solid var(--border) var(--bordersize);
+}
+#statuscafe-username {
+  margin-bottom: .5em;
+}
+#statuscafe-content {
+  margin: 0 1em 0.5em 1em;
+}
+
+
+td, th  {
+  border:1px solid white;
+}
+td {
+height: 70px;
+width: 40px;
+background-image: url('/web/20230105211922im_/https://sep.neocities.org/FOTD/img_girl.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  vertical-align: text-top;
+  padding-bottom: 0;
 }

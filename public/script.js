@@ -5,32 +5,55 @@ relativePath = "..";
 }
 
 let navbar = `
-  <div class="dropdown">
-    <button class="dropbtn">About 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">About</a>
-      <a href="#">uh</a>
-      <a href="#">me?</a>
-      <a href="#"></a>
-    </div>
-  </div> 
-  <div class="dropdown">
-    <button class="dropbtn">Flags 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Flags</a>
-      <a href="#">FOTD</a>
-      <a href="#">FFF</a>
-      <a href="#">WTF</a>
-      <a href="#"></a>
-    </div>
+<div class="dropdown">
+  <button class="dropbtn">Gen 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
   </div>
+</div> 
+
+<div class="dropdown">
+  <button class="dropbtn">Flags 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content">
+    <a href="flags.html">Flags</a>
+    <a href="FOTD.html">FOTD</a>
+    <a href="#">FFF</a>
+    <a href="#">WTF</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">Site 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content">
+    <a href="#">Site Map</a>
+  </div>
+</div>
 `;
 
 let headera = `<a href="index.html"><h1>SEP<h1></a>`;
+
+let header = `
+<img src="style/duck.png" style="float: left;"/>
+<div style="margin:0 auto; text-align: center;">
+<pre>
+███████╗███████╗██████╗ 
+██╔════╝██╔════╝██╔══██╗
+███████╗█████╗  ██████╔╝
+╚════██║██╔══╝  ██╔═══╝ 
+███████║███████╗██║     
+╚══════╝╚══════╝╚═╝     
+</pre>
+</div>
+<img src="style/duck.png" style="transform: scaleX(-1); float: right;"/>
+&nbsp
+`;
 
 let flags = `
 <div id="flagsright">
@@ -41,7 +64,7 @@ let flags = `
 
 <div id="flagsleft">
 <img src="style/flags/UK.png">
-<img src="style/flags/de.png">
+<img src="style/flags/DE.png">
 <img src="style/flags/scotland.png">
 </div>
 `;
