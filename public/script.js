@@ -50,7 +50,7 @@ let header = `
 ███████║███████╗██║     
 ╚══════╝╚══════╝╚═╝     
 </pre>
-</div>
+</div> 
 <img src="style/duck.png" style="transform: scaleX(-1); float: right;"/>
 &nbsp
 `;

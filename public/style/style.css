@@ -1,21 +1,22 @@
+
+@font-face {
+  font-family: funni;
+  src: url("verycoolfont.ttf");
+}
 :root {
   --bg: #818dac;
   --contbg: black;
   --text: white;
   --border: white;
   --navbg: black;
+  --font: "funni";
   --bordersize: 1.5px;
-}
-
-@font-face {
-  font-family: pixelwar;
-  src: url(Pixelic\ War.ttf);
 }
 
 body {
   margin-top: 30px;
   background-color: rgb(61, 61, 61);
-  font-family: "MS Gothic";
+  font-family: var(--font);
   background-image: url("https://preview.redd.it/c3du8b2ttoo51.png?auto=webp&s=436d95c8601206d52599b26cf7125a77f0dffe0a");
   background-repeat: repeat-x;
   background-attachment: fixed;
