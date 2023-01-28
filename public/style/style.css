@@ -1,8 +1,3 @@
-
-@font-face {
-  font-family: funni;
-  src: url("https://sep.neocities.org/style/verycoolfont.ttf");
-}
 :root {
   --bg: #818dac;
   --contbg: black;
@@ -16,7 +11,7 @@
 body {
   margin-top: 30px;
   background-color: rgb(61, 61, 61);
-  font-family: var(--font);
+  font-family: 'Courier New', Courier, monospace;
   background-image: url("https://preview.redd.it/c3du8b2ttoo51.png?auto=webp&s=436d95c8601206d52599b26cf7125a77f0dffe0a");
   background-repeat: repeat-x;
   background-attachment: fixed;
