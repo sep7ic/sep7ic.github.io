@@ -9,14 +9,14 @@
   --text: white;
   --border: white;
   --navbg: black;
-  --font: "funni";
+  --font: "https://sep.neocities.org/style/verycoolfont.ttf";
   --bordersize: 1.5px;
 }
 
 body {
   margin-top: 30px;
   background-color: rgb(61, 61, 61);
-  font-family: var(--font);
+  font-family: "https://sep.neocities.org/style/verycoolfont.ttf";
   background-image: url("https://preview.redd.it/c3du8b2ttoo51.png?auto=webp&s=436d95c8601206d52599b26cf7125a77f0dffe0a");
   background-repeat: repeat-x;
   background-attachment: fixed;
