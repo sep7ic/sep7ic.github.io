@@ -22,8 +22,9 @@
           <h1>FOTD</h1>
           <p>flag of the day! click on a flag to read more about what the flag stands for/the state itself</p>
 
-          <a href="a" id="FOTDlink"><img src="flag" id="FOTD" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"></a>
-          <h2 style="text-align: center;" id="FOTDalt">no country :(</h2>
+          <a href="a" id="FOTDlink"><img src="FOTD/cantfind.png" id="FOTD" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"></a>
+          <h2 style="text-align: center; margin: 3px;" id="FOTDalt">cant find flag</h2>
+          <h3 style="text-align: center; margin: 3px;" id="FOTDdate">cant fetch date</h3>
     
           <h2>january</h2>
     
@@ -94,10 +95,23 @@
   const m = new Date();
   path = "FOTD/"
   flag = document.getElementById("FOTD").src = path + "month"+m.getMonth()+"/" + d.getDate() + ".png";
+  const monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+  todaydate = "month"+m.getMonth()+"/" + d.getDate()
+  var keyword = path + todaydate + ".png";
+  console.log(keyword)
 
-todaydate = "month"+m.getMonth()+"/" + d.getDate()
-var keyword = path + todaydate + ".png";
-console.log(keyword)
+  const nth = function(o) {
+  if (o > 3 && o < 21) return 'th';
+  switch (o % 10) {
+    case 1:  return "st";
+    case 2:  return "nd";
+    case 3:  return "rd";
+    default: return "th";
+  }
+}
+const date = d.getDate();
+      document.getElementById("FOTDdate").innerHTML =  date+nth(date) + " of " + monthNames[d.getMonth()];
+  
  $("table img").filter(function(index) {
     if ($(this).attr("src").match(keyword)) {
       $(this).parent().attr("id","CURRENT");
