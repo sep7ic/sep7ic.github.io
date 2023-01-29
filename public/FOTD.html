@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <link rel="stylesheet" href="style/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <style>
   .content img {
@@ -19,7 +20,10 @@
     <p>Flag of the Day!!</p>
 
           <h1>FOTD</h1>
-          <p>flag of the day</p>
+          <p>flag of the day! click on a flag to read more about what the flag stands for/the state itself</p>
+
+          <a href="a" id="FOTDlink"><img src="flag" id="FOTD" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"></a>
+          <h2 style="text-align: center;" id="FOTDalt">no country :(</h2>
     
           <h2>january</h2>
     
@@ -34,45 +38,45 @@
                 <th>Sat</th>
               </tr>
               <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td>5 <a href="https://en.wikipedia.org/wiki/Kingdom_of_Serbia"><img src="FOTD/jan/5.png"></a></td>
-                <td>6 <a href="https://en.wikipedia.org/wiki/Laser_Kiwi_flag"><img src="FOTD/jan/6.png"></a></td>
-                <td>7 <a href="https://en.wikipedia.org/wiki/Raven_banner"><img src="FOTD/jan/7.png"></a></td>
+                <td>1 <a href="https://en.wikipedia.org/wiki/Kingdom_of_Serbia"><img src="FOTD/month0/5.png"></a></td>
+                <td>2 <a href="https://en.wikipedia.org/wiki/Kingdom_of_Serbia"><img src="FOTD/month0/5.png"></a></td>
+                <td>3 <a href="https://en.wikipedia.org/wiki/Kingdom_of_Serbia"><img src="FOTD/month0/5.png"></a></td>
+                <td>4 <a href="https://en.wikipedia.org/wiki/Kingdom_of_Serbia"><img src="FOTD/month0/5.png"></a></td>
+                <td>5 <a href="https://en.wikipedia.org/wiki/Kingdom_of_Serbia"><img src="FOTD/month0/5.png"></a></td>
+                <td>6 <a href="https://en.wikipedia.org/wiki/Laser_Kiwi_flag"><img src="FOTD/month0/6.png"></a></td>
+                <td>7 <a href="https://en.wikipedia.org/wiki/Raven_banner"><img src="FOTD/month0/7.png"></a></td>
               </tr>
               <tr>
-                <td>8 <a href="https://www.flaginstitute.org/wp/flags/belfast-flag/"><img src="FOTD/jan/8.png"></a></td>
-                <td>9 <a href="https://en.wikipedia.org/wiki/Armorial_of_Ireland#/media/File:Four_Provinces_Flag.svg"><img src="FOTD/jan/9.png"></a></td>
-                <td>10 <a href="https://en.m.wikipedia.org/wiki/Flag_of_Caithness"><img src="FOTD/jan/10.png"></a></td>
-                <td>11 <a href="https://en.wikipedia.org/wiki/List_of_Chinese_flags#/media/File:Flagkarmapa.svg"><img src="FOTD/jan/11.png"></a></td>
-                <td>12 <a href="https://en.wikipedia.org/wiki/New_Zealand_national_rugby_union_team"><img src="FOTD/jan/12.png" alt=""></a></td>
-                <td>13 <a href="https://en.wikipedia.org/wiki/List_of_Estonian_flags#/media/File:Presidential_Standard_of_Estonia_(at_sea).svg"><img src="FOTD/jan/13.png" alt=""></a></td>
-                <td>14 <a href="https://en.wikipedia.org/wiki/Holy_Roman_Empire"><img src="FOTD/jan/14.png" alt=""></a></td>
+                <td>8 <a href="https://www.flaginstitute.org/wp/flags/belfast-flag/"><img src="FOTD/month0/8.png"></a></td>
+                <td>9 <a href="https://en.wikipedia.org/wiki/Armorial_of_Ireland#/media/File:Four_Provinces_Flag.svg"><img src="FOTD/month0/9.png"></a></td>
+                <td>10 <a href="https://en.m.wikipedia.org/wiki/Flag_of_Caithness"><img src="FOTD/month0/10.png"></a></td>
+                <td>11 <a href="https://en.wikipedia.org/wiki/List_of_Chinese_flags#/media/File:Flagkarmapa.svg"><img src="FOTD/month0/11.png"></a></td>
+                <td>12 <a href="https://en.wikipedia.org/wiki/New_Zealand_national_rugby_union_team"><img src="FOTD/month0/12.png" alt=""></a></td>
+                <td>13 <a href="https://en.wikipedia.org/wiki/List_of_Estonian_flags#/media/File:Presidential_Standard_of_Estonia_(at_sea).svg"><img src="FOTD/month0/13.png" alt=""></a></td>
+                <td>14 <a href="https://en.wikipedia.org/wiki/Holy_Roman_Empire"><img src="FOTD/month0/14.png" alt=""></a></td>
               </tr>
               <tr>
-                <td>15 <a href="https://en.wikipedia.org/wiki/Flag_of_Nepal"><img src="FOTD/jan/15.png" alt=""></a></td>
-                <td>16 <a href="https://en.wikipedia.org/wiki/German_colonial_empire"><img src="FOTD/jan/16.png" alt=""></a></td>
-                <td>17 <a href="https://en.wikipedia.org/wiki/Louis_XIV"><img src="FOTD/jan/17.png" alt=""></a></td>
-                <td>18 <a href="https://en.wikipedia.org/wiki/Flags_of_the_Ottoman_Empire#/media/File:Naval_standard_of_the_Ottoman_Sultan.svg"><img src="FOTD/jan/18.png" alt=""></a></td>
-                <td>19 <a href=""><img src="FOTD/jan/19.png" alt=""></a></td>
-                <td>20 <a href=""><img src="FOTD/jan/20.png" alt=""></a></td>
-                <td>21</td>
+                <td>15 <a href="https://en.wikipedia.org/wiki/Flag_of_Nepal"><img src="FOTD/month0/15.png" alt=""></a></td>
+                <td>16 <a href="https://en.wikipedia.org/wiki/German_colonial_empire"><img src="FOTD/month0/16.png" alt=""></a></td>
+                <td>17 <a href="https://en.wikipedia.org/wiki/Louis_XIV"><img src="FOTD/month0/17.png" alt=""></a></td>
+                <td>18 <a href="https://en.wikipedia.org/wiki/Flags_of_the_Ottoman_Empire#/media/File:Naval_standard_of_the_Ottoman_Sultan.svg"><img src="FOTD/month0/18.png" alt=""></a></td>
+                <td>19 <a href="https://en.wikipedia.org/wiki/Byzantine_Empire"><img src="FOTD/month0/19.png" alt=""></a></td>
+                <td>20 <a href="https://en.wikipedia.org/wiki/Flag_of_Quebec"><img src="FOTD/month0/20.png" alt=""></a></td>
+                <td>21 <a href="https://en.wikipedia.org/wiki/Bequia"><img src="FOTD/month0/21.png" alt=""></a></td>
               </tr>
               <tr>
-                <td>22</td>
-                <td>23</td>
-                <td>24</td>
-                <td>25</td>
-                <td>26</td>
-                <td>27</td>
-                <td>28</td>
+                <td>22 <a href="https://en.wikipedia.org/wiki/Flag_of_Iraq"><img src="FOTD/month0/22.png" alt=""></a></td>
+                <td>23 <a href="https://en.wikipedia.org/wiki/Smiling_Sun"><img src="FOTD/month0/23.png" alt=""></a></td>
+                <td>24 <a href="https://en.wikipedia.org/wiki/Flag_of_Brittany"><img src="FOTD/month0/24.png" alt=""></a></td>
+                <td>25 <a href="https://en.wikipedia.org/wiki/Tu%CA%BBi_Tonga_Empire"><img src="FOTD/month0/25.png" alt=""></a></td>
+                <td>26 <a href="https://www.oma.com/projects/eu-barcode"><img src="FOTD/month0/26.png" alt=""></a></td>
+                <td>27 <a href="https://en.wikipedia.org/wiki/Kingdom_of_Serbia_(medieval)"><img src="FOTD/month0/27.png" alt=""></a></td>
+                <td>28 <a href="https://en.wikipedia.org/wiki/Ukraine"><img src="FOTD/month0/28.png" alt=""></a></td>
               </tr>
               <tr>
-                <td>29</td>
-                <td>30</td>
-                <td>31</td>
+                <td>29 <a href="https://en.wikipedia.org/wiki/Seychelles"><img src="FOTD/month0/29.png" alt="Seychelles Presidential Flag 1976-1977"></a></td>
+                <td>30 <a href=""><img src="FOTD/month0/30.png" alt=""></a></td>
+                <td>31 <a href=""><img src="FOTD/month0/31.png" alt=""></a></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -80,9 +84,28 @@
               </tr>
             </table>
   </div>
+  <div id="footer" class="footer">footer</div>
 </div>
-<div id="footer" class="footer">footer</div>
 </div>
 <script src="script.js"></script>
 </body>
+<script>
+  const d = new Date();
+  const m = new Date();
+  path = "FOTD/"
+  flag = document.getElementById("FOTD").src = path + "month"+m.getMonth()+"/" + d.getDate() + ".png";
+
+todaydate = "month"+m.getMonth()+"/" + d.getDate()
+var keyword = path + todaydate + ".png";
+console.log(keyword)
+ $("table img").filter(function(index) {
+    if ($(this).attr("src").match(keyword)) {
+      $(this).parent().attr("id","CURRENT");
+      todayslink = $("#CURRENT").attr('href');
+      $("#FOTDlink").attr('href', todayslink)
+      $("#FOTDalt").text($(this).attr("alt"));
+    }
+});
+
+</script>
 </html>
