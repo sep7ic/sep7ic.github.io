@@ -34,6 +34,7 @@ let navbar = `
   <div class="dropdown-content">
     <a href="#">Site Map</a>
     <a href="rss.xml">RSS Feed</a>
+    <a href="sillytest.html">test</a>
   </div>
 </div>
 `;
