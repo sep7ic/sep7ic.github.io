@@ -1,19 +1,16 @@
-name: Update this repo's README
-
-#on:
-#  schedule:
-    # Once a day at 8 AM
-#    - cron: 0 8 * * *
-on:
+name: Update readme with blog posts
+on: 
   push:
-    branches:
-      - main
-
+    branches: [ main ]
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: JasonEtco/rss-to-readme@v2
         with:
-          feed-url: https://github.com/sep7ic/sep7ic.github.io/commits/main.atom
+          feed-url: https://rlevchenko.com/rss/
+          max: 3
           readme-section: feed
+          branch: main
+          empty-commits: false
+          template: "#### [{{ title }}]({{ link }}) \n*{{ pubDate }}*\n\n"
