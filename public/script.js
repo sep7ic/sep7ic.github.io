@@ -118,21 +118,7 @@ xhttp.onreadystatechange = function() {
             var date_obj = new Date(site_data.info.last_updated);
             var not_obj = new Date(site_data.info.created_at);
             
-            const nth = function(o) {
-              if (o > 3 && o < 21) return 'th';
-              switch (o % 10) {
-                case 1:  return "st";
-                case 2:  return "nd";
-                case 3:  return "rd";
-                default: return "th";
-              }
-            }
-            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
             const datey = date_obj.getDate()
-
-            COOLTEXTHERE = monthNames[d.getMonth()] + " " + datey+nth(datey) + "," +not_obj.getHours() + ":" + ('0'+ date_obj.getMinutes()).slice(-2)
-
-            $("#time").text(COOLTEXTHERE)
 
             nyehheh = date_obj.getMinutes()
             cooldate = ('0'+nyehheh).slice(-2)
