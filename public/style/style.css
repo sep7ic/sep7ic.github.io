@@ -1,16 +1,14 @@
 :root {
   --bg: #818dac;
-  --contbg: black;
+  --contbg: #111111;
   --text: white;
   --border: white;
-  --navbg: black;
+  --navbg: #111111;
   --font: "verycoolfont.tff";
-  --bordersize: 1.5px;
+  --bordersize: 1px;
 }
 
 body {
-  margin-top: 30px;
-  background-color: rgb(61, 61, 61);
   font-family: 'Courier New', Courier, monospace;
   font-family: 'Quicksand', sans-serif;
   background-image: url("https://preview.redd.it/c3du8b2ttoo51.png?auto=webp&s=436d95c8601206d52599b26cf7125a77f0dffe0a");
@@ -18,7 +16,7 @@ body {
   background-attachment: fixed;
   background-size: auto 100%;
   color: var(--text);
-
+  
   font-smooth: never;
 -webkit-font-smoothing : none;
 image-rendering: optimizeSpeed;
@@ -67,7 +65,7 @@ image-rendering: optimize-contrast;
 .header {
   width: 100%;
   margin: 10px 0 10px 0;
-  height: 15vh;
+  height: 16vh;
   display:inline-flex;
   align-items:center;
 }
@@ -76,7 +74,7 @@ image-rendering: optimize-contrast;
     margin-left: auto;
     margin-right: auto;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 15px;
+    font-size: 1vw;
 }
 #header img {
   height: 90%;

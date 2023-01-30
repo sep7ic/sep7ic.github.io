@@ -40,7 +40,7 @@ let navbar = `
 let headera = `<a href="index.html"><h1>SEP<h1></a>`;
 
 let header = `
-<img src="style/duck.png" style="float: left;"/>
+<img src="style/fleur.png" style="float: left; padding: 10px;"/>
 <div style="margin:0 auto; text-align: center;">
 <pre>
 ███████╗███████╗██████╗ 
@@ -51,7 +51,7 @@ let header = `
 ╚══════╝╚══════╝╚═╝     
 </pre>
 </div> 
-<img src="style/duck.png" style="transform: scaleX(-1); float: right;"/>
+<img src="style/fleur.png" style="transform: scaleX(-1); float: right; padding: 10px;"/>
 &nbsp
 `;
 
@@ -79,11 +79,12 @@ document.head.innerHTML +=  `
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 `;
 
-if (document.getElementById("navbar")) {
-  document.getElementById("navbar").innerHTML = navbar;
-}
+
 if (document.getElementById("header")) {
   document.getElementById("header").innerHTML = header;
+}
+if (document.getElementById("navbar")) {
+  document.getElementById("navbar").innerHTML = navbar;
 }
 if (document.getElementById("flags")) {
   document.getElementById("flags").innerHTML = flags;
