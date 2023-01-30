@@ -6,6 +6,12 @@
   --navbg: #111111;
   --font: "verycoolfont.tff";
   --bordersize: 1px;
+
+  --startcomp: #ee3131;
+  --endcomp: #36bb2a;
+}
+* {
+  box-sizing: border-box 
 }
 
 body {
@@ -47,7 +53,7 @@ image-rendering: optimize-contrast;
   border: solid var(--border) var(--bordersize);
 }
 .content {
-  padding: 30px;
+  padding: 0 30px;
 }
 /*---RESPONSIVE---*/
 @media screen and (max-width: 800px) {
@@ -86,6 +92,8 @@ image-rendering: optimize-contrast;
   overflow: hidden;
   background-color: var(--navbg);
   border: solid var(--border) var(--bordersize);
+  border-left: none;
+  border-right: none;
 }
 .navbar a {
   float: left;
@@ -143,7 +151,10 @@ p {
   line-height: 1.3em;
 }
 hr {
-  border-width: 1px;
+  border: none;
+  height: 1px;
+  color: var(--border);
+  background-color: var(--border);
 }
 
 
@@ -192,4 +203,47 @@ background-image: url('/web/20230105211922im_/https://sep.neocities.org/FOTD/img
   background-size: cover;
   vertical-align: text-top;
   padding-bottom: 0;
+}
+
+
+
+
+
+
+meter::-webkit-meter-optimum-value {
+  background: linear-gradient(to right, var(--startcomp) 0%, var(--endcomp) 100%)
+  right/
+  100% 400px;
+}
+meter::-moz-meter-bar { /* Firefox Pseudo Class */
+  background: red;
+}
+.outer {
+  background-color: white;
+  width: 100%;
+  padding: 1px;
+  height: 30px;
+  position:relative;
+}
+.outer>div {
+  height: 100%;
+   /* this will do the magic */
+  -webkit-mask:linear-gradient(#fff 0 0);
+          mask:linear-gradient(#fff 0 0);
+  color: white;
+}
+.outer>div::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-image: linear-gradient(to right, red, yellow, green); /* your gradient here */
+}
+#inner1 {
+  width: 50%;
+}
+#inner2 {
+  width: 4%;
 }

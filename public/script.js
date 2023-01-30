@@ -33,6 +33,7 @@ let navbar = `
   </button>
   <div class="dropdown-content">
     <a href="#">Site Map</a>
+    <a href="rss.xml">RSS Feed</a>
   </div>
 </div>
 `;
