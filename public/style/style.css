@@ -65,6 +65,10 @@ image-rendering: optimize-contrast;
     display: none;
   }
 }
+a {
+  text-decoration-style: dotted;
+  color: white;
+}
 
 
 /*---HEADER---*/
