@@ -142,7 +142,7 @@ xhttp.onreadystatechange = function() {
             dateob = not_obj.getMinutes()
             idk = ('0'+nyehheh).slice(-2)
             acool = not_obj.getFullYear() + "-" + (not_obj.getMonth()+1) + "-" +not_obj.getDate() + "T" + not_obj.getHours() + ":" + idk + "+13:00";
-            $("#started").attr('title', acool)
+            $("#started").attr('title', acool) 
   
           }
         document.getElementById("hitcount").innerHTML = num_str;
