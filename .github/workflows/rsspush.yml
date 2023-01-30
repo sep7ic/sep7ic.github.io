@@ -1,0 +1,16 @@
+name: Update this repo's README
+
+on:
+  schedule:
+    # Once a day at 8 AM
+    - cron: 0 8 * * *
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: JasonEtco/rss-to-readme@v1
+        with:
+          feed-url: https://github.com/sep7ic/sep7ic.github.io/commits/main.atom
+          template: "> {{ excerpt }}\n\n[Read more!]({{ url }})"
+          readme-section: feed
