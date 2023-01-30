@@ -1,1 +1,5 @@
-# i am a cool person
+### Example RSS feed:
+
+<!--START_SECTION:feed-->
+...
+<!--END_SECTION:feed-->
