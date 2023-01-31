@@ -235,7 +235,7 @@ background-image: url('/web/20230105211922im_/https://sep.neocities.org/FOTD/img
   left:0;
   right:0;
   bottom:0;
-  background-image: linear-gradient(to right, red, yellow, green); /* your gradient here */
+  background-image: linear-gradient(to right, red, yellow, green); 
 }
 #inner1 {
   width: 50%;

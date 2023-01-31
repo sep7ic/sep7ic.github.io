@@ -22,8 +22,8 @@ let navbar = `
   <div class="dropdown-content">
     <a href="${relativePath}/flags.html">Flags</a>
     <a href="${relativePath}/FOTD.html">FOTD</a>
-    <a href="#">FFF</a>
-    <a href="#">WTF</a>
+    <a href="${relativePath}/FFF.html">FFF</a>
+    <a href="${relativePath}/WTF.html">WTF</a>
     <a href="${relativePath}/quiz.html">flag quiz</a>
   </div>
 </div>
