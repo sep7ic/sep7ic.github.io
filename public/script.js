@@ -1,6 +1,6 @@
 let url = window.location.pathname;
 
-if ( url.includes("FOTW/"))( url.includes("more/")); {
+if ( url.includes("quiz/"))( url.includes("more/")); {
 relativePath = "..";
 }
 
@@ -10,8 +10,8 @@ let navbar = `
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-content">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="${relativePath}/index.html">Home</a>
+    <a href="${relativePath}/about.html">About</a>
   </div>
 </div> 
 
@@ -20,10 +20,11 @@ let navbar = `
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-content">
-    <a href="flags.html">Flags</a>
-    <a href="FOTD.html">FOTD</a>
+    <a href="${relativePath}/flags.html">Flags</a>
+    <a href="${relativePath}/FOTD.html">FOTD</a>
     <a href="#">FFF</a>
     <a href="#">WTF</a>
+    <a href="${relativePath}/quiz.html">flag quiz</a>
   </div>
 </div>
 
@@ -32,8 +33,8 @@ let navbar = `
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-content">
-    <a href="sitemap.html">Site Map</a>
-    <a href="rss.xml">RSS Feed</a>
+    <a href="${relativePath}/sitemap.html">Site Map</a>
+    <a href="${relativePath}/rss.xml">RSS Feed</a>
   </div>
 </div>
 `;
@@ -41,7 +42,7 @@ let navbar = `
 let headera = `<a href="index.html"><h1>SEP<h1></a>`;
 
 let header = `
-<img src="style/fleur.png" style="float: left; padding: 10px;"/>
+<img src="${relativePath}/style/fleur.png" style="float: left; padding: 10px;"/>
 <div style="margin:0 auto; text-align: center;">
 <pre>
 ███████╗███████╗██████╗ 
@@ -53,21 +54,21 @@ let header = `
 </pre>
 welcome, visitor #<span id="hitcount"><span>
 </div> 
-<img src="style/fleur.png" style="transform: scaleX(-1); float: right; padding: 10px;"/>
+<img src="${relativePath}/style/fleur.png" style="transform: scaleX(-1); float: right; padding: 10px;"/>
 &nbsp
 `;
 
 let flags = `
 <div id="flagsright">
-<img src="style/flags/NZ.png">
-<img src="style/flags/fern.png">
-<img src="style/flags/maori.png">
+<img src="${relativePath}/style/flags/NZ.png">
+<img src="${relativePath}/style/flags/fern.png">
+<img src="${relativePath}/style/flags/maori.png">
 </div>
 
 <div id="flagsleft">
-<img src="style/flags/UK.png">
-<img src="style/flags/DE.png">
-<img src="style/flags/scotland.png">
+<img src="${relativePath}/style/flags/UK.png">
+<img src="${relativePath}/style/flags/DE.png">
+<img src="${relativePath}/style/flags/scotland.png">
 </div>
 `;
 

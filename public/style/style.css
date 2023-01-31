@@ -214,14 +214,7 @@ background-image: url('/web/20230105211922im_/https://sep.neocities.org/FOTD/img
 
 
 
-meter::-webkit-meter-optimum-value {
-  background: linear-gradient(to right, var(--startcomp) 0%, var(--endcomp) 100%)
-  right/
-  100% 400px;
-}
-meter::-moz-meter-bar { /* Firefox Pseudo Class */
-  background: red;
-}
+
 .outer {
   background-color: white;
   width: 100%;
@@ -231,7 +224,6 @@ meter::-moz-meter-bar { /* Firefox Pseudo Class */
 }
 .outer>div {
   height: 100%;
-   /* this will do the magic */
   -webkit-mask:linear-gradient(#fff 0 0);
           mask:linear-gradient(#fff 0 0);
   color: white;
