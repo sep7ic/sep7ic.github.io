@@ -1,8 +1,11 @@
 let url = window.location.pathname;
 
-if ( url.includes("quiz/"))( url.includes("movies/")); {
+if ( url.includes("quiz/"))( url.includes("flags/")); {
 relativePath = "..";
 }
+if ( url.includes("flags/quizzes/")); {
+  relativePath = "../..";
+  }
 
 let navbar = `
 <div class="dropdown">
@@ -11,8 +14,8 @@ let navbar = `
   </button>
   <div class="dropdown-content">
     <a href="${relativePath}/index.html">Home</a>
-    <a href="${relativePath}/about.html">About</a>
-    <a href="${relativePath}/ayearinpixels.html">AYIP</a>
+    <a href="${relativePath}/gen/about.html">About</a>
+    <a href="${relativePath}/gen/ayip.html">AYIP</a>
   </div>
 </div> 
 
@@ -21,12 +24,12 @@ let navbar = `
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-content">
-    <a href="${relativePath}/flags.html">Flags</a>
-    <a href="${relativePath}/FOTD.html">FOTD</a>
-    <a href="${relativePath}/FBD.html">FBD</a>
-    <a href="${relativePath}/FFF.html">FFF</a>
-    <a href="${relativePath}/WTF.html">WTF</a>
-    <a href="${relativePath}/quizzes.html">Quizzes</a>
+    <a href="${relativePath}/flags/flags.html">Flags</a>
+    <a href="${relativePath}/flags/FOTD.html">FOTD</a>
+    <a href="${relativePath}/flags/FBD.html">FBD</a>
+    <a href="${relativePath}/flags/FFF.html">FFF</a>
+    <a href="${relativePath}/flags/WTF.html">WTF</a>
+    <a href="${relativePath}/flags/quizzes.html">Quizzes</a>
   </div>
 </div>
 
@@ -35,8 +38,8 @@ let navbar = `
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-content">
-    <a href="${relativePath}/sitemap.html">Site Map</a>
-    <a href="${relativePath}/rss.xml">RSS Feed</a>
+    <a href="${relativePath}/other/sitemap.html">Site Map</a>
+    <a href="${relativePath}/other/rss.xml">RSS Feed</a>
   </div>
 </div>
 `;
@@ -44,19 +47,10 @@ let navbar = `
 let headera = `<a href="index.html"><h1>SEP<h1></a>`;
 
 let header = `
-<img src="${relativePath}/style/fleur.png" style="float: left; padding: 10px;"/>
 <div style="margin:0 auto; text-align: center;">
-<pre>
-███████╗███████╗██████╗ 
-██╔════╝██╔════╝██╔══██╗
-███████╗█████╗  ██████╔╝
-╚════██║██╔══╝  ██╔═══╝ 
-███████║███████╗██║     
-╚══════╝╚══════╝╚═╝     
-</pre>
+<img src="${relativePath}/style/logo.png" style="width: 100%;"/>
 welcome, visitor #<span id="hitcount"><span>
-</div> 
-<img src="${relativePath}/style/fleur.png" style="transform: scaleX(-1); float: right; padding: 10px;"/>
+</div>
 &nbsp
 `;
 
