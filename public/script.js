@@ -12,6 +12,7 @@ let navbar = `
   <div class="dropdown-content">
     <a href="${relativePath}/index.html">Home</a>
     <a href="${relativePath}/about.html">About</a>
+    <a href="${relativePath}/ayearinpixels.html">AYIP</a>
   </div>
 </div> 
 
