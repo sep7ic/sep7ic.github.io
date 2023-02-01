@@ -6,14 +6,26 @@
         <description>xaaa </description>
         <category>Personal Site</category>
         <language>en-gb</language>
-        <pubDate>1/30/2023</pubDate>
+
+        <item>
+            <title>Updated FBD!</title>
+            <link>https://sep.neocities.org/FBD.html</link>
+            <pubDate>Wed, 01 Feb 2023 21:11 GMT+1300</pubDate>
+            <description>
+                i updated flags by design!! im (somewhat) proud of what i did because it took me like 4 hours, still a wip though!! i added 3 FOTD's for today, sorry im 2 days late lol
+                <![CDATA[ <img src="http://sep.neocities.org/images/flags/SPQR2.jpg"/> ]]>
+            </description>
+        </item>
+
         <item>
             <title>RSS feed!!!</title>
             <link>https://sep.neocities.org/</link>
+            <pubDate>Mon, 30 Jan 2023 21:11 GMT+1300</pubDate>
             <description>
                 I added an RSS feed!! ill try see if i can automate this with github. also, heres the FOTD for today!! -- >
                 <![CDATA[ <img src="https://sep.neocities.org/FOTD/month0/30.png"/> ]]>
             </description>
         </item>
+
     </channel>
 </rss>

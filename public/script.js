@@ -1,6 +1,6 @@
 let url = window.location.pathname;
 
-if ( url.includes("quiz/"))( url.includes("more/")); {
+if ( url.includes("quiz/"))( url.includes("movies/")); {
 relativePath = "..";
 }
 
@@ -22,9 +22,10 @@ let navbar = `
   <div class="dropdown-content">
     <a href="${relativePath}/flags.html">Flags</a>
     <a href="${relativePath}/FOTD.html">FOTD</a>
+    <a href="${relativePath}/FBD.html">FBD</a>
     <a href="${relativePath}/FFF.html">FFF</a>
     <a href="${relativePath}/WTF.html">WTF</a>
-    <a href="${relativePath}/quiz.html">flag quiz</a>
+    <a href="${relativePath}/quizzes.html">Quizzes</a>
   </div>
 </div>
 

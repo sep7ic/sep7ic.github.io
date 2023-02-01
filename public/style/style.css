@@ -1,9 +1,9 @@
 :root {
   --bg: #818dac;
-  --contbg: #111111;
+  --contbg: #000000;
   --text: white;
   --border: white;
-  --navbg: #111111;
+  --navbg: #000000;
   --font: "verycoolfont.tff";
   --bordersize: 1px;
 
@@ -208,8 +208,6 @@ background-image: url('/web/20230105211922im_/https://sep.neocities.org/FOTD/img
   vertical-align: text-top;
   padding-bottom: 0;
 }
-
-
 
 
 
