@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-      - '!main/public/games/rebis'
+      - '!main/public/games/rebis/'
 
 jobs:
   deploy:
