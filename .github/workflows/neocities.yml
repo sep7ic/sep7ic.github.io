@@ -3,10 +3,9 @@ name: Deploy to neocities
 # only run on changes to main
 on:
   push:
-    paths-ignore:
-      - 'public/rebis/**'
     branches:
       - main
+      - '!rebis/**'
 
 jobs:
   deploy:
