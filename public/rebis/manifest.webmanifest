@@ -1,6 +1,6 @@
 {
-  "name": "Peachy Winter",
-  "short_name": "Peachy Winter",
+  "name": "Throw Poland",
+  "short_name": "Throw Poland",
   "id": "com.example.gamename",
   "description": "",
   "orientation": "landscape",
@@ -8,5 +8,8 @@
   "display": "standalone",
   "background_color": "black",
   "categories": ["games", "entertainment"],
-  "icons": []
+  "icons": [{
+        "src": "Poland.png3.png",
+        "sizes": "512x512"
+      }]
 }
