@@ -4,7 +4,7 @@ name: Deploy to neocities
 on:
   push:
     paths-ignore:
-      - '**/rebis'
+      - 'rebis'
     branches:
       - main
 
