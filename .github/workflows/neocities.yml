@@ -5,7 +5,8 @@ on:
   push:
     branches:
       - main
-      - '!main/public/games/rebis/'
+    paths-ignore: 
+     - 'public/games/rebis/'
 
 jobs:
   deploy:

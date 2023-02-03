@@ -38,7 +38,7 @@ let navbar = `
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-content">
-    <a href="https://sep7ic.github.io/rebis">WHAT IS THIS@!!!</a>
+    <a href="https://sep7ic.github.io/games/rebis">WHAT IS THIS@!!!</a>
   </div>
 </div>
 
