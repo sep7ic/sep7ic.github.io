@@ -34,6 +34,15 @@ let navbar = `
 </div>
 
 <div class="dropdown">
+  <button class="dropbtn">Games 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content">
+    <a href="${relativePath}/rebis/index.html">WHAT IS THIS@!!!</a>
+  </div>
+</div>
+
+<div class="dropdown">
   <button class="dropbtn">Site 
     <i class="fa fa-caret-down"></i>
   </button>
