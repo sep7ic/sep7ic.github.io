@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-      - '!public/rebis/**'
+      - '!main/rebis/**'
 
 jobs:
   deploy:
