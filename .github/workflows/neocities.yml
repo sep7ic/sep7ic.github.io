@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths-ignore: 
-     - 'public/games/rebis/**'
+     - 'public/games/rebis/*'
 
 jobs:
   deploy:
