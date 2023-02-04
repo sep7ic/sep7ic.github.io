@@ -15,6 +15,7 @@ let navbar = `
   <div class="dropdown-content">
     <a href="${relativePath}/index.html">Home</a>
     <a href="${relativePath}/gen/about.html">About</a>
+    <a href="${relativePath}/gen/blog.html">blog</a>
     <a href="${relativePath}/gen/ayip.html">AYIP</a>
   </div>
 </div> 
@@ -26,19 +27,9 @@ let navbar = `
   <div class="dropdown-content">
     <a href="${relativePath}/flags/flags.html">Flags</a>
     <a href="${relativePath}/flags/FOTD.html">FOTD</a>
-    <a href="${relativePath}/flags/FBD.html">FBD</a>
     <a href="${relativePath}/flags/FFF.html">FFF</a>
     <a href="${relativePath}/flags/WTF.html">WTF</a>
     <a href="${relativePath}/flags/quizzes.html">Quizzes</a>
-  </div>
-</div>
-
-<div class="dropdown">
-  <button class="dropbtn">Games 
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-content">
-    <a href="https://sep7ic.github.io/games/rebis">WHAT IS THIS@!!!</a>
   </div>
 </div>
 
