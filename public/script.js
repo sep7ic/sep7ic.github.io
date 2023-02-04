@@ -15,7 +15,6 @@ let navbar = `
   <div class="dropdown-content">
     <a href="${relativePath}/index.html">Home</a>
     <a href="${relativePath}/gen/about.html">About</a>
-    <a href="${relativePath}/gen/blog.html">blog</a>
     <a href="${relativePath}/gen/ayip.html">AYIP</a>
   </div>
 </div> 
@@ -27,9 +26,11 @@ let navbar = `
   <div class="dropdown-content">
     <a href="${relativePath}/flags/flags.html">Flags</a>
     <a href="${relativePath}/flags/FOTD.html">FOTD</a>
+    <a href="${relativePath}/flags/quizzes.html">Quizzes</a>
     <a href="${relativePath}/flags/FFF.html">FFF</a>
     <a href="${relativePath}/flags/WTF.html">WTF</a>
-    <a href="${relativePath}/flags/quizzes.html">Quizzes</a>
+    <a href="${relativePath}/flags/evolutions.html">evolutions</a>
+    <a href="${relativePath}/flags/links.html">links & resources</a>
   </div>
 </div>
 

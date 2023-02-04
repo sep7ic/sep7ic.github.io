@@ -160,6 +160,9 @@ hr {
   color: var(--border);
   background-color: var(--border);
 }
+img {
+  width: 30%;
+}
 
 
 .flags {
