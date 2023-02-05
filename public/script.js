@@ -31,6 +31,10 @@ let navbar = `
     <a href="${relativePath}/flags/WTF.html">WTF</a>
     <a href="${relativePath}/flags/evolutions.html">evolutions</a>
     <a href="${relativePath}/flags/links.html">links & resources</a>
+    <a href="${relativePath}/flags/tierlists.html">tierlists</a>
+    <a href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Flags_by_country" target="_blank">Random flag by country</a>
+    <a href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Flags" target="_blank">Random flags page</a>
+    <a href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Flags_by_year_of_introduction" target="_blank">Random flag by introduction</a>
   </div>
 </div>
 
@@ -49,7 +53,9 @@ let headera = `<a href="index.html"><h1>SEP<h1></a>`;
 
 let header = `
 <div style="margin:0 auto; text-align: center;">
-<img src="${relativePath}/style/logo.png" style="width: 100%;"/>
+<div style="font-size: 45px;">
+<span class="rainbowtext">SEP</span><span>.neocities.org</span>
+</div>
 welcome, visitor #<span id="hitcount"><span>
 </div>
 &nbsp
@@ -139,3 +145,4 @@ xhttp.send();
   jQuery(document).ready(function() {
   jQuery("abbr.timeago").timeago(); 
   });
+

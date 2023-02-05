@@ -17,10 +17,12 @@
 body {
   font-family: 'Courier New', Courier, monospace;
   font-family: 'Quicksand', sans-serif;
-  background-image: url("https://preview.redd.it/c3du8b2ttoo51.png?auto=webp&s=436d95c8601206d52599b26cf7125a77f0dffe0a");
-  background-repeat: repeat-x;
+  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Quicksand', sans-serif;
+  background: url("https://opengameart.org/sites/default/files/flags16_pre.gif"),   linear-gradient(to bottom, #000000, #3d3d3d);
   background-attachment: fixed;
-  background-size: auto 100%;
+  background-size: auto, cover;
+  background-blend-mode: overlay;
   color: var(--text);
   
   font-smooth: never;
@@ -243,4 +245,26 @@ background-image: url('/web/20230105211922im_/https://sep.neocities.org/FOTD/img
 }
 #inner2 {
   width: 4%;
+}
+
+
+
+
+
+h1, h2 {
+	color: #fff;
+	text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+}
+
+
+
+.rainbowtext {
+  animation: rainbow-colors 2s linear infinite;
+}
+@keyframes rainbow-colors {
+  0% { color: hsl(0turn, 90%, 65%); }
+  25% { color: hsl(.25turn, 90%, 65%); }
+  50% { color: hsl(.5turn, 90%, 65%); }
+  75% { color: hsl(.75turn, 90%, 65%); }
+  100% { color: hsl(1turn, 90%, 65%); }
 }
