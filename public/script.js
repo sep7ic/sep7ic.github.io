@@ -7,70 +7,49 @@ if ( url.includes("flags/quizzes/")); {
   relativePath = "../..";
   }
 
-let navbar = `
-<div class="dropdown">
-  <button class="dropbtn">GEN 
-  </button>
-  <div class="dropdown-content">
-    <a href="${relativePath}/index.html">Home</a>
-    <a href="${relativePath}/gen/about.html">About</a>
-    <a href="${relativePath}/gen/ayip.html">AYIP</a>
-  </div>
-</div> 
+  let navbar = `
+  <ul>
+  <div class="dropdown">
+    <button class="dropbtn">GEN 
+    </button>
+    <div class="dropdown-content">
+      <a href="${relativePath}/index.html">Home</a>
+      <a href="${relativePath}/gen/about.html">About</a>
+      <a href="${relativePath}/gen/ayip.html">AYIP</a>
+    </div>
+  </div> 
 
-<div class="dropdown">
-  <button class="dropbtn">FLAGS 
-  </button>
-  <div class="dropdown-content">
-    <a href="${relativePath}/flags/flags.html">Flags</a>
-    <a href="${relativePath}/flags/FOTD.html">FOTD</a>
-    <a href="${relativePath}/flags/quizzes.html">Quizzes</a>
-    <a href="${relativePath}/flags/FFF.html">FFF</a>
-    <a href="${relativePath}/flags/WTF.html">WTF</a>
-    <a href="${relativePath}/flags/evolutions.html">evolutions</a>
-    <a href="${relativePath}/flags/links.html">links & resources</a>
-    <a href="${relativePath}/flags/tierlists.html">tierlists</a>
-    <a href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Flags_by_country" target="_blank">Random flag by country</a>
-    <a href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Flags" target="_blank">Random flags page</a>
-    <a href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Flags_by_year_of_introduction" target="_blank">Random flag by introduction</a>
+  <div class="dropdown">
+    <button class="dropbtn">FLAGS 
+    </button>
+    <div class="dropdown-content">
+      <a href="${relativePath}/flags/flags.html">Flags</a>
+      <a href="${relativePath}/flags/FOTD.html">FOTD</a>
+      <a href="${relativePath}/flags/quizzes.html">Quizzes</a>
+      <a href="${relativePath}/flags/FFF.html">FFF</a>
+      <a href="${relativePath}/flags/WTF.html">WTF</a>
+      <a href="${relativePath}/flags/evolutions.html">evolutions</a>
+      <a href="${relativePath}/flags/links.html">links & resources</a>
+      <a href="${relativePath}/flags/tierlists.html">tierlists</a>
+      <a href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Flags_by_country" target="_blank">Random flag by country</a>
+      <a href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Flags" target="_blank">Random flags page</a>
+      <a href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Flags_by_year_of_introduction" target="_blank">Random flag by introduction</a>
+    </div>
   </div>
-</div>
-
-<div class="dropdown">
-  <button class="dropbtn">SITE 
-  </button>
-  <div class="dropdown-content">
-    <a href="${relativePath}/other/sitemap.html">Site Map</a>
-    <a href="${relativePath}/other/rss.xml">RSS Feed</a>
+  
+  <div class="dropdown">
+    <button class="dropbtn">SITE 
+    </button>
+    <div class="dropdown-content">
+      <a href="${relativePath}/other/sitemap.html">Site Map</a>
+      <a href="${relativePath}/other/rss.xml">RSS Feed</a>
+    </div>
   </div>
-</div>
-`;
+  </ul>
+  `;
 
 let headera = `<a href="index.html"><h1>SEP<h1></a>`;
 
-let header = `
-<div style="margin:0 auto; text-align: center;">
-<div style="font-size: 45px;">
-<span class="rainbowtext">SEP</span><span>.neocities.org</span>
-</div>
-welcome, visitor #<span id="hitcount"><span>
-</div>
-&nbsp
-`;
-
-let flags = `
-<div id="flagsright">
-<img src="${relativePath}/style/flags/NZ.png">
-<img src="${relativePath}/style/flags/fern.png">
-<img src="${relativePath}/style/flags/maori.png">
-</div>
-
-<div id="flagsleft">
-<img src="${relativePath}/style/flags/UK.png">
-<img src="${relativePath}/style/flags/DE.png">
-<img src="${relativePath}/style/flags/scotland.png">
-</div>
-`;
 
 let footer = `
 <div style="text-align: center; padding: 10px;">
@@ -89,10 +68,6 @@ document.head.innerHTML +=  `
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 `;
 
-
-if (document.getElementById("header")) {
-  document.getElementById("header").innerHTML = header;
-}
 if (document.getElementById("navbar")) {
   document.getElementById("navbar").innerHTML = navbar;
 }

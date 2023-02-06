@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="utf-8">
-<link rel="stylesheet" href="../../style/style.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" type="text/javascript"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flags by Design</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js" type="text/javascript"></script>
 </head>
 <style>
@@ -54,78 +56,84 @@
 }
 </style>
 <body>
-<div id="flags" class="flags"></div>
-<div class="container">
-  <div class="header" id="header"></div>
-  <div class="navbar" id="navbar"></div>
-  <div class="content">
-    <h1>Flags By Design</h1>
-    <p>a nation's flag serves as a symbol of that nation's identity and sovereignty. they typically have a distinctive shape, colour scheme, and occasionally an emblem or symbol that speaks to the history, culture, or ideals of said nation. I'm going to attempt to analyse 255 of the worlds flags and sort them by design, colours, shape/aspect ratios, patterns and charges/symbols.</p>
-    <p>(flags researched on include those of micronations, flags/countries non UN recognised countries, and non official flags such as the Antarcitca one.)</p>
-    <p>After doing some research and counting, I came out with the following results:</p>
-    <hr>
-    <h2>Colours</h2>
-    <h3>World</h3>
-    <div>
-    <div class="piechartcolours" style="float: left;"></div>
-    <div style="width: 50%; float: right;">
-      <div class="health"><div style="width: 80.39%; background-color: var(--red);">80.39%</div></div>
-      <div class="health"><div style="width: 78.82%; background-color: var(--white);  color: black;">78.82%</div></div>
-      <div class="health"><div style="width: 59.21%; background-color: var(--blue);">59.21%</div></div>
-      <div class="health"><div style="width: 51.76%; background-color: var(--yellow);">51.76%</div></div>
-      <div class="health"><div style="width: 45.49%; background-color: var(--green);">45.49%</div></div>
-      <div class="health"><div style="width: 34.11%; background-color: var(--black);">34.11%</div></div>
-      <div class="health"><div style="width: 9%; background-color: var(--orange);">9%</div></div>
-      <div class="health"><div style="width: 8.62%; background-color: var(--brown);">8.62%</div></div>
-      <div class="health"><div style="width: 1.17%; background-color: var(--pink);">1.17%</div></div>
-      <div class="health"><div style="width: 0.78%; background-color: var(--purple);">0.78%</div></div>
+  
+<div id="container">
+    <div id="headerArea">
+        <div id="header"></div>
+        <nav id="navbar" style="margin-bottom: 10px;">lel u need js</nav>
     </div>
-    <div style="clear: both;"></div>
-    <p>The most common colour on flags is RED, with 205 out of 255 (or 80.39%) flags containing some form of RED (including orangey red tones or brownish red tones [Qatar])</p>
-    <p>The second most common colour on flags is WHITE, with 201 out of 255 (or 78.82%) flags containing some form of white (includes very light grey, such as the colour seen on the Spainish flag's coat)</p>
-    <p>151 out of 255 (59.21%) flags have some sort of shade of BLUE on them</p>
-    <p>132 out of 255 (51.76%) flags have YELLOW or GOLD on them</p>
-    <p>116 out of 255 (45.49%) flags have a shade of GREEN on them</p>
-    <p>87 out of 255 (34.11%) flags have some sort of BLACK (can be very dark blue or red, as seen on the coat of arms of multiple flags such as the Mexican flag). this is including very thin lines on coats (Ecuador) or very small dots of black (Guam)</p>
-    <p>23 out of 255 (9%) flags have ORANGE</p>
-    <p>22 out of 255 (8.62%) flags have BROWN</p>
-    <p>3 out of 255 (1.17%) flags have PINK (Spain, Mexico, and Turks and Caicos)</p>
-    <p>2 out of 255 (0.78%) flags have PURPLE (Dominica and Nicuragua)</p>
+
+    <div id="flex" >
+        <main>
+            <h1>Flags By Design</h1>
+            <p>a nation's flag serves as a symbol of that nation's identity and sovereignty. they typically have a distinctive shape, colour scheme, and occasionally an emblem or symbol that speaks to the history, culture, or ideals of said nation. I'm going to attempt to analyse 255 of the worlds flags and sort them by design, colours, shape/aspect ratios, patterns and charges/symbols.</p>
+            <p>(flags researched on include those of micronations, flags/countries non UN recognised countries, and non official flags such as the Antarcitca one.)</p>
+            <p>After doing some research and counting, I came out with the following results:</p>
+            <hr>
+            <h2>Colours</h2>
+            <h3>World</h3>
+            <div>
+            <div class="piechartcolours" style="float: left;"></div>
+            <div style="width: 50%; float: right;">
+              <div class="health"><div style="width: 80.39%; background-color: var(--red);">80.39%</div></div>
+              <div class="health"><div style="width: 78.82%; background-color: var(--white);  color: black;">78.82%</div></div>
+              <div class="health"><div style="width: 59.21%; background-color: var(--blue);">59.21%</div></div>
+              <div class="health"><div style="width: 51.76%; background-color: var(--yellow);">51.76%</div></div>
+              <div class="health"><div style="width: 45.49%; background-color: var(--green);">45.49%</div></div>
+              <div class="health"><div style="width: 34.11%; background-color: var(--black);">34.11%</div></div>
+              <div class="health"><div style="width: 9%; background-color: var(--orange);">9%</div></div>
+              <div class="health"><div style="width: 8.62%; background-color: var(--brown);">8.62%</div></div>
+              <div class="health"><div style="width: 1.17%; background-color: var(--pink);">1.17%</div></div>
+              <div class="health"><div style="width: 0.78%; background-color: var(--purple);">0.78%</div></div>
+            </div>
+            <div style="clear: both;"></div>
+            <p>The most common colour on flags is RED, with 205 out of 255 (or 80.39%) flags containing some form of RED (including orangey red tones or brownish red tones [Qatar])</p>
+            <p>The second most common colour on flags is WHITE, with 201 out of 255 (or 78.82%) flags containing some form of white (includes very light grey, such as the colour seen on the Spainish flag's coat)</p>
+            <p>151 out of 255 (59.21%) flags have some sort of shade of BLUE on them</p>
+            <p>132 out of 255 (51.76%) flags have YELLOW or GOLD on them</p>
+            <p>116 out of 255 (45.49%) flags have a shade of GREEN on them</p>
+            <p>87 out of 255 (34.11%) flags have some sort of BLACK (can be very dark blue or red, as seen on the coat of arms of multiple flags such as the Mexican flag). this is including very thin lines on coats (Ecuador) or very small dots of black (Guam)</p>
+            <p>23 out of 255 (9%) flags have ORANGE</p>
+            <p>22 out of 255 (8.62%) flags have BROWN</p>
+            <p>3 out of 255 (1.17%) flags have PINK (Spain, Mexico, and Turks and Caicos)</p>
+            <p>2 out of 255 (0.78%) flags have PURPLE (Dominica and Nicuragua)</p>
+            </div>
+        <hr>
+            <h2>Aspect Ratios</h2>
+            <h3>World</h3>
+            <p>please note: a select few of flags do not have an official aspect ratio. these countries being: Cape Verde and Antarctica. However, both of these countries are still included</p>
+            <div class="health" style="display: flex;">
+              <div style="width: 43.52%; background-color: red;"></div>
+              <div style="width: 30.58%; background-color: orange;"></div>
+              <div style="width: 8.62%; background-color: yellow;"></div>
+              <div style="width: 6.66%; background-color: pink;"></div>
+              <div style="width: 1.96%; background-color: yellowgreen;"></div>
+              <div style="width: 1.96%; background-color: green;"></div>
+              <div style="width: 1.56%; background-color: lightseagreen;"></div>
+              <div style="width: 1.56%; background-color: RoyalBlue;"></div>
+              <div style="width: 1.17%; background-color: purple;"></div>
+              <div style="width: 0.78%; background-color: MediumSlateBlue;"></div>
+              <div style="width: 0.39%; background-color: violet;"></div>
+            </div>  
+            <div>
+                <p>111 out of 255 (43.52%) flags have the most common aspect ratio, 2:3, or, in decimal, 1.5 (decimal ratio is first number divided by second number)</p>
+                <p>The second most used aspect ratio is 1:2, with 78 out of 255 (30.58%) flags using it. all british former colonies and dependencies use this aspect ratio as it is the same as their mother country; Great Britain.</p>
+                <p>22 out of 255 (8.62%) flags have a 3:5 aspect ratio</p>
+                <p>5 out of 255 (1.96%) flags have a 5:8 aspect ratio</p>
+                <p>5 out of 255 (1.96%) flags have an 8:11 aspect ratio</p>
+                <p>4 out of 255 (1.56%) flags have a 10:19 aspect ratio</p>
+                <p>4 out of 255 (1.56%) flags have a 3:4 aspect ratio</p>
+                <p>2 out of 255 (0.78%) flags have a 1:1 aspect ratio (completely square). these flags being Switzerland and Vatican City, although Vatican City's is undefined and both 1:1 and 1:2 are acceptable and have been seen flying. Vatican City is only counted towards 1:1 and is not counted towards the 1:2 aspect ratio count.</p>
+                <p>3 out of 255 (1.17%) flags have an aspect ratio of either 4:7, 5:7 or 7:10</p>
+                <p>1 out of 255 (0.39%) flags have a 1:φ aspect ratio (golden ratio). Togo is the only flag with the golden ratio for an aspect ratio.</p>
+                <p>17 out of 255 (6.66%) flags have a different aspect ratio (see below for aspect ratios. each of these are only used by one flag, so im not going to give each one their own text space)</p>
+                <p>- 4:5, 10:17, 11:18, 11:20, 11:28, 13:15, 15:22, 16:25, 17:26, 189:335, 18:25, 19:36, 22:41, 28:37, 50:41, 6:7, 7:11</p>
+              </div>
+        </main>
+        
     </div>
-<hr>
-    <h2>Aspect Ratios</h2>
-    <h3>World</h3>
-    <p>please note: a select few of flags do not have an official aspect ratio. these countries being: Cape Verde and Antarctica. However, both of these countries are still included</p>
-    <div class="health" style="display: flex;">
-      <div style="width: 43.52%; background-color: red;"></div>
-      <div style="width: 30.58%; background-color: orange;"></div>
-      <div style="width: 8.62%; background-color: yellow;"></div>
-      <div style="width: 6.66%; background-color: pink;"></div>
-      <div style="width: 1.96%; background-color: yellowgreen;"></div>
-      <div style="width: 1.96%; background-color: green;"></div>
-      <div style="width: 1.56%; background-color: lightseagreen;"></div>
-      <div style="width: 1.56%; background-color: RoyalBlue;"></div>
-      <div style="width: 1.17%; background-color: purple;"></div>
-      <div style="width: 0.78%; background-color: MediumSlateBlue;"></div>
-      <div style="width: 0.39%; background-color: violet;"></div>
-    </div>  
-    <div>
-        <p>111 out of 255 (43.52%) flags have the most common aspect ratio, 2:3, or, in decimal, 1.5 (decimal ratio is first number divided by second number)</p>
-        <p>The second most used aspect ratio is 1:2, with 78 out of 255 (30.58%) flags using it. all british former colonies and dependencies use this aspect ratio as it is the same as their mother country; Great Britain.</p>
-        <p>22 out of 255 (8.62%) flags have a 3:5 aspect ratio</p>
-        <p>5 out of 255 (1.96%) flags have a 5:8 aspect ratio</p>
-        <p>5 out of 255 (1.96%) flags have an 8:11 aspect ratio</p>
-        <p>4 out of 255 (1.56%) flags have a 10:19 aspect ratio</p>
-        <p>4 out of 255 (1.56%) flags have a 3:4 aspect ratio</p>
-        <p>2 out of 255 (0.78%) flags have a 1:1 aspect ratio (completely square). these flags being Switzerland and Vatican City, although Vatican City's is undefined and both 1:1 and 1:2 are acceptable and have been seen flying. Vatican City is only counted towards 1:1 and is not counted towards the 1:2 aspect ratio count.</p>
-        <p>3 out of 255 (1.17%) flags have an aspect ratio of either 4:7, 5:7 or 7:10</p>
-        <p>1 out of 255 (0.39%) flags have a 1:φ aspect ratio (golden ratio). Togo is the only flag with the golden ratio for an aspect ratio.</p>
-        <p>17 out of 255 (6.66%) flags have a different aspect ratio (see below for aspect ratios. each of these are only used by one flag, so im not going to give each one their own text space)</p>
-        <p>- 4:5, 10:17, 11:18, 11:20, 11:28, 13:15, 15:22, 16:25, 17:26, 189:335, 18:25, 19:36, 22:41, 28:37, 50:41, 6:7, 7:11</p>
-      </div>
-  </div>
-<div id="footer" class="footer">footer</div>
+    <footer id="footer">seeeeep</footer>
 </div>
-<script src="../../script.js"></script>
+<script src="../script.js"></script>
 </body>
 </html>

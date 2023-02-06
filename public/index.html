@@ -1,70 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="utf-8">
-<link rel="stylesheet" href="style/style.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" type="text/javascript"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sep</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js" type="text/javascript"></script>
-
-<meta content="sep" property="og:title" />
-<meta content="https://sep.neocities.org/" property="og:url" />
-<meta content="https://sep.neocities.org/style/logo.png" property="og:image" />
-<meta content="#00ff11" data-react-helmet="true" name="theme-color" />
-<meta name="twitter:card" content="summary_large_image">
-
 </head>
-<style>
-  #fotdcont {
-    float: left;
-    width: 30%;
-  }
-  #visitors {
-    float: right;
-    width: 70%;
-  }
-@media screen and (max-width: 800px) {
-  #fotdcont, #visitors {
-    width: 100%;
-    float: none;
-  }
-}
-</style>
 <body>
-<div id="flags" class="flags"></div>
-<div class="container">
-  <div class="header" id="header"></div>
-  <div class="navbar" id="navbar"></div>
-  <div class="content" style="margin-top: 20px;">
-    <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=septic" defer></script> 
-    <p>welcome to my personal site!! call me septic (or sep). im a teen from Taranaki whos interested in flags and programming. im here to code and meet like minded people.</p>
-    <p>this site is basically just an archive for all my thoughts, to put it simply. im suprised this website's style hasnt changed since 2023 because apparently i like to remodel my sites, alot (hence why i have a folder one directory up which contains about 20 different folders each holding their own sites.)</p>
-    <p>im currently attempting to purchase a domain name for my site but i have to get a job first. ill probably get something like "septic.net.nz" or "septic.nz"</p>
-    <hr>
-      <div id="fotdcont">
-        <h3>Flag of the Day</h3>
-        <a href="flags/FOTD.html">
-          <img src="flags/FOTD/cantfind.png" id="FOTD" style="width: 100%;" onError="this.onerror=null;this.src='flags/FOTD/cantfind.png';">
-        </a>
-      </div>
-      <div id="visitors">
-        <h3>Visitors</h3>
-        <a href="https://info.flagcounter.com/IolJ"><img src="https://s11.flagcounter.com/count2/IolJ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_7/maxflags_250/viewers_0/labels_0/pageviews_0/flags_1/percent_0/" style="width: 100%;"></a>
-      </div>
-    <div style="clear: both;"></div>
-    <hr>
-    <iframe src="https://www5.cbox.ws/box/?boxid=940345&boxtag=L45nL9" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-  </div>
-  <div id="footer" class="footer">footer</div>
+  
+<div id="container">
+    <div id="headerArea">
+        <div id="header"></div>
+        <nav id="navbar" style="margin-bottom: 10px;">lel u need js</nav>
+    </div>
+
+    <div id="flex" >
+        <aside id="leftSidebar" style="margin-right: 10px;">
+            <h2>page updates</h2>
+            <div class="box" >  
+                <p>ok</p>
+            </div>
+            <h3>Flag of the Day</h3>
+            <a href="flags/FOTD.html">
+              <img src="flags/FOTD/cantfind.png" id="FOTD" style="width: 100%;" onError="this.onerror=null;this.src='flags/FOTD/cantfind.png';">
+            </a>
+        </aside>
+        <main>
+          <h1>home</h1>
+          <div class="box">
+          <p>welcome to my personal site!! call me septic (or sep). im a teen from Taranaki whos interested in flags and programming. im here to code and meet like minded people.</p>
+          <p>this site is basically just an archive for all my thoughts, to put it simply. im suprised this website's style hasnt changed since 2023 because apparently i like to remodel my sites, alot (hence why i have a folder one directory up which contains about 20 different folders each holding their own sites.)</p>
+          <p>im currently attempting to purchase a domain name for my site but i have to get a job first. ill probably get something like "septic.net.nz" or "septic.nz"</p>
+          <a href="https://info.flagcounter.com/IolJ"><img src="https://s11.flagcounter.com/count2/IolJ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_7/maxflags_250/viewers_0/labels_0/pageviews_0/flags_1/percent_0/" style="width: 100%;"></a>
+        </div>
+        </main>
+        
+    </div>
+    <footer id="footer">i am sep</footer>
 </div>
 <script src="script.js"></script>
 </body>
-
 <script>
   const d = new Date();
   const m = new Date();
   path = "flags/FOTD/"
   flag = document.getElementById("FOTD").src = path + "month"+m.getMonth()+"/" + d.getDate() + ".png";
 </script>
-
 </html>
+
+
