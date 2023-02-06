@@ -9,8 +9,7 @@ if ( url.includes("flags/quizzes/")); {
 
 let navbar = `
 <div class="dropdown">
-  <button class="dropbtn">Gen 
-    <i class="fa fa-caret-down"></i>
+  <button class="dropbtn">GEN 
   </button>
   <div class="dropdown-content">
     <a href="${relativePath}/index.html">Home</a>
@@ -20,8 +19,7 @@ let navbar = `
 </div> 
 
 <div class="dropdown">
-  <button class="dropbtn">Flags 
-    <i class="fa fa-caret-down"></i>
+  <button class="dropbtn">FLAGS 
   </button>
   <div class="dropdown-content">
     <a href="${relativePath}/flags/flags.html">Flags</a>
@@ -39,8 +37,7 @@ let navbar = `
 </div>
 
 <div class="dropdown">
-  <button class="dropbtn">Site 
-    <i class="fa fa-caret-down"></i>
+  <button class="dropbtn">SITE 
   </button>
   <div class="dropdown-content">
     <a href="${relativePath}/other/sitemap.html">Site Map</a>
@@ -99,13 +96,12 @@ if (document.getElementById("header")) {
 if (document.getElementById("navbar")) {
   document.getElementById("navbar").innerHTML = navbar;
 }
-if (document.getElementById("flags")) {
-  document.getElementById("flags").innerHTML = flags;
-}
 if (document.getElementById("footer")) {
   document.getElementById("footer").innerHTML = footer;
 }
-
+if (document.getElementById("flags")) {
+  document.getElementById("flags").innerHTML = flags;
+}
 
 
 // -------------visit counter----------------//
