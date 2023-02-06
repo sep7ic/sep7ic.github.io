@@ -1,11 +1,11 @@
 :root {
   --bg: #818dac;
-  --contbg: #000000;
+  --contbg: #1f1f1f;
   --text: white;
   --border: white;
-  --navbg: #000000;
+  --navbg: var(--contbg);
   --font: "verycoolfont.tff";
-  --bordersize: 1px;
+  --bordersize: 0px;
 
   --startcomp: #ee3131;
   --endcomp: #36bb2a;
@@ -51,11 +51,15 @@ image-rendering: optimize-contrast;
 .container {
   margin: auto;
   width: 60%;
-  background-color: var(--contbg);
   border: solid var(--border) var(--bordersize);
 }
 .content {
   padding: 0 30px;
+  margin-top: 0!important;
+}
+.header, .navbar, .content {
+  margin-bottom: 10px;
+  background-color: var(--contbg);
 }
 /*---RESPONSIVE---*/
 @media screen and (max-width: 800px) {
@@ -124,12 +128,12 @@ a {
   margin: 0;
 }
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: var(--contbg);
+  background-color: black;
 }
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: var(--contbg);
+  background-color: black;
   min-width: 160px;
   z-index: 1;
   border: solid var(--border) var(--bordersize);

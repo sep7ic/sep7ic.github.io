@@ -99,9 +99,6 @@ if (document.getElementById("navbar")) {
 if (document.getElementById("footer")) {
   document.getElementById("footer").innerHTML = footer;
 }
-if (document.getElementById("flags")) {
-  document.getElementById("flags").innerHTML = flags;
-}
 
 
 // -------------visit counter----------------//
