@@ -1,0 +1,22 @@
+@import url('https://fonts.cdnfonts.com/css/depixel');
+body {
+        
+    font-family: 'DePixel', sans-serif;
+    margin: 0 10px;
+}
+h1, h2, h3 {margin: 0; text-align: center;}
+hr {border: none; height: 1px; background-color: black;}
+#hr { margin-top: 90px;}
+
+td, th  {
+    border:1px solid black;
+  }
+  td {
+  height: 70px;
+  width: 40px;
+  background-image: url('/web/20230105211922im_/https://sep.neocities.org/FOTD/img_girl.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: text-top;
+    padding-bottom: 0;
+  }

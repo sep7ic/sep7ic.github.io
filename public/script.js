@@ -1,116 +1,72 @@
-let url = window.location.pathname;
+// Melo-tech Frame Link Management System 3.2
+// This script updates the URL on each page, allowing you to share and bookmark frameset and iFrame links!
+// Feel free to steal this code!
+// Get help here - https://forum.melonking.net/index.php?topic=115
 
-if ( url.includes("quiz/"))( url.includes("flags/")); {
-relativePath = "..";
-}
-if ( url.includes("flags/quizzes/")); {
-  relativePath = "../..";
-  }
+// oO How to use this code Oo
+// 1. Add '<script src="https://melonking.net/scripts/frame-link.js"></script>' to your <head>.
+// 2. Add 'id="mainframe"' to your main iFrame or Frame window.
+// Optional: Create a second <script></script> section AFTER you link the frame-link.js
+// Optional: add 'updateTitle = false;' if you want to disable title updating. (Default is true)
+// Optional: add 'titlePrefix = "My Site ";' if you want to add a prefix to your titles. (Default is none)
+// Optional: add 'pageParam = "z";' if you want to change the url path of your pages. (Default is z)
+// Optional: if you use a hitCounter like GoatCounter add 'hitCounterFunction = function () { XXX MY HIT COUNTER CODE }', this function will automaticly be called each time someone click a page, so you can log per page hits within your frame.
+// See https://melonking.net/melon.html for a working example! GOOD LUCK!
 
-  let navbar = `
-  <ul>
-  <div class="dropdown">
-    <button class="dropbtn">GEN 
-    </button>
-    <div class="dropdown-content">
-      <a href="${relativePath}/index.html">Home</a>
-      <a href="${relativePath}/gen/about.html">About</a>
-      <a href="${relativePath}/gen/ayip.html">AYIP</a>
-    </div>
-  </div> 
+var mainFrame;
+var firstLoad = true;
+var updateTitle = true;
+var pageParam = "z";
+var titlePrefix = "";
+var hitCounterFunction = undefined;
 
-  <div class="dropdown">
-    <button class="dropbtn">FLAGS 
-    </button>
-    <div class="dropdown-content">
-      <a href="${relativePath}/flags/flags.html">Flags</a>
-      <a href="${relativePath}/flags/FOTD.html">FOTD</a>
-      <a href="${relativePath}/flags/quizzes.html">Quizzes</a>
-      <a href="${relativePath}/flags/FFF.html">FFF</a>
-      <a href="${relativePath}/flags/WTF.html">WTF</a>
-      <a href="${relativePath}/flags/evolutions.html">evolutions</a>
-      <a href="${relativePath}/flags/links.html">links & resources</a>
-      <a href="${relativePath}/flags/tierlists.html">tierlists</a>
-      <a href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Flags_by_country" target="_blank">Random flag by country</a>
-      <a href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Flags" target="_blank">Random flags page</a>
-      <a href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Flags_by_year_of_introduction" target="_blank">Random flag by introduction</a>
-    </div>
-  </div>
-  
-  <div class="dropdown">
-    <button class="dropbtn">SITE 
-    </button>
-    <div class="dropdown-content">
-      <a href="${relativePath}/other/sitemap.html">Site Map</a>
-      <a href="${relativePath}/other/rss.xml">RSS Feed</a>
-    </div>
-  </div>
-  </ul>
-  `;
+//Event to handle first page load - Also sets up the mainFrame
+window.addEventListener("DOMContentLoaded", (e) => {
+    mainFrame = document.getElementById("mainframe");
+    mainFrame.addEventListener("load", updateHistory, false);
+    setMainFrame();
+});
 
-let headera = `<a href="index.html"><h1>SEP<h1></a>`;
-
-
-let footer = `
-<div style="text-align: center; padding: 10px;">
-<span>this site was last updated</span> <abbr class="timeago" id="time" title="CANT FETCH">CANT FETCH</abbr>
-<br>
-<span>this site was started</span> <abbr class="timeago" id="started" title="CANT FETCH">CANT FETCH</abbr>
-</div>`
-
-
-
-document.head.innerHTML +=  `
-<title>sep</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
-`;
-
-if (document.getElementById("navbar")) {
-  document.getElementById("navbar").innerHTML = navbar;
-}
-if (document.getElementById("footer")) {
-  document.getElementById("footer").innerHTML = footer;
-}
-
-
-// -------------visit counter----------------//
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        var site_data = JSON.parse(this.responseText);
-        var num_arr = site_data.info.views.toString().split("");
-        var num_str = "";
-        for (i = 0; i < num_arr.length; i++) {
-            num_str += num_arr[i];
-            if ( (num_arr.length-1 - i) % 3 == 0 && (num_arr.length-1 - i) != 0 ) {num_str += ",";}
-            var date_str = site_data.info.last_updated;
-            var date_obj = new Date(site_data.info.last_updated);
-            var not_obj = new Date(site_data.info.created_at);
-            
-            const datey = date_obj.getDate()
-
-            nyehheh = date_obj.getMinutes()
-            cooldate = ('0'+nyehheh).slice(-2)
-            datesomething = date_obj.getFullYear() + "-" + (date_obj.getMonth()+1) + "-" +date_obj.getDate() + "T" + date_obj.getHours() + ":" + cooldate + "+13:00";
-            $("#time").attr('title', datesomething)
-
-            dateob = not_obj.getMinutes()
-            idk = ('0'+nyehheh).slice(-2)
-            acool = not_obj.getFullYear() + "-" + (not_obj.getMonth()+1) + "-" +not_obj.getDate() + "T" + not_obj.getHours() + ":" + idk + "+13:00";
-            $("#started").attr('title', acool) 
-  
-          }
-        document.getElementById("hitcount").innerHTML = num_str;
+//Event to handle back button presses
+window.addEventListener("popstate", function (e) {
+    if (e.state !== null) {
+        setMainFrame();
     }
-};
-xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=sep", true);
-xhttp.send();
-  //----------------------------------------------//
+});
 
-  jQuery(document).ready(function() {
-  jQuery("abbr.timeago").timeago(); 
-  });
+//Checks to see if a page parameter exists and sets the mainframe src to that page.
+function setMainFrame() {
+    let params = new URLSearchParams(window.location.search);
+    let page = params.get(pageParam);
+    if (page != null) {
+        mainFrame.src = page;
+    }
+}
 
+//Updates the browser history with the current page, causing the URL bar to update.
+function updateHistory() {
+    let title = titlePrefix + mainFrame.contentDocument.title;
+
+    // Stops the page getting into an infinate loop reloading itself.
+    if (firstLoad) {
+        firstLoad = false;
+        if (updateTitle) {
+            document.title = title;
+        }
+        if (hitCounterFunction != undefined) {
+            hitCounterFunction();
+        }
+        return;
+    }
+
+    history.replaceState(null, "", "?" + pageParam + "=" + mainFrame.contentWindow.location.pathname);
+
+    if (updateTitle) {
+        document.title = title;
+    }
+
+    //Save a hit - Optionally run this if a hit counter has been defined.
+    if (hitCounterFunction != undefined) {
+        hitCounterFunction();
+    }
+}
