@@ -1,7 +1,10 @@
 @import url('https://fonts.cdnfonts.com/css/depixel');
+@import url('https://fonts.cdnfonts.com/css/exepixelperfect');
+@import url('https://fonts.cdnfonts.com/css/rose-2');
 body {
         
     font-family: 'DePixel', sans-serif;
+                                                
     margin: 0 10px;
 }
 h1, h2, h3 {margin: 0 ; text-align: center;}
