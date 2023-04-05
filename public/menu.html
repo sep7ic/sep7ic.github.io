@@ -1,0 +1,90 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    </head>
+    <style>
+        ul {
+  padding-left: 20px;
+}
+body {
+  padding-left: 10px;
+}
+#artwork, #artwork2 {
+  margin-bottom: 10px;
+}
+    </style>
+    <body>
+      <div class="content">
+        <ul>
+          <li><a href="landing.html" target="Display">home</a></li>
+          <li><a href="flags/flags.html" target="Display">flags</a></li>
+            <ul>
+            <li><a href="flags/FOTD.html" target="Display">FOTD</a></li>
+            <li>FBD</li>
+            </ul>
+          </li>
+          <li>rome</li>
+        </ul> 
+      </div>
+
+      <div class="content">
+        <img src="images/passover.gif" alt="">
+      </div>
+
+      <div class="content">
+        currently listening to:
+        <hr>
+        <div id="last">
+          <a href="http://www.last.fm/user/sep7ic/now"><img id="artwork" src=""></a><section id="track">im offline ^^</section>
+        </div>
+      </div>
+      <div class="content">
+        last listened to:
+        <hr>
+        <img id="artwork2" src="">
+        <section id="track2"></section>
+      </div>
+
+    </body>
+    <script>
+username="sep7ic";
+
+$("#last a").attr("href", "http://www.last.fm/user/" + username + "/now");
+
+$.get( "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=" + username + "&api_key=1f633977acf0e2d0630ec11dbc350d3e&format=json", function( data ) 
+{
+	if (typeof data.recenttracks.track[0]["@attr"] != "undefined")
+	{
+	    artist=data.recenttracks.track[0].artist["#text"];
+    	track=data.recenttracks.track[0].name;
+    	album=data.recenttracks.track[0].album["#text"];
+    	artwork=data.recenttracks.track[0].image[1]["#text"];
+    	$("#artwork").attr("src", artwork);
+   	  $("#track").html("<strong>" + track + "</strong>" + "<br>" + artist + "<br><br>");
+    	$("#last").fadeIn("slow");
+	}
+});
+    </script>
+    <script>
+      $(document).ready(function() {
+  var url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sep7ic&api_key=afc213709a996ae561e307f596c9952b&format=json";
+  $.getJSON(url, function(data) {
+    var artist = data.recenttracks.track[0].artist["#text"];
+    var song = data.recenttracks.track[0]["name"];
+    var cover = data.recenttracks.track[0].image[3]["#text"];
+    var artwork = data.recenttracks.track[0].image[1]["#text"];
+    
+    $("#artwork2").attr("src", artwork);
+    $('#track2').html("\
+      <strong>"+song+"</strong><br />\
+      "+artist+"\
+    ");
+    if (cover == "") {
+      cover = "http://upload.wikimedia.org/wikipedia/commons/d/d7/No_Cover_.jpg";
+    }
+    $('.cover').css("background-image", "url("+cover+")");
+  });
+});
+    </script>
+</html>

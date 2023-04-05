@@ -4,88 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEP</title>
+    <title>sep</title>
+    <link rel="stylesheet" href="scanlines.css">
     <script src="script.js"></script>
-    <link href="https://fonts.cdnfonts.com/css/depixel" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <style>
+            @font-face {
+            font-family: pixel;
+            src: url("Pixel_NES.woff");
+        }
     body {
-        margin: 0 auto; 
-        width: 50%;
-        image-rendering: pixelated;
-        image-rendering: -moz-crisp-edges;
-        font-family: 'DePixel', sans-serif;
-        background-image: url("ui/bg.png");
-        background-size: cover;
+        background-color: black;
+        font-family: pixel;
     }
-    .container {position: relative; margin-top: 100px;}
-    .container > * {position: absolute;}
-    .N {position: absolute; text-align: center; width: 95px; height: 28px;}
-    a {color: black; text-decoration: none; display: block; margin-top: 4px;}
-    ._1 {top:0px; left:-120px; background-image: url("ui/red.png"); background-size: 100% 100%;}
-    ._2 {top:50px; left:-120px; background-image: url("ui/white.png"); background-size: 100% 100%;}
-    ._3 {top:100px; left:-120px; background-image: url("ui/blue.png"); background-size: 100% 100%;}
-    ._4 {top:150px; left:-120px; background-image: url("ui/red.png"); background-size: 100% 100%;}
-    ._5 {top:200px; left:-120px; background-image: url("ui/white.png"); background-size: 100% 100%;}
-    ._6 {top:250px; left:-120px; background-image: url("ui/blue.png"); background-size: 100% 100%;}
-
-    .cont {top:-27px; left:-25px; width: 660px; height: 344px; z-index: -1;}
-    .bunting {top:0px; left:0px; width: 600px; height: 3px; z-index: 40;}
-    .pole {top:-27px; left: 640px; width: 26px; height: 462px; z-index: 30;}
-    .fotd {top:0px; left: 665px; width: 200px; height: 462px; z-index: 40;}
-    .nz {top:250px; left: 500px; width: 160px; height: 234px; z-index: 40;}
-
-    #FOTD {outline: 2px solid #1e1f24;}
-
-    .SC {top:350px; left:-120px; z-index: 400;}
-    .BL {top:405px; left:10px; z-index: 400; color: #9c9cb8;}
-    .BL a { color: #676781;}
-    a {display: inline-block;}
-
-    #statuscafe {
-    padding: .5em;
-    background-color: white;
-    border: 2px solid black;
+    h1 {
+        color: #a31d1d;
+        font-size: 50px;
+        text-align: center;
+        margin: 0;
+    }
+    ::-webkit-scrollbar {
+  width: 1px;
 }
-#statuscafe-username {
-    margin-bottom: .5em;
+::-webkit-scrollbar-track {
+  background: #000; 
 }
-#statuscafe-content {
-    margin: 0 1em 0.5em 1em;
+::-webkit-scrollbar-thumb {
+  background: #a31d1d; 
+}
+    .container {
+  margin: auto;
+  width: 70%;
+    }
+    .menu {
+        width: 20%;
+        height: 100%
+    }
+    .main {
+        width: 80%;
+        float: right;
+    }
+
+    @media screen and (max-width: 800px) {
+  .menu, .main {
+    width: 100%;
+  }
 }
 </style>
 <body>
 
-<div class="container">
-    
-    <div class="N _1"><a href="?z=/gen/about">about</a></div>
-    <div class="N _2"><a href="?z=/flags/flags.html">flags</a></div>
-    <div class="N _3"><a href="?z=/flags/FOTD">FOTD</a></div>
-    <div class="N _4"><a href="?z=/flags/wild.html">Wild</a></div>
-    <div class="N _5"><a href="?z=/posts/posts.html">posts</a></div>
-    <div class="N _6"><a href="?z=/n">links</a></div>
-
-    <div class="BL"><a href="?z=/flags/FOTD.html">FOTD</a> | <a href="?z=/flags/FBD.html">FBD</a> | <a href="?z=/flags/WTF.html">WTF</a> | <a href="?z=/flags/videos.html">Videos</a> | <a href="?z=/flags/evolutions">Evolutions</a></div>
-
-    <div class="bunting"><img src="ui/bunting.png" width="100%"></div>
-    <div class="nz"><img src="ui/nz.png" width="100%"></div>
-    <div class="pole"><img src="ui/pole.png" width="100%"></div>
-    <div class="fotd"><a href="?z=/flags/FOTD.html"><img src="flags/FOTD/month0/18.png" width="100%" id="FOTD" onerror="this.onerror=null;this.src='flags/FOTD/cantfind.png';"></a></div>
-
-    <iframe src="home.html" frameborder="0" scrolling="yes" id="mainframe" width="600" height="400"></iframe>
-    <div class="cont"><img src="ui/cont.png" width="100%" usemap="#workmap"></div>
-
-    <map name="workmap">
-        <area tabindex="0" shape="rect" coords="28,0,59,28" alt="Computer" href="javascript:history.back(-2)">
-        <area tabindex="0" shape="rect" coords="59,0,90,28" alt="Computer" href="index.html">
-        <area tabindex="0" shape="rect" coords="90,0,121,28" alt="Computer" href="javascript:history.go(1)">
-      </map>
-</div>
+    <div class="container scanlines">
+ <h1>septic</h1>
+        <div class="frames">
+            <iframe src="menu.html" class="menu" name="Menu" frameBorder="0" onload="this.style.height=(this.contentDocument.body.scrollHeight+45) +'px';"></iframe>
+            <iframe src="landing.html" class="main" name="Display" frameBorder="0" onload="this.style.height=(this.contentDocument.body.scrollHeight+45) +'px';"></iframe>
+        </div>
+    </div>
 </body>
-<script>
-    const d = new Date();
-    const m = new Date();
-    path = "flags/FOTD/"
-    flag = document.getElementById("FOTD").src = path + "month"+m.getMonth()+"/" + d.getDate() + ".png";
-  </script>
 </html>

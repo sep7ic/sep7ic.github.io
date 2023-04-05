@@ -1,0 +1,64 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+@font-face {
+  font-family: pixel;
+  src: url("Pixel_NES.woff");
+}
+td, th  {
+    border:1px solid white;
+  }
+  td {
+  height: 70px;
+  width: 40px;
+  background-image: url('/web/20230105211922im_/https://sep.neocities.org/FOTD/img_girl.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: text-top;
+    padding-bottom: 0;
+  }
+
+  body {
+    font-family: MS Gothic;
+    background-color: transparent;
+    color: white;
+  }
+  .content {
+    border-radius: 2px;
+    outline: 2px solid grey;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  hr
+  {
+      background-color: #eee;
+      border: 0 none;
+      color: #eee;
+      height: 1px;
+  }
+  h1 {
+    color: #a31d1d;
+    font-size: 30px;
+    margin: 0;
+    font-family: pixel;
+}
+a {
+  color: #a31d1d;
+}
+marquee {
+  margin-bottom: 10px;
+}
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a31d1d; 
+}
