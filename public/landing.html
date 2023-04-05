@@ -18,5 +18,47 @@
 <p>because i dont want to put too much effort in, ive used iframes instead of loading my menus ect into place. yeah. im working on a script to make pages "bookmarkable". </p>
 </div>
 <marquee>scrolling text</marquee>
-    </body>
+<div class="content">
+<h1>comments</h1>
+<style>
+    textarea {
+        appearance: none;
+        background-color: transparent;
+        color: white;
+    }
+</style>
+<form>
+    <textarea id="title" rows="1" cols="50" placeholder="Name/Site"></textarea>
+    <br>
+    <textarea id="description" rows="4" cols="50" placeholder="Comment"></textarea>
+    <br>
+    <input type="color" id="color"> <--- name colour
+    <br>
+    <button type="button" onclick="pingWebhook()">Post</button>
+  </form>
+  <ul style="list-style: none;">
+    <li style="color: aqua;">Septic</li>
+    <li>Test!!</li>
+  </ul>
+  </div>
+</div>
+</body>
+<script>
+    function pingWebhook() {
+      const title = document.getElementById("title").value;
+      const description = document.getElementById("description").value;
+      const webhook = "https://discord.com/api/webhooks/1093111181494997063/DlHPEiQkqYCdTMe8hq5zyLtEd_RVK9N34-DmG3XpJ8I9nK5BRC4YVdjk75BLxG5niBNu"
+      const color = document.getElementById("color").value;
+      const embed = {
+        "title": title,
+        "description": description,
+        "color": parseInt(color.replace('#', '0x'), 16)
+      };
+      fetch(webhook, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ embeds: [embed] })
+      });
+    }
+  </script>
 </html>
