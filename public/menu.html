@@ -46,9 +46,10 @@ span {
       <div class="content">
         <section id="listen">CANT FETCH</section>
         <hr>
-        <img id="artwork2" src="">
-        <section id="track2"></section>
+        <a href="" id="artworklink" target="_blank"><img id="artwork" src=""></a>
+        <section id="track"></section>
       </div>
+
       <div class="content">
         most recent <span>earthquake</span> in NZ
         <hr>
@@ -80,26 +81,38 @@ console.log(time)
   });
   });
 });
-    </script>
 
 
+$(document).ready(function() {
+var statusurl = "https://api.lanyard.rest/v1/users/720506205528916029";
+$.getJSON(statusurl, function(data) {
+var status = data.data.discord_status;
 
-    <script>
-      var status = false
+if ( status == "online"){
+            $("#status").html('<span style="color: green;">online</span>')
+    } else {
+      console.log("offline")
+    }
+
+});
+});
+
+
       $(document).ready(function() {
   var url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sep7ic&api_key=afc213709a996ae561e307f596c9952b&format=json";
   $.getJSON(url, function(data) {
     var artist = data.recenttracks.track[0].artist["#text"];
     var song = data.recenttracks.track[0]["name"];
     var artwork = data.recenttracks.track[0].image[1]["#text"];
+    var link = data.recenttracks.track[0]["url"];
 
 
-    $("#artwork2").attr("src", artwork);
-    $('#track2').html("\
+    $("#artwork").attr("src", artwork);
+    $('#track').html("\
       <strong>"+song+"</strong><br />\
       "+artist+"\
     ");
-
+    $("#artworklink").attr("href", link)
 
     if (typeof data.recenttracks.track[0]["@attr"] != "undefined"){
             $("#listen").html('<span style="color: green;">listening</span> to:')
