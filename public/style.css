@@ -6,6 +6,9 @@
   font-family: pixel;
   src: url("Pixel_NES.woff");
 }
+* {
+  box-sizing: border-box;
+}
 td, th  {
     border:1px solid white;
   }
@@ -32,9 +35,9 @@ td, th  {
   }
   hr
   {
-      background-color: #eee;
+      background-color: grey;
       border: 0 none;
-      color: #eee;
+      color: grey;
       height: 1px;
   }
   h1 {
@@ -44,6 +47,9 @@ td, th  {
     font-family: pixel;
 }
 a {
+  color: brown;
+}
+span {
   color: #a31d1d;
 }
 marquee {

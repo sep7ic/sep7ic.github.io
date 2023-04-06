@@ -11,6 +11,9 @@
 #artwork, #artwork2 {
   margin-bottom: 10px;
 }
+span {
+  color: #a31d1d;
+}
     </style>
     <body>
       <div class="content">
@@ -22,7 +25,11 @@
             <li>FBD</li>
             </ul>
           </li>
-          <li>rome</li>
+          <li>music</li>
+          <li>dreams</li>
+          <ul>
+            <li>somni</li>
+          </ul>
         </ul> 
       </div>
 
@@ -31,57 +38,41 @@
       </div>
 
       <div class="content">
-        currently listening to:
-        <hr>
-        <div id="last">
-          <a href="http://www.last.fm/user/sep7ic/now"><img id="artwork" src=""></a><section id="track">im offline ^^</section>
-        </div>
-      </div>
-      <div class="content">
-        last listened to:
+        <section id="listen">CANT FETCH</section>
         <hr>
         <img id="artwork2" src="">
         <section id="track2"></section>
       </div>
+      <div class="content">
+        <section id="status"><span>offline</span></section>
+      </div>
 
     </body>
     <script>
-username="sep7ic";
-
-$("#last a").attr("href", "http://www.last.fm/user/" + username + "/now");
-
-$.get( "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=" + username + "&api_key=1f633977acf0e2d0630ec11dbc350d3e&format=json", function( data ) 
-{
-	if (typeof data.recenttracks.track[0]["@attr"] != "undefined")
-	{
-	    artist=data.recenttracks.track[0].artist["#text"];
-    	track=data.recenttracks.track[0].name;
-    	album=data.recenttracks.track[0].album["#text"];
-    	artwork=data.recenttracks.track[0].image[1]["#text"];
-    	$("#artwork").attr("src", artwork);
-   	  $("#track").html("<strong>" + track + "</strong>" + "<br>" + artist + "<br><br>");
-    	$("#last").fadeIn("slow");
-	}
-});
-    </script>
-    <script>
+      var status = false
       $(document).ready(function() {
   var url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sep7ic&api_key=afc213709a996ae561e307f596c9952b&format=json";
   $.getJSON(url, function(data) {
     var artist = data.recenttracks.track[0].artist["#text"];
     var song = data.recenttracks.track[0]["name"];
-    var cover = data.recenttracks.track[0].image[3]["#text"];
     var artwork = data.recenttracks.track[0].image[1]["#text"];
-    
+
+
     $("#artwork2").attr("src", artwork);
     $('#track2').html("\
       <strong>"+song+"</strong><br />\
       "+artist+"\
     ");
-    if (cover == "") {
-      cover = "http://upload.wikimedia.org/wikipedia/commons/d/d7/No_Cover_.jpg";
+
+
+    if (typeof data.recenttracks.track[0]["@attr"] != "undefined"){
+            $("#listen").html('<span style="color: green;">listening</span> to:')
+            console.log("true")
+            $("#status").html('<span style="color: green;">online</span>')
+    } else {
+      $("#listen").html("last <span>listened</span> to:")
+        console.log("false")
     }
-    $('.cover').css("background-image", "url("+cover+")");
   });
 });
     </script>
