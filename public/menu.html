@@ -26,10 +26,15 @@ span {
             <li>FBD</li>
             </ul>
           </li>
-          <li>music</li>
-          <li>dreams</li>
+          <li><a href="code/widgets.html" target="Display">widgets</a></li>
+          <li>posts</li>
           <ul>
-            <li>somni</li>
+            <li>2023</li>
+            <ul>
+              <li>jan</li>
+              <li>feb</li>
+            </ul>
+            <li>2022</li>
           </ul>
         </ul> 
       </div>
@@ -39,6 +44,8 @@ span {
       </div>
       <div class="content">
         <section id="status"><span>offline</span></section>
+        <hr>
+        <p class="clock" timezone="+12" style="margin: 0; display: inline;"></p> in <span>NZ</span>
       </div>
       <marquee onmouseover="this.stop();" onmouseout="this.start();">status: <a href="https://www.imood.com/users/septic"><img src="https://moods.imood.com/display/uname-septic/imood.gif" alt="The current mood of septic at www.imood.com" border="0"></a></marquee>
     
@@ -46,8 +53,9 @@ span {
       <div class="content">
         <section id="listen">CANT FETCH</section>
         <hr>
-        <a href="" id="artworklink" target="_blank"><img id="artwork" src=""></a>
-        <section id="track"></section>
+        <a href="" id="artworklink" target="_blank" style="display: block;"><img id="artwork" src="">
+        <marquee id="track" direction="left" style="color: white;"></marquee></a>
+        
       </div>
 
       <div class="content">
@@ -125,4 +133,42 @@ if ( status == "online"){
   });
 });
     </script>
+
+<script>
+  function dateToText(date) {
+      var hours = date.getHours()
+      var minutes = date.getMinutes();
+      // var seconds = date.getSeconds();
+      if (minutes < 10) minutes = '0'+minutes;
+      //if  seconds < 10) seconds = '0'+seconds;
+      if (hours < 10) hours = '0'+hours;
+      return hours + ":" + minutes; // + ":" + seconds;
+  }
+  function updateClocks() {
+    for (var i = 0; i < window.arrClocks.length; i++) {
+      var clock = window.arrClocks[i];
+      var offset = window.arrOffsets[i];
+      clock.innerHTML = dateToText(new Date(new Date().getTime()+offset));
+    }
+  }
+  function startClocks() {
+    clockElements = document.getElementsByClassName('clock');
+    window.arrClocks = []
+    window.arrOffsets = [];
+    var j = 0;
+    for(var i = 0; i < clockElements.length; i++) {
+      el = clockElements[i];
+      timezone = parseInt(el.getAttribute('timezone'));
+      if (!isNaN(timezone)) {
+        var tzDifference = timezone * 60 + (new Date()).getTimezoneOffset();
+        var offset = tzDifference * 60 * 1000;
+        window.arrClocks.push(el);
+        window.arrOffsets.push(offset);
+      }
+    }
+    updateClocks();
+    clockID = setInterval(updateClocks, 1000);
+  }
+  setTimeout(startClocks, 100);
+  </script>
 </html>

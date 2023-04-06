@@ -3,6 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+@font-face {
+  font-family: pxl;
+  src: url(pixelTF.woff);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -20,6 +25,7 @@ td, th  {
   }
 
   body {
+    font-family: pxl;
     font-family: MS Gothic;
     background-color: transparent;
     color: white;
