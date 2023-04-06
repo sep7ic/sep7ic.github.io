@@ -3,6 +3,7 @@
       <link rel="stylesheet" href="style.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
       <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js" type="text/javascript"></script>
     </head>
     <style>
         ul {
@@ -36,6 +37,11 @@ span {
       <div class="content">
         <img src="images/passover.gif" alt="">
       </div>
+      <div class="content">
+        <section id="status"><span>offline</span></section>
+      </div>
+      <marquee onmouseover="this.stop();" onmouseout="this.start();">status: <a href="https://www.imood.com/users/septic"><img src="https://moods.imood.com/display/uname-septic/imood.gif" alt="The current mood of septic at www.imood.com" border="0"></a></marquee>
+    
 
       <div class="content">
         <section id="listen">CANT FETCH</section>
@@ -44,10 +50,40 @@ span {
         <section id="track2"></section>
       </div>
       <div class="content">
-        <section id="status"><span>offline</span></section>
+        most recent <span>earthquake</span> in NZ
+        <hr>
+        <section id="eqMag">Mag:</section>
+        <section id="eqLoc"></section>
+        <section id="eqDep"></section>
+        <abbr class="timeago" id="time" title="">time</abbr>
       </div>
 
     </body>
+        <script>
+      $(document).ready(function() {
+  var equrl = "https://api.geonet.org.nz/quake?MMI=0";
+  $.getJSON(equrl, function(data) {
+    var mag = data.features[0].properties.magnitude;
+    var loc = data.features[0].properties.locality;
+    var dep = data.features[0].properties.depth;
+    var time = data.features[0].properties.time;
+
+console.log(mag)
+console.log(time)
+
+    $("#eqMag").html("Mag: " + Math.round((mag + Number.EPSILON) * 100) / 100);
+    $("#eqLoc").html(loc);
+    $("#eqDep").html("Depth: " + Math.round((dep + Number.EPSILON) * 100) / 100 + "km");
+    $("#time").attr("title", time);
+    jQuery(document).ready(function() {
+  jQuery("abbr.timeago").timeago(); 
+  });
+  });
+});
+    </script>
+
+
+
     <script>
       var status = false
       $(document).ready(function() {
