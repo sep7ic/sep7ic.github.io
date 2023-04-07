@@ -9,7 +9,7 @@
     <div id="presence"></div>
     <script>
       const userId = '720506205528916029';
-      const token = process.env.DISCORD_BOT_TOKEN;
+      const token = import.meta.env.DISCORD_BOT_TOKEN;
       const endpoint = `https://discord.com/api/v9/users/${userId}`;
 
       $.ajax({
