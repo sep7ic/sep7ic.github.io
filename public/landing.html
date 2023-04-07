@@ -9,6 +9,12 @@
                 margin-right: auto;
                 display: block;
             }
+            .hidden {
+			display: none;
+		}
+        #toggle-img:hover {
+  cursor: pointer;
+}
         </style>
     </head>
     <body>
@@ -16,7 +22,13 @@
             <h1>willkommen!</h1>
             <span>welcome!! enjoy your stay here.</span>
 <br>
+<img src="images/sep.png" style="float: right;" id="toggle-img" >
             <img style="float: left; margin: 10px; margin-left: 0;" src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/ae4e8afc535534eee3c9e1be78cf3dc1.jpeg?x-expires=1681027200&x-signature=gjmqBiutGCrW3%2FBpQrRoMwaT7M4%3D" alt="">
+            <div id="element-to-toggle" class="hidden">
+                <textarea name="" id="" cols="30" rows="10">
+                    <a href="https://septicide.online/"><img src="https://septicide.online/images/sep.png" alt=""></a>
+                </textarea>
+            </div>
 <p>welcome to my new site!!</p>
 <p>if you cant tell, this site is a MASSIVE work in progress. expect links to be broken. this site will for sure not work on mobile lmfao</p>
 <p>because i dont want to put too much effort in, ive used iframes instead of loading my menus ect into place. yeah. im working on a script to make pages "bookmarkable". </p>
@@ -28,7 +40,8 @@
         <a href="http://keatongamer1248.neocities.org"><img src="http://keatongamer1248.neocities.org/img/keatonad.gif"></a>
         <img src="images/buttons/newgrounds.gif" alt="">
         <a href="https://snals.neocities.org"><img src="https://snals.neocities.org/snals/snals/buttons/buttonwip.png"></a>
-        <a href="https://snals.neocities.org"><img src="https://snals.neocities.org/snals/snals/gifs/ezgif-3-1b52dfb82c.gif"></a>
+        <img src="images/sep.png" alt="">
+        <img src="images/buttons/wooper.gif" alt="">
         <a href="https://parkaction.neocities.org/"><img src="https://parkaction.neocities.org/button.gif"></a>
         <a href='https://blinkies.cafe' target='_blank'><img src='https://blinkies.cafe/b/display/blinkiesCafe-badge.gif' alt='blinkies.cafe | make your own blinkies!'></a>
         <a href="https://moodlemcdoodle.neocities.org/"><img src="images/buttons/moodlebutton1.gif" alt=""></a>
@@ -91,5 +104,17 @@ document.getElementById("useragent").innerHTML = userAgent
   })
   .catch(error => console.error(error));
 
+</script>
+<script>
+    const toggleImg = document.getElementById('toggle-img');
+    const elementToToggle = document.getElementById('element-to-toggle');
+
+    toggleImg.addEventListener('click', () => {
+        if (elementToToggle.style.display === 'none') {
+            elementToToggle.style.display = 'block';
+        } else {
+            elementToToggle.style.display = 'none';
+        }
+    });
 </script>
 </html>
