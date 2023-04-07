@@ -19,10 +19,11 @@ td, th  {
     font-family: MS Gothic, pxl, sans-serif;
     background-color: transparent;
     color: white;
+    font-size: smaller;
   }
   .content {
     border-radius: 2px;
-    outline: 2px solid grey;
+    outline: 1px solid grey;
     padding: 10px;
     margin-bottom: 10px;
   }
