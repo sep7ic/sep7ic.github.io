@@ -15,7 +15,7 @@
     }
   }
   function startClocks() {
-    clockElements = document.getElementsByClassName('clock');
+    clockElements = document.getElementsByClassName('clockseconds');
     window.arrClocks = []
     window.arrOffsets = [];
     var j = 0;
