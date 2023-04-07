@@ -12,9 +12,30 @@
             .hidden {
 			display: none;
 		}
-        #toggle-img:hover {
+        #clickelement:hover {
   cursor: pointer;
 }
+.image-container {
+  position: relative;
+  float: right;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 88px;
+  height: 31px;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  display: none;
+}
+
+.image-container:hover .text-overlay {
+  display: block;
+}
+
         </style>
     </head>
     <body>
@@ -22,9 +43,12 @@
             <h1>willkommen!</h1>
             <span>welcome!! enjoy your stay here.</span>
 <br>
-<img src="images/sep.png" style="float: right;" id="toggle-img" >
+<div class="image-container">
+    <img src="images/sep.png" alt="your image description">
+    <div class="text-overlay" id="clickelement">click for my button :3</div>
+  </div>
             <img style="float: left; margin: 10px; margin-left: 0;" src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/ae4e8afc535534eee3c9e1be78cf3dc1.jpeg?x-expires=1681027200&x-signature=gjmqBiutGCrW3%2FBpQrRoMwaT7M4%3D" alt="">
-            <div id="element-to-toggle" class="hidden">
+            <div id="txtarea" class="hidden" style="float: right;">
                 <textarea name="" id="" cols="30" rows="10">
                     <a href="https://septicide.online/"><img src="https://septicide.online/images/sep.png" alt=""></a>
                 </textarea>
@@ -106,15 +130,19 @@ document.getElementById("useragent").innerHTML = userAgent
 
 </script>
 <script>
-    const toggleImg = document.getElementById('toggle-img');
-    const elementToToggle = document.getElementById('element-to-toggle');
+    const toggleImg = document.getElementById('clickelement');
+    const elementToToggle = document.getElementById('txtarea');
 
     toggleImg.addEventListener('click', () => {
-        if (elementToToggle.style.display === 'none') {
-            elementToToggle.style.display = 'block';
-        } else {
-            elementToToggle.style.display = 'none';
-        }
-    });
+    console.log('Click event triggered');
+    const computedStyle = window.getComputedStyle(elementToToggle);
+    if (computedStyle.display === 'none') {
+        console.log('Element is hidden');
+        elementToToggle.style.display = 'block';
+    } else {
+        console.log('Element is shown');
+        elementToToggle.style.display = 'none';
+    }
+});
 </script>
 </html>
