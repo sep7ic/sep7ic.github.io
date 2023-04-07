@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Discord Presence Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="presence"></div>
+    <script>
+      const userId = '720506205528916029';
+      const token = process.env.DISCORD_BOT_TOKEN;
+      const endpoint = `https://discord.com/api/v9/users/${userId}`;
+
+      $.ajax({
+        url: endpoint,
+        headers: {
+          'Authorization': `Bot ${token}`,
+        },
+        method: 'GET',
+        success: (user) => {
+          const presence = user?.presence?.status || 'offline';
+          $('#presence').text(`User ${user.username} is ${presence}`);
+        },
+        error: (xhr) => {
+          console.error(xhr);
+          $('#presence').text('Error fetching user presence');
+        },
+      });
+    </script>
+  </body>
+</html>
