@@ -44,6 +44,7 @@ span {
       </div>
       <div class="content">
         <section id="status"><span>offline</span></section>
+        <section id="activity"></section>
         <hr>
         <p class="clock" timezone="+12" style="margin: 0; display: inline;"></p> in <span>NZ</span>
       </div>
@@ -92,21 +93,6 @@ console.log(time)
 
 
 $(document).ready(function() {
-var statusurl = "https://api.lanyard.rest/v1/users/720506205528916029";
-$.getJSON(statusurl, function(data) {
-var status = data.data.discord_status;
-
-if ( status == "online"){
-            $("#status").html('<span style="color: green;">online</span>')
-    } else {
-      console.log("offline")
-    }
-
-});
-});
-
-
-      $(document).ready(function() {
   var url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sep7ic&api_key=afc213709a996ae561e307f596c9952b&format=json";
   $.getJSON(url, function(data) {
     var artist = data.recenttracks.track[0].artist["#text"];
@@ -132,6 +118,43 @@ if ( status == "online"){
     }
   });
 });
+
+
+$(document).ready(function() {
+var statusurl = "https://api.lanyard.rest/v1/users/720506205528916029";
+$.getJSON(statusurl, function(data) {
+var status = data.data.discord_status;
+var activity = data.data.activities[0].name;
+var web = data.data.active_on_discord_web;
+var desktop = data.data.active_on_discord_desktop;
+var mobile = data.data.active_on_discord_mobile;
+
+console.log("smoething"+desktop)
+console.log("activity is:"+activity)
+
+if (activity !== undefined) {
+$("#activity").html("i am currently on <span>"+activity+"</span>")
+}
+
+if ( status == "online"){
+    $("#status").html('<span style="color: green;">online</span>')
+    } else {
+      console.log("offline")
+    }
+
+if (desktop == true){
+  $("#status").html('<span style="color: green;">online on desktop</span>')
+}
+if (web == true){
+  $("#status").html('<span style="color: green;">online on web</span>')
+}
+if (mobile == true){
+  $("#status").html('<span style="color: green;">online on phone</span>')
+}
+
+});
+});
+
     </script>
 
 <script>
