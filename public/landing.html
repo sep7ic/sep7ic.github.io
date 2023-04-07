@@ -42,6 +42,33 @@
         </ul>
     </div>
     <marquee direction="left">Do you like how I <i>walk?</i> Do you like how I <i>talk?</i> Do you like how my face <span>disintegrates</span> into <i>chalk?</i> I have a <span>wonderful</span> wife, I have a powerful job, She criticizes me for being <span><i><b>egocentric.</b></i></span></marquee>
+    <div class="content">
+        <h1>visitor information</h1>
+        <p id="useragent"></p>
+        <p id="location"></p>
+        <script>
+            var userAgent = navigator.userAgent;
+document.getElementById("useragent").innerHTML = userAgent
+        </script>
+    </div>
 </div>
 </body>
+<script>
+    fetch('https://ipapi.co/json/')
+  .then(response => response.json())
+  .then(data => {
+    var country = data.country_name;
+    var city = data.city;
+    var countryCode = data.country_code;
+
+    document.getElementById('location').innerHTML = country + ', ' + city;
+
+        var flagUrl = 'https://flagcdn.com/w40/' + countryCode.toLowerCase() + '.png';
+    var flagImg = document.createElement('img');
+    flagImg.src = flagUrl;
+    document.getElementById('location').appendChild(flagImg);
+  })
+  .catch(error => console.error(error));
+
+</script>
 </html>
