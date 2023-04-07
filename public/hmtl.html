@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Latest Earthquake</title>
+  </head>
+  <body>
+    <button onclick="getLatestEarthquake()">Get Latest Earthquake</button>
+    <div id="earthquakeData"></div>
+    <script>
+      function getLatestEarthquake() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson");
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            var data = JSON.parse(xhr.responseText);
+            var latestEarthquake = data.features[0].properties;
+            var earthquakeData = document.getElementById("earthquakeData");
+            earthquakeData.innerHTML = "<h2>Latest Earthquake</h2><p>Magnitude: " + latestEarthquake.mag + "</p><p>Location: " + latestEarthquake.place + "</p><p>Time: " + new Date(latestEarthquake.time) + "</p>";
+          }
+        };
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>
