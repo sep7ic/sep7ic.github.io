@@ -13,12 +13,13 @@
     <body>
         <div class="content">
             <h1>willkommen!</h1>
+            <span>welcome!! enjoy your stay here.</span>
 <p>welcome to my new site!!</p>
 <p>if you cant tell, this site is a MASSIVE work in progress. expect links to be broken. this site will for sure not work on mobile lmfao</p>
 <p>because i dont want to put too much effort in, ive used iframes instead of loading my menus ect into place. yeah. im working on a script to make pages "bookmarkable". </p>
 <span>this site is best viewed at 90%</span>
     </div>
-    <marquee onmouseover="this.stop();" onmouseout="this.start();" direction="right">
+    <marquee onmouseover="this.stop();" onmouseout="this.start();" direction="right" behavior="alternate">
         <a href="https://starlocked.neocities.org" target="_blank"><img src="https://tinyurl.com/yxwzze34"></a>
         <a href="https://www.tumblr.com/drakerapper/710175077273059328/idk-if-anyones-interested-heres-some-88x31?source=share" target="_blank"> <img src="images/buttons/derse.jpg" alt=""> <img src="images/buttons/homestuck.webp" alt=""> <img src="images/buttons/kirby.jpg" alt=""></a>
         <a href="http://keatongamer1248.neocities.org"><img src="http://keatongamer1248.neocities.org/img/keatonad.gif"></a>
@@ -30,7 +31,7 @@
     
     <div class="content">
         <h1>about me</h1>
-        <p>some maybe interesting things about me.</p>
+        <span>information about me!</span>
         <ul>
             <li>i come from new zealand</li>
             <li>i am <span style="background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">autistic ∞</span></li>
@@ -41,7 +42,9 @@
             <li>i love <span style="color: pink;">kirby</span> and kirby games.</li>
         </ul>
     </div>
-    <marquee direction="left">Do you like how I <i>walk?</i> Do you like how I <i>talk?</i> Do you like how my face <span>disintegrates</span> into <i>chalk?</i> I have a <span>wonderful</span> wife, I have a powerful job, She criticizes me for being <span><i><b>egocentric.</b></i></span></marquee>
+    <marquee direction="left" behavior="alternate"><a href="https://www.last.fm/music/IFA+Wartburg/_/FDJ+(Freie+Deutsche+Jugend)" style="color: white; text-decoration: none;">Warum wollen denn die Jugend anderen Ländern Ihre <span>Tugend</span> nicht verändern?
+        Nur ein <i>Streber</i> geht vorüber
+        Andern aber wir sind alle Freie Deutsche <span><i>Jugend!</i></span></a></marquee>
     <div class="content">
         <h1>visitor information</h1>
         <span>yup! thats information about you.</span>
@@ -62,12 +65,13 @@ document.getElementById("useragent").innerHTML = userAgent
     var city = data.city;
     var countryCode = data.country_code;
 
-    document.getElementById('location').innerHTML = country + ', ' + city;
+    document.getElementById('location').innerHTML = "you live in " + country + "! ";
 
         var flagUrl = 'https://flagcdn.com/w40/' + countryCode.toLowerCase() + '.png';
     var flagImg = document.createElement('img');
     flagImg.src = flagUrl;
     document.getElementById('location').appendChild(flagImg);
+    document.getElementById("location").append("( dont worry, i dont actually know where you live !! but my website does ;D )")
   })
   .catch(error => console.error(error));
 

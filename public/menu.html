@@ -137,6 +137,9 @@ console.log("activity is:"+activity)
 if (activity !== undefined) {
 $("#activity").html("i am currently on <span>"+activity+"</span>")
 }
+if (activity == "Custom Status") {
+$("#activity").html("")
+}
 
 if ( status == "online"){
     $("#status").html('<span style="color: green;">online</span>')
