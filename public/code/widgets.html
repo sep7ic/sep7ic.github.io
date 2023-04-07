@@ -6,10 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
 </head>
+<style>
+    table {
+        width:100%;
+    }
+    td  {width: 50%}
+
+</style>
 <body>
     <div class="content">
     <h1>widgets</h1>
     <p>i decided to make a widgets page for all the widget things i make. feel free to use them and edit the code.</p>
+</div>
+<div class="content">
+    <h1>Clock</h1>
+    <p>this code displays the time in different time zones. to use, copy the code below and add into your site.</p>
+    <p>to set a timezone, add a P element and give it the class "clock". add the attribute "timezone" and set that to whatever timezone suits your needs. <a href="https://www.countries-ofthe-world.com/world-time-zones.html">here is a list of timezones you can reference.</a></p>
+    <p>eg: &lt;p class="clock" timezone="+12"&gt;&lt;p&gt;</p>
+    <table>
+        <tr>
+            <td>    
+                <textarea name="" id="" cols="30" rows="10">
+                <script src="https://septicide.online/code/clock.js"></script>
+                <p class="clock" timezone="+12"></p>
+            </textarea></td>
+            <td>
+                <script src="https://septicide.online/code/clock.js"></script>
+                <p class="clock" timezone="+12" style="margin: 0; display: inline;"></p> in <span>Auckland, NZ</span>
+                <br>
+                <p class="clock" timezone="0" style="margin: 0; display: inline;"></p> in <span>Wherever GMT is </span>
+                <br>
+                <p class="clock" timezone="-4" style="margin: 0; display: inline;"></p> in <span>Washington, D.C (i think)</span>
+            </td>
+        </tr>
+    </table>
 </div>
 <div class="content">
     <h1>last fm</h1>
@@ -46,17 +76,6 @@
     </table>
     <p>if the above doesnt work, please add the below into the head of your page.</p>
     &lt;meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/&gt;
-</div>
-<div class="content">
-    <h1>Clock</h1>
-    <p>this code displays </p>
-    <textarea name="" id="" cols="30" rows="10">
-
-    </textarea>
-    <div class="content">
-        <script src="https://septicide.online/code/clock.js"></script>
-        <p class="clock" timezone="+12" style="margin: 0; display: inline;"></p> in <span>NZ</span>
-    </div>
 </div>
 </body>
 </html>

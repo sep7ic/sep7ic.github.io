@@ -16,8 +16,7 @@ td, th  {
 }
 
   body {
-    font-family: pxl;
-    font-family: MS Gothic;
+    font-family: MS Gothic, pxl, sans-serif;
     background-color: transparent;
     color: white;
   }
