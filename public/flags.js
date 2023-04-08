@@ -20,10 +20,11 @@
       
 
       function handleKeyDown(event) {
-  if (event.key === "Enter") {
-    sendMessage();
-  }
-}
+        if (event.key === "Enter" || event.keyCode === 13 || event.keyCode === 9) {
+          sendMessage();
+        }
+      }
+      
       // Send a new message to the chat
       function sendMessage() {
         setDisplayNameFromMessage();
