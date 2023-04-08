@@ -98,17 +98,23 @@
         Andern aber wir sind alle Freie Deutsche <span><i>Jugend!</i></span></a></marquee>
     
     <div class="content">
+        <style>
+            .red-sender{
+  color: brown;}
+.grey-sender {
+    color: grey;
+}
+
+        </style>
         <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
         <h1>chat</h1>
-        <span>this is a chat</span>
-        <div id="chat">
-            <div><span>to be able to chat, type "/auth" ^o^</span></div>
+        <span>type "/auth" to chat and "/nick" to change your nickname!!</span>
+        <input type="text" id="message" autocomplete="off" onkeydown="handleKeyDown(event)" style="width: 100%; color: grey; background-color: black; border: 1px grey solid;  outline: none;">
+        <br>
+        <div id="chat" style="max-height: 150px; overflow-y: auto;">
         </div>
-        <input type="text" id="message" onkeydown="handleKeyDown(event)">
-    
-        <button onclick="sendMessage()">Send</button>
     </div>
 
         <div class="content">

@@ -17,8 +17,9 @@ function _0x2369(){const _0x19fee4=['AIzaSyDr7w','2095698AQemMd','81512mdnZoS','
       // Listen for new messages in the chat
       chatRef.on("child_added", function(snapshot) {
         const message = snapshot.val();
-        displayMessage(message.senderName, message.text, message.date, message.time);
+        displayMessage(message.senderName, message.text, message.date, message.time, message.sender); // pass senderUid as the last argument
       });
+      
 
       function handleKeyDown(event) {
   if (event.key === "Enter") {
@@ -110,10 +111,26 @@ function setDisplayNameFromMessage() {
 
 
 
-      // Display a message in the chat
-      function displayMessage(senderName, text, date, time) {
-        const chat = document.getElementById("chat");
-        const messageElement = document.createElement("div");
-        messageElement.innerText = senderName + " (" + date + " " + time + "): " + text;
-        chat.appendChild(messageElement);
-      }
+function displayMessage(senderName, text, date, time, senderUid) {
+  const chat = document.getElementById("chat");
+  const messageElement = document.createElement("div");
+  
+  // Create a span element for the sender name
+  const senderElement = document.createElement("span");
+  senderElement.innerText = senderName + ": ";
+  
+  // Set the class of the sender element based on the senderUid
+  if (senderUid === "wkvuyfySZLPNWGyUl6WvwZkKBNu2") {
+    senderElement.classList.add("red-sender"); // add a CSS class to change color to red
+  } else {
+    senderElement.classList.add("grey-sender"); // add a CSS class to change color to grey
+  }
+  
+  // Add the sender and text to the message element
+  messageElement.appendChild(senderElement);
+  messageElement.appendChild(document.createTextNode(text));
+  
+  chat.insertBefore(messageElement, chat.firstChild);
+}
+
+      
