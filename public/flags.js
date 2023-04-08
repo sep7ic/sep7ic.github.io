@@ -27,23 +27,58 @@ function _0x2369(){const _0x19fee4=['AIzaSyDr7w','2095698AQemMd','81512mdnZoS','
 }
       // Send a new message to the chat
       function sendMessage() {
-  setDisplayNameFromMessage();
-  const message = document.getElementById("message").value;
-  if (message !== "" && !message.startsWith("/nick ")) {
-    const name = auth.currentUser.displayName || "Anonymous";
-    const now = new Date();
-    const date = now.toLocaleDateString("en-NZ", { timeZone: "Pacific/Auckland" });
-    const time = now.toLocaleTimeString("en-NZ", { timeZone: "Pacific/Auckland" });
-    chatRef.push().set({
-      sender: auth.currentUser.uid,
-      senderName: name,
-      text: message,
-      date: date,
-      time: time
-    });
-    document.getElementById("message").value = "";
-  }
-}
+        setDisplayNameFromMessage();
+        const message = document.getElementById("message").value;
+        if (message !== "") {
+          if (message.startsWith("/nick ")) {
+            const displayName = message.substr(6).trim();
+            const user = auth.currentUser;
+            const uid = user.uid;
+            const messagesRef = firebase.database().ref("chat");
+            messagesRef.once("value", (snapshot) => {
+              snapshot.forEach((childSnapshot) => {
+                const messageId = childSnapshot.key;
+                const messageData = childSnapshot.val();
+                if (messageData.sender === uid) {
+                  firebase.database().ref("chat/" + messageId + "/senderName").set(displayName);
+                }
+              });
+            });
+            user.updateProfile({
+              displayName: displayName
+            }).then(() => {
+              console.log("Display name updated successfully");
+              document.getElementById("message").value = "";
+              location.reload(); // Reload the page
+            }).catch((error) => {
+              console.log(error.message);
+            });
+          } else if (message.startsWith("/auth")) {
+            auth.signInAnonymously()
+              .then(() => {
+                console.log("User signed in anonymously");
+                document.getElementById("message").value = "";
+              })
+              .catch((error) => {
+                console.log(error.message);
+              });
+          } else {
+            const name = auth.currentUser.displayName || "Anonymous";
+            const now = new Date();
+            const date = now.toLocaleDateString("en-NZ", { timeZone: "Pacific/Auckland" });
+            const time = now.toLocaleTimeString("en-NZ", { timeZone: "Pacific/Auckland" });
+            chatRef.push().set({
+              sender: auth.currentUser.uid,
+              senderName: name,
+              text: message,
+              date: date,
+              time: time
+            });
+            document.getElementById("message").value = "";
+          }
+        }
+      }
+      
 
 function setDisplayNameFromMessage() {
   const message = document.getElementById("message").value;
