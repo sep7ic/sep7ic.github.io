@@ -9,25 +9,24 @@ function _0x2369(){const _0x19fee4=['AIzaSyDr7w','2095698AQemMd','81512mdnZoS','
     messagingSenderId: "279553956146",
     appId: "1:279553956146:web:4a345eeb09388b7b13df2b"
   };
-     firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
-const chatRef = database.ref("chat");
-const auth = firebase.auth();
+      firebase.initializeApp(firebaseConfig);
+      const database = firebase.database();
+      const chatRef = database.ref("chat");
+      const auth = firebase.auth();
 
-// Listen for new messages in the chat
-chatRef.on("child_added", function(snapshot) {
-  const message = snapshot.val();
-  displayMessage(message.senderName, message.text, message.date, message.time);
-});
+      // Listen for new messages in the chat
+      chatRef.on("child_added", function(snapshot) {
+        const message = snapshot.val();
+        displayMessage(message.senderName, message.text, message.date, message.time);
+      });
 
-function handleKeyDown(event) {
+      function handleKeyDown(event) {
   if (event.key === "Enter") {
     sendMessage();
   }
 }
-
-// Send a new message to the chat
-function sendMessage() {
+      // Send a new message to the chat
+      function sendMessage() {
   setDisplayNameFromMessage();
   const message = document.getElementById("message").value;
   if (message !== "" && !message.startsWith("/nick ")) {
@@ -69,7 +68,17 @@ function setDisplayNameFromMessage() {
       document.getElementById("message").value = "";
       location.reload(); // Reload the page
     }).catch((error) => {
-      console.error(error);
+      console.log(error.message);
     });
   }
 }
+
+
+
+      // Display a message in the chat
+      function displayMessage(senderName, text, date, time) {
+        const chat = document.getElementById("chat");
+        const messageElement = document.createElement("div");
+        messageElement.innerText = senderName + " (" + date + " " + time + "): " + text;
+        chat.appendChild(messageElement);
+      }
