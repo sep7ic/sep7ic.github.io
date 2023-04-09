@@ -54,7 +54,10 @@
 
 </style>
 <body> 
-
+  <div style="position: absolute;">
+  <input type="checkbox" id="scan" name="scan" value="true">
+  <label for="scan" style="color: #a9a9a948;">disable scanlines</label><br>
+</div>
     <div class="container scanlines">
         <div style="text-align: center;">
             <img src="images/mars.gif"  style="height: 50px; vertical-align:sub;"><h1 style="display: inline;"> - septic - </h1><img src="images/mars.gif"  style="height: 50px; vertical-align:sub;"></div>
@@ -77,5 +80,17 @@
         }, 100);
       }
     };
+  </script>
+  <script>
+
+$("#scan").change(function() {
+  if(this.checked) {
+    $(".container").removeClass("scanlines");
+  } else {
+    $(".container").addClass("scanlines");
+  }
+});
+
+
   </script>
 </html>
