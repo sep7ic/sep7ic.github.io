@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Canvas Drawing App</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <br>
+    <input type="color" id="colorPicker">
+    <input type="range" min="1" max="100" value="5" id="brushSize">
+    <button id="clearButton">Clear</button>
+    <button id="undoButton">Undo</button>
+    <script>
+      const canvas = document.querySelector('#canvas');
+      const context = canvas.getContext('2d');
+      let isDrawing = false;
+      let undoStack = [];
+
+      function draw(e) {
+        if (!isDrawing) return;
+        context.lineWidth = brushSize.value;
+        context.lineCap = 'round';
+        context.strokeStyle = colorPicker.value;
+        context.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        context.stroke();
+        context.beginPath();
+        context.endPath();
+        context.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        undoStack.push(context.getImageData(0, 0, canvas.width, canvas.height)); // save the canvas state to undo stack
+      }
+
+      function clearCanvas() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.beginPath();
+        isDrawing = false;
+        undoStack = [];
+      }
+
+      function undo() {
+        if (undoStack.length > 1) {
+          undoStack.pop(); // remove the current state
+          context.putImageData(undoStack[undoStack.length - 1], 0, 0); // restore the previous state
+        }
+      }
+
+      canvas.addEventListener('mousedown', () => isDrawing = true);
+      canvas.addEventListener('mouseup', () => {
+        isDrawing = false;
+        context.closePath();
+      });
+      canvas.addEventListener('mousemove', draw);
+      clearButton.addEventListener('click', clearCanvas);
+      undoButton.addEventListener('click', undo);
+    </script>
+  </body>
+</html>
