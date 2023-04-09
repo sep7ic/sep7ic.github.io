@@ -5,6 +5,8 @@
       <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js" type="text/javascript"></script>
       <base target="_blank">
+      <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
     </head>
     <style>
         ul {
@@ -56,6 +58,8 @@ span {
         <script src="https://septicide.online/code/clock.js"></script>
         <a href="code/widgets.html#clock" target="Display" style="float: right; text-decoration: none; color: white;">ⓘ</a>
         <p class="clock" timezone="+12" style="margin: 0; display: inline;"></p> in <span>NZ</span>
+        <hr>
+        <span id="usercount">0</span> users onsite
       </div>
       <marquee onmouseover="this.stop();" onmouseout="this.start();">status: <a href="https://www.imood.com/users/septic"><img src="https://moods.imood.com/display/uname-septic/imood.gif" alt="The current mood of septic at www.imood.com" border="0"></a></marquee>
     
@@ -172,4 +176,5 @@ if (mobile == true){
 
 
     </script>
+    <script src="silly.js"></script>
 </html>
