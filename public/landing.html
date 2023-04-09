@@ -112,7 +112,10 @@
         <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
         <h1>chat</h1>
         <span>type "/auth" to chat and "/nick" to change your nickname!!</span>
-        <input type="text" id="message" autocomplete="off" onkeydown="handleKeyDown(event)" style="width: 100%; color: grey; background-color: black; border: 1px grey solid;  outline: none;">
+        <br><br>
+        <input type="text" id="message" autocomplete="off" onkeydown="handleKeyDown(event)" placeholder="chat message here" style="width: 92%; color: grey; background-color: black; border: 1px grey solid; outline: none;">
+<button onclick="sendMessage()" style="color: grey; background-color: black; border: 1px grey solid; outline: none; margin-left: -4px;">Send</button>
+<br>
         <br>
         <div id="chat" style="max-height: 150px; overflow-y: auto;">
         </div>
