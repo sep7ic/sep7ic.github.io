@@ -20,7 +20,7 @@ chatRef.on("child_added", function(snapshot) {
 });
 
 function handleKeyDown(event) {
-  if (event.key === "Enter" || event.keyCode === 13 || event.keyCode === 9) {
+  if (event.key === "Enter" || event.keyCode === 13) {
     sendMessage();
   }
 }
