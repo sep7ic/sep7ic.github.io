@@ -109,27 +109,27 @@ if (message.startsWith("/nick ")) {
 }
 
 
-
+let verifiedusers = ["cyaT5DGKLAa1UwVD3DEz37ddqgg2", "Hzy5uRYmgROxsGUoQ8pgTTZxNwO2"];
 function displayMessage(senderName, text, date, time, senderUid) {
-const chat = document.getElementById("chat");
-const messageElement = document.createElement("div");
-
-// Create a span element for the sender name
-const senderElement = document.createElement("span");
-senderElement.innerText = senderName + ": ";
-
-// Set the class of the sender element based on the senderUid
-if (senderUid === "wkvuyfySZLPNWGyUl6WvwZkKBNu2") {
-  senderElement.classList.add("red-sender"); // add a CSS class to change color to red
-} else {
-  senderElement.classList.add("grey-sender"); // add a CSS class to change color to grey
-}
-
-// Add the sender and text to the message element
-messageElement.appendChild(senderElement);
-messageElement.appendChild(document.createTextNode(text));
-
-chat.insertBefore(messageElement, chat.firstChild);
+  const chat = document.getElementById("chat");
+  const messageElement = document.createElement("div");
+  
+  // Create a span element for the sender name
+  const senderElement = document.createElement("span");
+  senderElement.innerText = senderName + ": ";
+  
+  // Set the class of the sender element based on the senderUid
+  if (verifiedusers.includes(senderUid)) {
+    senderElement.classList.add("red-sender"); // add a CSS class to change color to red
+  } else {
+    senderElement.classList.add("grey-sender"); // add a CSS class to change color to grey
+  }
+  
+  // Add the sender and text to the message element
+  messageElement.appendChild(senderElement);
+  messageElement.appendChild(document.createTextNode(text));
+  
+  chat.insertBefore(messageElement, chat.firstChild);
 }
 
     
