@@ -109,7 +109,7 @@ if (message.startsWith("/nick ")) {
 }
 
 
-let verifiedusers = ["cyaT5DGKLAa1UwVD3DEz37ddqgg2", "Hzy5uRYmgROxsGUoQ8pgTTZxNwO2"];
+let verifiedusers = ["bq7qsGSJ1eQJTbkTi7VpkNscW4d2", "Hzy5uRYmgROxsGUoQ8pgTTZxNwO2"];
 function displayMessage(senderName, text, date, time, senderUid) {
   const chat = document.getElementById("chat");
   const messageElement = document.createElement("div");
