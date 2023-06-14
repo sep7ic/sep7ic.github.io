@@ -66,7 +66,7 @@ const firebaseConfig = {
           const name = auth.currentUser.displayName || "Anonymous";
           const now = new Date();
           const date = now.toLocaleDateString("en-NZ", { timeZone: "Pacific/Auckland" });
-          const time = now.toLocaleTimeString("en-NZ", { timeZone: "Pacific/Auckland" });
+          const time = now.toLocaleTimeString("en-NZ", { timeZone: "Pacific/Auckland", hour12: false });
           chatRef.push().set({
             sender: auth.currentUser.uid,
             senderName: name,
@@ -109,15 +109,16 @@ if (message.startsWith("/nick ")) {
 }
 
 
-let verifiedusers = ["bq7qsGSJ1eQJTbkTi7VpkNscW4d2", "Hzy5uRYmgROxsGUoQ8pgTTZxNwO2"];
+let verifiedusers = ["bq7qsGSJ1eQJTbkTi7VpkNscW4d2", "cyaT5DGKLAa1UwVD3DEz37ddqgg2"];
+
 function displayMessage(senderName, text, date, time, senderUid) {
   const chat = document.getElementById("chat");
   const messageElement = document.createElement("div");
   
   // Create a span element for the sender name
   const senderElement = document.createElement("span");
-  senderElement.innerText = senderName + ": ";
-  
+  senderElement.innerHTML = '<span style="color: DimGray; font-size: smaller;">' + date + ", " + time + " | " + "</span>" + senderName + ": ";
+
   // Set the class of the sender element based on the senderUid
   if (verifiedusers.includes(senderUid)) {
     senderElement.classList.add("red-sender"); // add a CSS class to change color to red
