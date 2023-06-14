@@ -1,5 +1,5 @@
 const firebaseConfig = {
-  apiKey: dataapikey,
+  apiKey: "AIzaSyDr7wYB3QzKeUemLu9xqpCedpLpftOYwcA",
   authDomain: "septic-3172a.firebaseapp.com",
   projectId: "septic-3172a",
   databaseURL: "https://septic-3172a-default-rtdb.asia-southeast1.firebasedatabase.app",
