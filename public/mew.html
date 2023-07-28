@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+  margin:0;padding:15px; font-family: sans-serif;
+  font-size: 1.2em;
+}
+.container{
+  background: #333;display: grid;
+  grid-template-columns: auto auto auto;
+  padding:8px;box-sizing:border-box;
+  height: 500px;overflow:auto;
+}
+.item{
+  width: 90%;
+  height: 60px;
+  margin:60px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#FFFFFF;
+}
+.item:nth-child(even){
+  background: #30a57f;
+}
+.item:nth-child(odd){
+  background:#c17a38;
+}
+</style>
+<body>
+    <div class="container" id="items-container">
+        <div class="item"> </div>
+        <div class="item"></div>
+        <div class="item" style="width: 150%;">  </div>
+        <div class="item"> </div>
+        <div class="item"></div>
+        <div class="item" style="width: 150%;"> </div>
+        <div class="item"> </div>
+        <div class="item"> </div>
+        <div class="item" style="width: 150%;"> </div>
+        <div class="item"> </div>
+        <div class="item"> </div>
+        <div class="item" style="width: 150%;"> </div>
+        <div class="item"> </div>
+        <div class="item"> </div>
+        <div class="item" style="width: 150%;"> </div>
+        <div class="item"> </div>
+        <div class="item"> </div>
+        <div class="item" style="width: 150%;"> </div>
+      </div>
+</body>
+<script>
+    /* 
+  this is an implementation of Wes Bos click & drag scroll algorythm. In his video, he shows how to do the horizontal scroll. I have implemented the vertical scroll for those wondering how to make it as well.
+  
+  Wes Bos video:
+    https://www.youtube.com/watch?v=C9EWifQ5xqA
+*/
+const container = document.querySelector('#items-container');
+                
+                let startY;
+                let startX;
+                let scrollLeft;
+                let scrollTop;
+                let isDown;
+                
+                container.addEventListener('mousedown',e => mouseIsDown(e));  
+                container.addEventListener('mouseup',e => mouseUp(e))
+                container.addEventListener('mouseleave',e=>mouseLeave(e));
+                container.addEventListener('mousemove',e=>mouseMove(e));
+                
+                function mouseIsDown(e){
+                  isDown = true;
+                  startY = e.pageY - container.offsetTop;
+                  startX = e.pageX - container.offsetLeft;
+                  scrollLeft = container.scrollLeft;
+                  scrollTop = container.scrollTop; 
+                }
+                function mouseUp(e){
+                  isDown = false;
+                }
+                function mouseLeave(e){
+                  isDown = false;
+                }
+                function mouseMove(e){
+                  if(isDown){
+                    e.preventDefault();
+                    //Move vertcally
+                    const y = e.pageY - container.offsetTop;
+                    const walkY = y - startY;
+                    container.scrollTop = scrollTop - walkY;
+                
+                    //Move Horizontally
+                    const x = e.pageX - container.offsetLeft;
+                    const walkX = x - startX;
+                    container.scrollLeft = scrollLeft - walkX;
+                
+                  }
+                }
+</script>
+</html>
