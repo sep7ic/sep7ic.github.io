@@ -23,7 +23,6 @@ span {
       <div class="content">
         <ul>
           <li><a href="landing.html" target="Display">home</a></li>
-          <li><a href="writing.html" target="Display">thoughts</a></li>
           <li><a href="flags/flags.html" target="Display">flags</a></li>
             <ul>
             <li><a href="flags/FOTD.html" target="Display">FOTD</a></li>
@@ -56,7 +55,7 @@ span {
         <hr>
         <script src="https://septicide.online/code/clock.js"></script>
         <a href="code/widgets.html#clock" target="Display" style="float: right; text-decoration: none; color: white;">ⓘ</a>
-        <p class="clock" timezone="+12" style="margin: 0; display: inline;"></p> in <span>NZ</span>
+        <p class="clock" timezone="+13" style="margin: 0; display: inline;"></p> in <span>NZ</span>
       </div>
       <marquee onmouseover="this.stop();" onmouseout="this.start();">status: <a href="https://www.imood.com/users/septic"><img src="https://moods.imood.com/display/uname-septic/imood.gif" alt="The current mood of septic at www.imood.com" border="0"></a></marquee>
     
@@ -67,6 +66,13 @@ span {
         <a href="" id="artworklink" target="_blank" style="display: block;"><img id="artwork" src="">
         <marquee id="track" direction="left" style="color: white; margin-bottom: 0;"></marquee></a>
         
+      </div>
+
+      <div class="content">
+        <div id="dailyImageContainer">
+          <img id="dailyImage" src="" alt="Daily Image">
+          <div id="imageDate"></div>
+      </div>
       </div>
 
       <div class="content">
@@ -173,4 +179,34 @@ if (mobile == true){
 
 
     </script>
+
+
+<script>
+
+$(document).ready(function() {
+            var today = new Date();
+            var month = today.getMonth() + 1;
+            var day = today.getDate();
+            var year = today.getFullYear();
+
+            var imagePath = 'dailydoodle/' + month + '/' + day + '.png';
+
+            $.ajax({
+                url: imagePath,
+                type: 'HEAD',
+                error: function() {
+                    var totalDays = new Date(year, month, 0).getDate();
+                    var randomDate = Math.floor(Math.random() * totalDays) + 1; 
+                    var randomImage = 'dailydoodle/' + month + '/' + randomDate + '.png';
+                    $('#dailyImage').attr('src', randomImage);
+                    $('#imageDate').text(month + '/' + day + '/' + year + ' - Random');
+                },
+                success: function() {
+                    $('#dailyImage').attr('src', imagePath);
+                    $('#imageDate').text(month + '/' + day + '/' + year + ' - Daily Doodle');
+                }
+            });
+        });
+
+</script>
 </html>

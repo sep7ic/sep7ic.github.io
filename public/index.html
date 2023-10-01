@@ -58,22 +58,28 @@
 }.cat:active {
   cursor: grabbing;
 }
+
 </style>
 <body> 
-  <div style="position: absolute;">
-  <input type="checkbox" id="scan" name="scan" value="true">
-  <label for="scan" style="color: #a9a9a948;">disable scanlines</label><br>
-
+<div style="position: absolute;">
+<input type="checkbox" id="scan" name="scan" value="true">
+<label for="scan" style="color: #a9a9a948;">disable scanlines</label><br>
 </div>
-    <div class="container scanlines">
-        <div style="text-align: center;">
-            <img src="images/mars.gif"  style="height: 50px; vertical-align:sub;"><h1 style="display: inline;"> - septic - </h1><img src="images/mars.gif"  style="height: 50px; vertical-align:sub;"></div>
-        <img src="images/cat.gif" style="position: absolute; top: 38px;" class="cat">
-            <div class="frames">
-            <iframe src="menu.html" class="menu iframe" id="menu" name="Menu" frameBorder="0"></iframe>
-            <iframe src="landing.html" class="main iframe" name="Display" frameBorder="0" id="mainframe"></iframe>
-        </div>
+  
+<div class="container scanlines">
+  
+  <div style="text-align: center;">
+    
+    <img src="images/mars.gif"  style="height: 50px; vertical-align:sub;"><h1 style="display: inline;"> - septic - </h1><img src="images/mars.gif"  style="height: 50px; vertical-align:sub;"></div>
+    <img src="images/cat.gif" style="position: absolute; top: 38px;" class="cat">
+      
+    <div class="frames">
+        <iframe src="menu.html" class="menu iframe" id="menu" name="Menu" frameBorder="0"></iframe>
+        <iframe src="landing.html" class="main iframe" name="Display" frameBorder="0" id="mainframe"></iframe>
     </div>
+  
+</div>
+    
 </body>
 <script>
     window.onload = function() {
