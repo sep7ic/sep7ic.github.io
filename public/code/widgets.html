@@ -22,32 +22,8 @@
         <li><a href="#clock">clock</a></li>
         <li><a href="#lastfm">last fm</a></li>
         <li><a href="#apod">NASA APOD</a></li>
-        <li><a href="#hitcount">Hitcounter</a></li>
     </ul>
     <span>if youre using any of these widgets and they suddenly stop working, please check back here as i may have changed the path or even domain :D</span>
-</div>
-
-<div class="content" id="hitcount">
-    <h1>Hitcounter</h1>
-    <span>created by <a href="https://dannarchy.com/tut/tut_002">dannarchy!!</a></span>
-    <p>i just want to specify that this is NOT made by me. i just modified it by a little to make it <i>easier(?)</i> to use.</p>
-    <p>to use, just put your neocities user where it says "USER" in sitename. thats basically it!!</p>
-    <table>
-        <tr>
-            <td>
-                <textarea name="" id="" cols="30" rows="10">
-                    <script src="https://septicide.online/code/hitcounter.js"></script>
-                    You are visitor # <span id="hitcounter" sitename="USER"></span>
-                </textarea>
-            </td>
-            <td>
-                <script src="hitcounter.js"></script>
-                sep has <span id="hitcounter" sitename="sep"></span> visitors
-                <br>
-                you are the <span id="hitcounter" sitename="sep"></span>th visitor
-            </td>
-        </tr>
-    </table>
 </div>
 
 <div class="content" id="clock">
@@ -57,11 +33,12 @@
     <p>eg: &lt;p class="clock" timezone="+12"&gt;&lt;p&gt;</p>
     <p>eg: &lt;p class="clockseconds" timezone="-4"&gt;&lt;p&gt;</p>
     <p>if you have the class "clockseconds", it displays the seconds.</p>
+    <p>(doesnt account for daylight savings time)</p>
     <table>
         <tr>
             <td>    
                 <textarea name="" id="" cols="30" rows="10">
-                <script src="https://septicide.online/code/clock.js"></script>
+                <script src="https://septic.github.io/code/clock.js"></script>
                 <p class="clock" timezone="+12"></p>
             </textarea></td>
             <td>
@@ -79,17 +56,17 @@
     <h1>last fm</h1>
     <span>THIS WIDGET IS NO LONGER DEPENDENT ON JQUERY :)</span>
     <p>this is a widget for last fm and displays your last listened to/listening to song.</p>
-    <p>to use, take the code from below and paste into your site. then, add your user into where it says user="user". eg my user is sep7ic, so id put user="sep7ic". thats basically it!! feel free to go to <a href="https://septicide.online/code/lastfm.js">this link</a> and edit the code.</p>
+    <p>to use, take the code from below and paste into your site. then, add your user into where it says user="user". eg my user is sep7ic, so id put user="sep7ic". thats basically it!! feel free to go to <a href="https://septic.github.io/code/lastfm.js">this link</a> and edit the code.</p>
     <p>if you want to edit the CSS, go ahead, but make sure you keep the ID's "artworklink", and "track". If you dont want the text to be scrolling, change "marquee" to "p"</p>
     <table style="width: 100%;">
         <tr>
             <td style="width: 50%;">
                 <textarea name="" id="" cols="40" rows="10" >
-                    <script src="https://septicide.online/code/lastfm.js"></script>
+                    <script src="https://septic.github.io/code/lastfm.js"></script>
                     <div class="content">                
                         <section id="listen" user="USER">CANT FETCH last listened to</section>
                         <hr>
-                        <a href="" id="artworklink" target="_blank" style="display: block;"><img id="artwork" src="" onError="this.onerror=null;this.src='https://septicide.online/code/cover.png';">
+                        <a href="" id="artworklink" target="_blank" style="display: block;"><img id="artwork" src="" onError="this.onerror=null;this.src='https://septic.github.io/code/cover.png';">
                         <marquee id="track" direction="left" style="color: white;"></marquee></a>
                     </div>
                 </textarea>
@@ -100,7 +77,7 @@
             
                     <section id="listen" user="sep7ic">CANT FETCH last listened to</section>
                     <hr>
-                    <a href="" id="artworklink" target="_blank" style="display: block;"><img id="artwork" src="" onError="this.onerror=null;this.src='https://septicide.online/code/cover.png';">
+                    <a href="" id="artworklink" target="_blank" style="display: block;"><img id="artwork" src="" onError="this.onerror=null;this.src='https://septic.github.io/code/cover.png';">
                     <marquee id="track" direction="left" style="color: white;">SONG AND ARTIST</marquee></a>
                 </div>
             </td>
@@ -131,7 +108,7 @@
         <tr>
             <td>
                 <textarea name="" id="" cols="30" rows="10">
-                    <script src="https://septicide.online/code/apod.js"></script>
+                    <script src="https://septic.github.io/code/apod.js"></script>
                     <h1>Astronomy Picture of the Day</h1>
                     <h2 id="apod-title"></h2>
                     <p id="apod-date"></p>
