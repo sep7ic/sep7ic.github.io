@@ -44,6 +44,7 @@
     .container {
   margin: 0 auto;
   width: 800px;
+  position: relative;
     }
     .menu {
         width: 20%;
@@ -58,6 +59,15 @@
 }.cat:active {
   cursor: grabbing;
 }
+.scanlines {
+  position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1000;
+    pointer-events: none;
+}
 
 </style>
 <body> 
@@ -65,13 +75,19 @@
 <input type="checkbox" id="scan" name="scan" value="true">
 <label for="scan" style="color: #a9a9a948;">disable scanlines</label><br>
 </div>
+
+<div class="scanlines"></div>  
+
+<div class="container">
   
-<div class="container scanlines">
-  
+  <img src="https://web.archive.org/web/20091026073040/http://www.geocities.com/teddybatendres/ghost2.gif" style="position: absolute; top: 500px; left: -60px;">
+  <img src="https://web.archive.org/web/20090901185940/http://geocities.com/dianasplace58/ghostbar3.gif" style="position: absolute; top: 50px; right: -30px; z-index: 1000;">
+  <img src="https://web.archive.org/web/20091026185455/http://geocities.com/woofboy111qq/halloween/scary/skull/skelwalk.gif" style="position: absolute; top: 800px; right: -90px; z-index: 1000;">
+
   <div style="text-align: center;">
     
-    <img src="images/mars.gif"  style="height: 50px; vertical-align:sub;"><h1 style="display: inline;"> - septic - </h1><img src="images/mars.gif"  style="height: 50px; vertical-align:sub;"></div>
-    <img src="images/cat.gif" style="position: absolute; top: 38px;" class="cat">
+    <img src="https://web.archive.org/web/20090902002637/http://www.geocities.com/redondoguy2001/Halloween/moon1a.gif"  style="height: 50px; vertical-align:sub;"><h1 style="display: inline;"> - septic - </h1><img src="https://web.archive.org/web/20090902002637/http://www.geocities.com/redondoguy2001/Halloween/moon1a.gif"  style="height: 50px; vertical-align:sub;"></div>
+    <img src="https://web.archive.org/web/20040720215754/http://hk.geocities.com:80/cat0763/ghst/ghost.gif" style="position: absolute; top: 38px;" class="cat">
       
     <div class="frames">
         <iframe src="menu.html" class="menu iframe" id="menu" name="Menu" frameBorder="0"></iframe>
