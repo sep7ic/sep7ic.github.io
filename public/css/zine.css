@@ -48,10 +48,20 @@
 
 .front {
 	background: linear-gradient(to right, #d9d9d9 0%, #f9f9f9 3%, #ffffff 8%, #ffffff 100%);
+	clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+	transition: clip-path 0.2s;
+}
+.front:hover {
+	clip-path: polygon(83% 0, 100% 13.4%, 100% 100%, 0 100%, 0 0);
 }
 
 .back {
 	background: linear-gradient(to right, #ffffff 0%, #ffffff 92%, #f9f9f9 97%, #d9d9d9 100%);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+	transition: clip-path 0.2s;	
+}
+.back:hover {
+	clip-path: polygon(17.6% 0, 100% 0, 100% 100%, 0 100%, 0 14%);
 }
 
 .pageFoldRight {

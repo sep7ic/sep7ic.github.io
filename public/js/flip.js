@@ -53,7 +53,7 @@ $(document).ready(function() {
 
       $("#" + bookId + " .front").hover(
           function() {
-              TweenLite.to($(this).find(".pageFoldRight"), 0.3, {width: "50px", height: "50px", backgroundImage: "linear-gradient(45deg,  #fefefe 0%,#f2f2f2 49%,#ffffff 50%,#ffffff 100%)"});
+              TweenLite.to($(this).find(".pageFoldRight"), 0.3, {width: "50px", height: "50px", backgroundImage: "linear-gradient(45deg,  #fefefe 0%,#f2f2f2 49%,#ffffff00 50%,#ffffff00 100%)"});
               TweenMax.to($(this), 1, {force3D: true, rotationY: -20, transformOrigin: "left top", z: zi, zIndex: zi});
           },
           function() {
@@ -64,10 +64,13 @@ $(document).ready(function() {
 
       $("#" + bookId + " .back").hover(
           function() {
-              TweenLite.to($(this).find(".pageFoldLeft"), 0.3, {width: "50px", height: "50px", backgroundImage: "linear-gradient(135deg,  #ffffff 0%,#ffffff 50%,#f2f2f2 51%,#fefefe 100%)"});
-          },
+              TweenLite.to($(this).find(".pageFoldLeft"), 0.3, {width: "50px", height: "50px", backgroundImage: "linear-gradient(135deg,  #ffffff00 0%,#ffffff00 50%,#f2f2f2 51%,#fefefe 100%)"});
+              TweenMax.to($(this), 1, {force3D: true, rotationY: -160, transformOrigin: "right top", z: zi, zIndex: zi});
+              TweenMax.to($(this), 0, {x: -282});
+            },
           function() {
               TweenLite.to($(this).find(".pageFoldLeft"), 0.3, {width: "0px", height: "0px"});
+              TweenMax.to($(this), 1, {force3D: true, rotationY: -180, transformOrigin: "right top", z: zi, zIndex: zi});
           }
       );
   }
