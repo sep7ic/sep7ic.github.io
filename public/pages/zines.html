@@ -15,7 +15,6 @@
     .desc {
         position: absolute;
         width: 282.5px;
-        padding: 10px;
     }
     .pageFace {
         background-size: cover;
@@ -41,22 +40,18 @@
 
                         <div id="page4" class="page">
                             <div class="pageFace front">
-                                <h1>right 4</h1>
                                 <div class="pageFoldRight"></div>
                             </div>
                             <div class="pageFace back">
-                                <h1>left 4</h1>
                                 <div class="pageFoldLeft"></div>
                             </div>
                         </div>
 
                         <div id="page3" class="page">
                             <div class="pageFace front">
-                                <h1>right 3</h1>
                                 <div class="pageFoldRight"></div>
                             </div>
                             <div class="pageFace back">
-                                <h1>left 3</h1>
                                 <div class="pageFoldLeft"></div>
                             </div>
                         </div>
@@ -71,11 +66,10 @@
                         </div>
 
                         <div id="page1" class="page">
-                            <div class="pageFace front" style="background-image: url(/images/art/artcover.png);">
+                            <div class="pageFace front" style="background-image: url(/images/art/artcover.png);" style="outline:9px solid brown">
                                 <div class="pageFoldRight"></div>
                             </div>
                             <div class="pageFace back" style="background-image: url(/images/art/refshet.png);">
-                                <h1>left 1</h1>
                                 <div class="pageFoldLeft"></div>
                             </div>
                         </div>
@@ -85,9 +79,33 @@
             </div>
         </div>
     </div>
-    
 </div>
 </body>
+<script>
+$(document).ready(function() {
+      function addGradient($element, gradient) {
+        var currentBg = $element.css('background-image');
+        
+        var newBg = gradient + ',' + currentBg;
+        
+        $element.css({
+      'background-image': newBg,
+      'background-size': 'cover'
+    });
+
+        $element.css('background-image', newBg);
+      }
+      $('.pageFace.front').each(function() {
+        var gradient = 'linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 3%, transparent 8%, transparent 100%)';
+        addGradient($(this), gradient);
+      });
+      $('.pageFace.back').each(function() {
+        var gradient = 'linear-gradient(to right, transparent 0%, transparent 92%, rgba(0, 0, 0, 0.2) 97%, rgba(0, 0, 0, 0.5) 100%)';
+        addGradient($(this), gradient);
+      });
+    });
+
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 <script src="/js/flip.js"></script>
 </html>
