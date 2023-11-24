@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<style>
+        .postbox {
+            outline: 1px solid grey;
+            position: relative;
+    padding: 10px;
+    width: 200px;
+    margin: 10px;
+    display: inline-block;
+    }
+    .postbox > img {
+        width: 100%;
+    }
+    .postbox > h2 {
+        position: absolute;
+        top: 150px;
+        left: 20px;
+    }
+</style>
+<body>
+    <div class="content">
+        <h1>Blog</h1>
+        <span>check out some of my blogposts!</span>
+        <p>hi, welcome to my blog post area. this is just a lil spot for me to share my projects and thoughts. topics range from linguistics to book and game reviews.</p>
+        <hr><br>
+        <h1>featured</h1>
+        <span>some of my personal favourites :-)</span>
+        <marquee onmouseover="this.stop();" onmouseout="this.start();" scrollamount="7">
+        <div class="postbox">
+            <img src="/images/dailydoodle/10/1.png" alt="">
+            <h2>norsk</h2>
+        </div>
+        <div class="postbox">
+            <h2>text</h3>
+        </div>
+        </marquee>
+    </div>
+</body>
+</html>
