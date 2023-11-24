@@ -64,3 +64,11 @@ marquee {
 ::-webkit-scrollbar-thumb {
   background: #a31d1d; 
 }
+
+.content {background-color: black;}
+
+ul { list-style-type: "✧ ";}
+summary { list-style-type: "✦ ";}
+summary{
+  margin-left: -21px;
+}
