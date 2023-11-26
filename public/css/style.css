@@ -45,6 +45,32 @@ td, th  {
 a {
   color: brown;
 }
+a:not(:has(img)) {
+  color: brown;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+a:not(:has(img))::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  border-radius: 5px;
+  height: 0.05em;
+  bottom: 0;
+  left: 0;
+  background: currentcolor;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+a:not(:has(img)):hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 span {
   color: #a31d1d;
 }
