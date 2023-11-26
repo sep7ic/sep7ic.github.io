@@ -139,7 +139,7 @@ function displayMessage(senderName, text, date, time, senderUid, color) {
   const messageElement = document.createElement("div");
 
   const senderElement = document.createElement("span");
-  senderElement.innerHTML = '<span style="color: DimGrey; font-size: smaller;">' + date + ", " + time + " | " + "</span>" + '<span style="color:' + color + ';">' + senderName + ": </span>";
+  senderElement.innerHTML = '<span style="color: DimGrey; font-size: smaller;">' + "</span>" + '<span style="color:' + color + ';">' + senderName + ": </span>";
 
   if (verifiedusers.includes(senderUid)) {
     senderElement.classList.add("red-sender");
