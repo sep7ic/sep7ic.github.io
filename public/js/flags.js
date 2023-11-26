@@ -25,11 +25,7 @@ function handleKeyDown(event) {
 function sendMessage() {
   setDisplayNameFromMessage();
   const message = document.getElementById("message").value;
-  const blockedUserId = "xQwICs1DTRZGTwfFR05LOfPaicy1";
-  if (auth.currentUser.uid === blockedUserId) {
-    console.log("You are blocked and cannot send messages.");
-    return;
-  }
+
   if (message !== "") {
     if (message.startsWith("/nick ")) {
       const displayName = message.substr(6).trim();
@@ -37,7 +33,7 @@ function sendMessage() {
     } else if (message.startsWith("/colour ")) {
       const color = message.substr(8).trim();
       updateColor(color);
-    } else if (message.startsWith("/auth")) {
+    }  else if (message.startsWith("/auth")) {
       auth.signInAnonymously()
         .then(() => {
           console.log("User signed in anonymously");
