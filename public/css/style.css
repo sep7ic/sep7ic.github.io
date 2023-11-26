@@ -81,10 +81,15 @@ summary{
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 5px;
+  padding-top: 5px;
   color: grey;
-  margin-top: -5px;
+  background-color: rgba(128, 128, 128, 0.329);
 }
 .bar::after {
   content: "- ☐ X";
   float: right
+}
+.content:has(.bar) {
+  padding-top: 0;
+  margin-bottom: 10px;
 }
