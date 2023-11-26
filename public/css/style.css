@@ -72,3 +72,19 @@ summary { list-style-type: "✦ ";}
 summary{
   margin-left: -21px;
 }
+
+.bar {
+  border-bottom: solid 1px grey; 
+  margin-left: -10px; 
+  margin-right: -10px; 
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  color: grey;
+  margin-top: -5px;
+}
+.bar::after {
+  content: "- ☐ X";
+  float: right
+}

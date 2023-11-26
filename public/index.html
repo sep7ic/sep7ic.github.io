@@ -26,11 +26,12 @@
         background-image: url(/images/stars.gif);
         font-family: pixel;
         margin: 0;
+        overflow-x: hidden;
     }
     h1 {
         color: white;
         font-size: 50px;
-        text-align: center;
+        text-align: left;
         margin: 0;
   animation: anim 1s linear infinite alternate;
     }
@@ -85,10 +86,11 @@ i{
     border-bottom-right-radius: 5px;
     animation: animate 5s linear infinite;
     z-index: -10000; 
+    rotate: 30deg;
 }
 i::after {
     content: '\2605';
-    font-size: 10px;
+    font-size: 15px;
     color: brown;
     position: absolute;
     bottom: -10px;
@@ -106,10 +108,15 @@ i:nth-child(3n + 3){
 }
 @keyframes animate{
     0%{
-        transform: translateY(-900px);
+        transform: translateY(-960px);
+    }
+    90% {
+      opacity: 100;
     }
     100%{
-        transform: translateY(calc(100vh + 200px));
+        transform: translateY(calc(200vh + 200px));
+        transform: translateX(-70px);
+        opacity: 0; 
     }
 }
 
@@ -132,6 +139,10 @@ i:nth-child(3n + 3){
 <input type="checkbox" id="scan" name="scan" value="true">
 <label for="scan" style="color: #a9a9a948;">disable scanlines</label><br>
 </div>
+<div style="position: absolute; top: 25px;">
+<input type="checkbox" id="rain" name="rain" value="true">
+<label for="scan" style="color: #a9a9a948;">disable stars</label><br>
+</div>
 
 <div class="sl scanlines"></div>  
 
@@ -141,8 +152,8 @@ i:nth-child(3n + 3){
   <div style="text-align: center;">
 
     <div class="header">
-      <div style="padding-top: 15px;">
-      <img src="images/mars.gif"  style="height: 50px; vertical-align:sub;" class="mars"><h1 style="display: inline;"> - septic - </h1><img src="images/mars.gif"  style="height: 50px; vertical-align:sub;" class="mars"></div>
+      <div style="padding-top: 40px; width: 360px;">
+      <h1 style="display: inline;">septic.lol</h1></div>
     </div>
     </div>
   
@@ -206,13 +217,13 @@ $("#scan").change(function () {
 });
 
 function rain() {
-  let amount = 100;
+  let amount = 4;
   let body = document.querySelector('body');
   let i = 0;
   while (i < amount) {
     let drop = document.createElement('i');
     let size = Math.random() * 3;
-    let posX = Math.floor(Math.random() * window.innerWidth - 10);
+    let posX = Math.floor(Math.random() * window.innerWidth - 300);
     let delay = Math.random() * -20;
     let duration = Math.random() * 5;
 
@@ -225,7 +236,7 @@ function rain() {
     console.log("rain");
   }
 }
-
+rain()
 
 $('#rain').change(function () {
   if (this.checked) {
