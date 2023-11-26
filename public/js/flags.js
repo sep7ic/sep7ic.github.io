@@ -13,7 +13,7 @@ const auth = firebase.auth();
 
 chatRef.on("child_added", function(snapshot) {
   const message = snapshot.val();
-  displayMessage(message.senderName, message.text, message.date, message.time, message.sender, message.color);
+  displayMessage(message.senderName, message.text, message.date, message.time, message.sender, message.color, message.approved);
 });
 
 function handleKeyDown(event) {
@@ -57,6 +57,7 @@ function sendMessage() {
         time: time,
         color: color,
         timestamp: timestamp,
+        approved: false
       });
       document.getElementById("message").value = "";
     }
@@ -109,6 +110,7 @@ function updateColor(color) {
     });
   });
   document.getElementById("message").value = "";
+      location.reload();
 }
 
 function getUserColor(uid) {
@@ -130,7 +132,12 @@ function getUserColor(uid) {
 
 let verifiedusers = ["vHnehfBgx1UiBkJu40Qu2CBAxsP2", "cyaT5DGKLAa1UwVD3DEz37ddqgg2"];
 
-function displayMessage(senderName, text, date, time, senderUid, color) {
+function displayMessage(senderName, text, date, time, senderUid, color, approved) {
+
+  if (!approved) {
+    return;
+  }
+
   const chat = document.getElementById("chat");
   const messageElement = document.createElement("div");
 
