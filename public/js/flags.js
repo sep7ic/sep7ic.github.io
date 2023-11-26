@@ -116,7 +116,7 @@ function updateColor(color) {
 }
 
 function getUserColor(uid) {
-  const defaultColor = "black"; 
+  const defaultColor = "white"; 
   const messagesRef = firebase.database().ref("chat");
   let userColor = defaultColor;
 
