@@ -1,0 +1,8 @@
+      <div class="content">
+        <section id="status"><span>offline</span></section>
+        <section id="activity"></section>
+        <hr>
+        <script src="/code/clock.js"></script>
+        <a href="code/widgets.html#clock" target="Display" style="float: right; text-decoration: none; color: white;">ⓘ</a>
+        <p class="clock" timezone="+13" style="margin: 0; display: inline;"></p> in <span>NZ</span>
+      </div>
