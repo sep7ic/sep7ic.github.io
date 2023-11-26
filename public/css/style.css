@@ -91,7 +91,7 @@ marquee {
   background: #a31d1d; 
 }
 
-.content {background-color: black;}
+.content, .contentleft, .contentright {background-color: black;}
 
 ul { list-style-type: "✧ ";}
 summary { list-style-type: "✦ ";}
@@ -117,5 +117,29 @@ summary{
 }
 .content:has(.bar) {
   padding-top: 0;
+  margin-bottom: 10px;
+}
+.contentleft:has(.bar) {
+  padding-top: 0;
+  margin-bottom: 10px;
+}
+.contentright:has(.bar) {
+  padding-top: 0;
+  margin-bottom: 10px;
+}
+.contentleft {
+  border-radius: 2px;
+  outline: 1px solid grey;
+  padding: 10px;
+  width: 49%;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.contentright {
+  border-radius: 2px;
+  outline: 1px solid grey;
+  padding: 10px;
+  width: 49%;
+  float: right;
   margin-bottom: 10px;
 }

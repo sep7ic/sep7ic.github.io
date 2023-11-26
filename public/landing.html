@@ -109,39 +109,33 @@
         <img src="images/buttons/noweb3.gif" alt="">
     </marquee>
     
-    <div class="content">
+    <div class="contentleft" style="height: 311px; position: relative">
         <div class="bar">about.txt</div>
         <h1>über mich</h1>
-        <span>information about me!</span><img src="https://web.archive.org/web/20091026153953im_/http://geocities.com/pndtpa/halloween/pump2-21.gif" style="float: right;">
+        <span>information about me!</span>
         
             <p>i come from new zealand! currently living there right now. i am a massive classics and linguistics enjoyer!! the roman republic has a special place in my heart.<span style="background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></span> my favourite colour is <span>red</span> (is it evident?), and i speak german, english, & am learning latin and hebrew.</p>
             <p>i love <span style="color: pink;">kirby</span> and kirby games.</p>
+            <img src="/images/kirbywalkright.gif" style="position:absolute; bottom:9;">
+            <img src="/images/rock_kirby.gif" style="position:absolute; bottom:3; left: 30px;">
+            <img src="/images/kirbypunch.gif" style="position:absolute; bottom:3; left: 80px;">
+            <img src="/images/kirby_kiss.gif" style="position:absolute; bottom:10; left: 120px;">
+            <img src="/images/kirby_sneeze.gif" style="position:absolute; bottom:3; left: 160px;">
+            <img src="/images/kirby_cancel_right.gif" style="position:absolute; bottom:3; left: 200px;">
     </div>
-    <marquee direction="left" behavior="alternate"><a href="https://www.last.fm/music/IFA+Wartburg/_/FDJ+(Freie+Deutsche+Jugend)" style="color: white; text-decoration: none;">Warum wollen denn die Jugend anderen Ländern Ihre <span>Tugend</span> nicht verändern?
-        Nur ein <i>Streber</i> geht vorüber
-        Andern aber wir sind alle Freie Deutsche <span><i>Jugend!</i></span></a></marquee>
-    
-    <div class="content" style="position:relative;">
-        <style>
-            .red-sender{
-  color: brown;}
-.grey-sender {
-    color: grey;
-}
-
-        </style>
+    <div class="contentright" style="position:relative; height: 311px;">
+        <div class="bar">chat.js</div>
         <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
         
-        <h1>comments</h1>
+        <h1>chatbox</h1>
         <span>type "/auth" to chat and "/nick [NAME HERE]" to change your nickname!!</span>
-        <h1 style="position: absolute; top: 10px; right: 10px; color: grey; font-size: 10px;" id="sayhi">say hi!</h1>
+        <h1 style="position: absolute; top: 30px; right: 10px; color: grey; font-size: 10px;" id="sayhi">say hi!</h1>
         <br><br>
-        <input type="text" id="message" autocomplete="off" onkeydown="handleKeyDown(event)" placeholder="chat message here" style="width: 92%; color: grey; background-color: black; border: 1px grey solid; outline: none;">
-        <button onclick="sendMessage()" style="color: grey; background-color: black; border: 1px grey solid; outline: none; margin-left: -4px;">Send</button>
+        <input type="text" id="message" autocomplete="off" onkeydown="handleKeyDown(event)" placeholder="chat message here" style="width: 100%; color: grey; background-color: black; border: 1px grey solid; outline: none;">
         <br><br>
-        <div id="chat" style="max-height: 150px; overflow-y: auto;"></div>
+        <div id="chat" style="height: 150px; overflow-y: auto; word-wrap: break-word"></div>
         <span>use "/colour [COLOUR HERE]" to change your name colour.</span>
     </div>
 

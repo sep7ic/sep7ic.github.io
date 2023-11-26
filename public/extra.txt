@@ -6,3 +6,5 @@
         <a href="code/widgets.html#clock" target="Display" style="float: right; text-decoration: none; color: white;">ⓘ</a>
         <p class="clock" timezone="+13" style="margin: 0; display: inline;"></p> in <span>NZ</span>
       </div>
+
+      <button onclick="sendMessage()" style="color: grey; background-color: black; border: 1px grey solid; outline: none; margin-left: -4px;">Send</button>

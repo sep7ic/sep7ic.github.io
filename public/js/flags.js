@@ -38,11 +38,17 @@ function sendMessage() {
         .then(() => {
           console.log("User signed in anonymously");
           document.getElementById("message").value = "";
+          location.reload();
         })
         .catch((error) => {
           console.log(error.message);
         });
     } else {
+      if (!auth.currentUser){
+  const authinit = document.createElement("span");
+  authinit.innerHTML = '<span style="color: DimGrey;">you must first run /auth</span><br>';
+  chat.insertBefore(authinit, chat.firstChild);
+}
       const name = auth.currentUser.displayName || "Anonymous";
       const now = new Date();
       const date = now.toLocaleDateString("en-NZ", { timeZone: "Pacific/Auckland" });
