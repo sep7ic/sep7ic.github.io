@@ -169,7 +169,51 @@ i:nth-child(3n + 3){
       font-size: 16px;
       z-index: -100000;
     }
-</style>
+    
+
+@keyframes neonpulsate {
+  100% {
+    opacity: 1;
+  }
+ 77% {
+    opacity: 0.95;
+  }
+  76% {
+    opacity: 1;
+  }
+  
+  12% {
+    opacity: 0.92;
+  }
+  11% {
+    opacity: 1;
+  }
+}
+
+.blink{
+    animation:blinkingText 1.0s infinite;
+}
+
+.neon {
+  animation: neonpulsate 0.35s ease-in-out infinite alternate;
+  z-index:5;
+  text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #FDBEDD,
+      0 0 40px #FDBEDD,
+      0 0 80px #FDBEDD,
+      0 0 90px #FDBEDD,
+      0 0 100px #FDBEDD,
+      0 0 150px #FDBEDD;
+}
+
+@media screen and (prefers-reduced-motion) { 
+  .neon {
+    animation: none;
+  }
+}
+    </style>
 <body> 
 <div style="position: absolute;">
 <input type="checkbox" id="scan" name="scan" value="true">
