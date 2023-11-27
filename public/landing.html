@@ -222,25 +222,40 @@ function initializeEmoticons() {
         ":weary:": "/images/emoticons/weary.png",
     };
     const chatElement = document.getElementById("chat");
-            const chatDivs = chatElement.querySelectorAll("div");
+    const chatDivs = chatElement.querySelectorAll("div");
 
-            chatDivs.forEach((messageDiv) => {
-                Object.entries(replacementMap).forEach(([text, imageUrl]) => {
-                    const imageElement = document.createElement("img");
-                    imageElement.src = imageUrl;
-                    imageElement.alt = text;
+    chatDivs.forEach((messageDiv) => {
+        Object.entries(replacementMap).forEach(([text, imageUrl]) => {
+            const imageElement = document.createElement("img");
+            imageElement.src = imageUrl;
+            imageElement.alt = text;
 
-                    messageDiv.innerHTML = messageDiv.innerHTML.replace(
-                        new RegExp(escapeRegExp(text), "g"),
-                        imageElement.outerHTML
-                    );
+            const regex = new RegExp(escapeRegExp(text), "g");
+            replaceTextWithImage(messageDiv, regex, imageElement);
+        });
+    });
+
+    function replaceTextWithImage(container, regex, imageElement) {
+        container.childNodes.forEach((node) => {
+            if (node.nodeType === 3) {
+                const fragment = document.createDocumentFragment();
+                node.nodeValue.split(regex).forEach((text, i, arr) => {
+                    fragment.appendChild(document.createTextNode(text));
+                    if (i < arr.length - 1) {
+                        fragment.appendChild(imageElement.cloneNode(true));
+                    }
                 });
-            });
-
-            function escapeRegExp(string) {
-                return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+                node.replaceWith(fragment);
+            } else if (node.nodeType === 1) {
+                replaceTextWithImage(node, regex, imageElement);
             }
-        }
+        });
+    }
+
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }
+}
 
 </script>
 </html>
