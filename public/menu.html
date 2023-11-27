@@ -24,6 +24,24 @@ summary{
 li marquee {
   margin: 0;
 }
+ul > h1 {
+  margin-left: -20px;
+  margin-top: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a31d1d; 
+}
     </style>
     <body>
       <div class="content">
@@ -31,7 +49,7 @@ li marquee {
         <ul>
           <li><a href="/landing.html" target="Display">home</a></li>
           <li><a href="/pages/zines.html" target="Display">art</a></li>
-          <li><a href="/pages/history.html" target="Display">site history</a></li>
+          <li><a href="/pages/pixelclubs.html" target="Display">pixelclubs</a></li>
           <li><a href="/pages/blog.html" target="Display">blog</a></li>
           <li><a href="/pages/scrobble.html" target="Display">songs</a></li>
 
@@ -44,6 +62,8 @@ li marquee {
           </details>
 
           <li><a href="/code/widgets.html" target="Display">widgets</a></li>
+          <li><a href="/pages/history.html" target="Display">site history</a></li>
+          <li><a href="/pages/map.html" target="Display">site map</a></li>
 
 
         </ul> 
@@ -56,9 +76,10 @@ li marquee {
   <a href="https://neorings.org/webring/1/">Neorings</a>
   <a href="https://neorings.org/api/webring/1/next?via=https%3A%2F%2Fsep7ic.github.io">>></a>
   </div>
-  
-  
       </div>
+    
+      <img src="/images/futurama/botsandthebees.jpg" style="width: 100%; margin-bottom: 10px;">
+
       <div class="content">
         <div class="bar">status.js</div>
         <div id="statuscafe">
@@ -69,12 +90,6 @@ li marquee {
 
         <a href="https://www.imood.com/users/septic"><img src="https://moods.imood.com/display/uname-septic/fg-A52A2A/bg-000/imood.gif" style="margin-top: 5px;" alt="The current mood of septic at www.imood.com" border="0"></a>
       </div>
-
-      <div class="content">
-        <span>friends!!</span>
-        <hr>
-        <a href="https://wiichicken.neocities.org/"><img src="https://wiichicken.neocities.org/button.gif" style="image-rendering: pixelated;" alt="Visit wiichicken's website"></a>
-      </div>
       
       <div class="content">
         <div class="bar">lastfm.mp3</div>
@@ -84,7 +99,11 @@ li marquee {
         <marquee id="track" direction="left" style="color: white; margin-bottom: 0;"></marquee></a>
         
       </div>
-    
+      <div class="content">
+        <span>friends!!</span>
+        <hr>
+        <a href="https://wiichicken.neocities.org/"><img src="https://wiichicken.neocities.org/button.gif" style="image-rendering: pixelated;" alt="Visit wiichicken's website"></a>
+      </div>
 
 <div class="content">
   <div class="bar">to-do.txt</div>
@@ -105,6 +124,7 @@ most recent <span>earthquake</span> in NZ
         <abbr class="timeago" id="time" title="">time</abbr>
       </div>
 
+      <img src="images/suicidebooth.gif" style="width: 100%;">
     </body>
         <script>
       $(document).ready(function() {
