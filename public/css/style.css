@@ -7,6 +7,10 @@
   font-family: pxl;
   src: url(/fonts/pixelTF.woff);
 }
+@font-face {
+  font-family: fatboy;
+  src: url(/fonts/2Credits.ttf);
+}
 
 * {
   box-sizing: border-box;
@@ -36,11 +40,11 @@ td, th  {
   }
   h1 {
     color: #a31d1d;
-    font-size: 20px;
+    font-size: 25px;
     margin: 0;
-    font-family: 'Press Start 2P', cursive;
+    font-family: fatboy;
     text-transform: uppercase;
-    margin-top: 4px;
+    line-height: 18px;
 }
 a {
   color: brown;
@@ -72,7 +76,7 @@ a:not(:has(img)):hover::after {
 }
 
 span {
-  color: #a31d1d;
+  color: brown;
 }
 marquee {
   margin-bottom: 10px;
