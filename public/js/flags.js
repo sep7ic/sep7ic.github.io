@@ -30,10 +30,10 @@ function sendMessage() {
     if (message.startsWith("/nick ")) {
       const displayName = message.substr(6).trim();
       updateDisplayName(displayName);
-    } else if (message.startsWith("/colour ")) {
-      const color = message.substr(8).trim();
+    } else if (message.startsWith("/colour ") || message.startsWith("/color ")) {
+      const color = message.substr(message.indexOf(" ") + 1).trim();
       updateColor(color);
-    }  else if (message.startsWith("/auth")) {
+    } else if (message.startsWith("/auth")) {
       auth.signInAnonymously()
         .then(() => {
           console.log("User signed in anonymously");
