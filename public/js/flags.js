@@ -164,4 +164,6 @@ function displayMessage(senderName, text, date, time, senderUid, color, approved
   messageElement.appendChild(document.createTextNode(text));
 
   chat.insertBefore(messageElement, chat.firstChild);
+  initializeEmoticons();
+
 }

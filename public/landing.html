@@ -199,4 +199,48 @@ document.getElementById("useragent").innerHTML = userAgent
 </script>
 <script src="/js/flags.js"></script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    initializeEmoticons();
+});
+
+function initializeEmoticons() {
+    const replacementMap = {
+        ":bored:": "/images/emoticons/bored.png",
+        ":excited:": "/images/emoticons/excited.png",
+        ":exclamation:": "/images/emoticons/exclamation.png",
+        ":happy:": "/images/emoticons/happy.png",
+        ":kirby:": "/images/emoticons/kirby.png",
+        ":kiwi:": "/images/emoticons/kiwi.png",
+        ":pout:": "/images/emoticons/pout.png",
+        ":question:": "/images/emoticons/question.png",
+        ":rain:": "/images/emoticons/rain.png",
+        ":barf:": "/images/emoticons/sick.png",
+        ":sick:": "/images/emoticons/sick2.png",
+        ":surprised:": "/images/emoticons/suprise.png",
+        ":US:": "/images/emoticons/US.png",
+        ":weary:": "/images/emoticons/weary.png",
+    };
+    const chatElement = document.getElementById("chat");
+            const chatDivs = chatElement.querySelectorAll("div");
+
+            chatDivs.forEach((messageDiv) => {
+                Object.entries(replacementMap).forEach(([text, imageUrl]) => {
+                    const imageElement = document.createElement("img");
+                    imageElement.src = imageUrl;
+                    imageElement.alt = text;
+
+                    messageDiv.innerHTML = messageDiv.innerHTML.replace(
+                        new RegExp(escapeRegExp(text), "g"),
+                        imageElement.outerHTML
+                    );
+                });
+            });
+
+            function escapeRegExp(string) {
+                return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+            }
+        }
+
+</script>
 </html>
