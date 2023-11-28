@@ -140,12 +140,17 @@ i:nth-child(3n + 3){
 
 .header{
   border-radius: 2px 200px 2px 2px;
-    outline: 1px solid brown;
+    outline: 1px solid grey;
     margin: 8px;
     height: 100px;
     background-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%), url(/images/mars.jpg);
     background-position: 48% 10%;
     background-size: auto, cover;
+    transition: outline 0.3s ease, box-shadow 0.3s ease;
+}
+.header:hover{
+  outline: 1px solid brown;
+  box-shadow: 0px 0px 20px brown;
 }
 .mars {
   box-shadow: 0px 0px 30px #dd3434;
