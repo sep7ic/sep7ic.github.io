@@ -214,6 +214,30 @@ i:nth-child(3n + 3){
     animation: none;
   }
 }
+
+.marquee {
+  position: relative;
+  width: 100vw;
+  height: 15px;
+  font-family: MS Gothic, pxl;
+  font-size: smaller;
+  max-width: 100%;
+  color: white;
+  overflow-x: hidden;
+}
+
+.track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
     </style>
 <body> 
 <div style="position: absolute;">
@@ -239,6 +263,11 @@ i:nth-child(3n + 3){
       <h1 style="display: inline-block; text-align: left;">SEPTIC.lol</h1>
         </div>
     </div>
+    </div>
+    <div class="marquee">
+      <div class="track">
+        <div>&nbsp;<span style="color: brown;">septic</span> | /ˈsɛptɪk/ | adjective | infected with microorganisms, especially harmful bacteria | "his feet had gone septic" | noun | denoting a drainage system incorporating a septic tank. | <span style="color: brown;">septic</span> | /ˈsɛptɪk/ | adjective | infected with microorganisms, especially harmful bacteria | "his feet had gone septic" | noun | denoting a drainage system incorporating a septic tank. |</div>
+      </div>
     </div>
   
       
