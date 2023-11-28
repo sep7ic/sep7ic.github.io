@@ -1,6 +1,6 @@
 var mainFrame;
 var firstLoad = true;
-var updateTitle = true;
+var updateTitle = false;
 var pageParam = "z";
 var titlePrefix = "";
 var hitCounterFunction = undefined;
