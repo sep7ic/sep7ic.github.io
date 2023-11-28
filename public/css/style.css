@@ -147,3 +147,41 @@ summary{
   float: right;
   margin-bottom: 10px;
 }
+
+
+.tooltip {
+  position: relative;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  color: inherit;
+}
+
+.tooltip-info {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.tooltip::before {
+  content: attr(tooltip);
+  position: absolute;
+  top: 1.5em;
+  border-radius: 2px;
+    outline: 1px solid grey;
+    box-shadow: 0px 0px 10px #888888;
+  padding: 5px;
+  display: none;
+  color: white;
+  background: rgba(0, 0, 0, 0.95);
+  border-radius: 4px;
+  transition: opacity 0.1s ease-out;
+  z-index: 99;
+  text-align: left;
+}
+
+.tooltip:hover::before {
+  display: inline-block;
+}
+.tooltip:hover {
+  cursor: help;
+}
