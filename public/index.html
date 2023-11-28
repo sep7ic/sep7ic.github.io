@@ -121,18 +121,19 @@ i:nth-child(3n + 3){
 }
 @keyframes animate{
     0%{
-        transform: translateY(-960px);
+      top: -100vh;
+      transform: translateX(0);
         opacity: 0;
     }
     5% {
       opacity: 100;
     }
-    90% {
+    60% {
       opacity: 100;
     }
     100%{
-        transform: translateY(calc(200vh + 200px));
-        transform: translateX(-70px);
+      top: -30vh;
+      transform: translateY(calc(200vh + 200px));
         opacity: 0; 
     }
 }
@@ -302,15 +303,15 @@ $("#scan").change(function () {
 });
 
 function rain() {
-  let amount = 4;
+  let amount = 7;
   let body = document.querySelector('body');
   let i = 0;
   while (i < amount) {
     let drop = document.createElement('i');
     let size = Math.random() * 3;
-    let posX = Math.floor(Math.random() * window.innerWidth - 300);
+    let posX = Math.floor(Math.random() * window.innerWidth + 350);
     let delay = Math.random() * -20;
-    let duration = Math.random() * 5;
+    let duration = Math.random() * 30;
 
     drop.style.width = 0.2 + size + 'px';
     drop.style.left = posX + 'px';
