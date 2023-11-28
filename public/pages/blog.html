@@ -107,10 +107,9 @@
                         content.classList.remove('active');
                 });
                 var bfrhagh = window.location.href.split('#')[0];
-console.log(bfrhagh)
-history.pushState(null, null, bfrhagh + "#" + targetId);
-document.getElementById(targetId).classList.add('active');
-
+                console.log(bfrhagh)
+                //window.location = bfrhagh + "%23" + targetId;
+                document.getElementById(targetId).classList.add('active');
             });
         });
     
