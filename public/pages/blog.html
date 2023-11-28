@@ -56,12 +56,12 @@
         </div>
     </div>
 
-    <div class="content" id="wordlorecaesar">
+    <div class="content" id="wordlorecaesar"><div class="bar">wordlorecaesar.html</div><h2 class="backbtn">back</h2>
         <h1>wordlore - the title caesar</h1>
         <span>a breif history of the title caesar</span>
         <p>The title “Caesar” originally began as a cognomen (a cognomen was the third name that a roman citizen was generally given, and was apart of the tria nomina, a three-part naming system. The tria nomina consisted of the praenomen (personal name), nomen (family name), and cognomen.)) The Cognomen Caesar is believed to have came from Sextus Julius Caesar, who was praised for killing an elephant (called "caesai" in the Moorish language) during a battle. As a result, he was granted the cognomen "Caesar," which means "elephant" or "thick head of hair" in Latin. Cognomina (the plural of cognomen) could be inherited within a family, which would pass down through generations. Julius Caesar's family belonged to the prestigious Julian clan, which claimed descent from Trojan prince and war hero Aeneas, and the goddess Venus (Aeneas was the son of the goddess, venus, and a prince of troy. Aeneas sailed to sicily, where his father, anchises, then died. Then he travlleded to latium, located in central italy, where he met latinus. Aeneas’ then had a child with Lavinia, whom was married to Aeneas by Latinus in a marriage alliance. Their baby boy was named Ascanius, and he would go on to found Alba Longa, which would eventually lead to Romulus and Remus an dyeah). The Julian clan was one of the oldest and most influential patrician families in Rome. The cognomen "Caesar" was not initially associated with his family but was later adopted as a hereditary name by his successors. “Caesar” may not have started out as a cognomen at all, as historians and linguists have argued that the suffix “ar” is extremely uncommon and unusual for latin, but it was common in the Sabine Oscan language, an Indo-European Italic language from southern italy. Caesars adoptive son, Augustus, who was originally named Gaius Octavius, subsequently took the name Gaius Julius Caesar Octavianus. After the establishment of the Roman Empire, he became known as Augustus Caesar. Tiberius, who succeeded Augustus as emperor, was born as Tiberius Claudius Nero and was later adopted by Augustus. He took the name Tiberius Julius Caesar, and the regnal name Tiberius Caesar Augustus. Caligula, whose birth name was Gaius Julius Caesar Germanicus, later took the name Gaius Caesar Augustus Germanicus. He was the son of Germanicus, who was a nephew of Tiberius. Claudius, born as Tiberius Claudius Drusus, was the fourth emperor of Rome. He became known as Tiberius Claudius Caesar Augustus Germanicus after ascending to the throne, however, did not gain the name through inheritance like the past 3 emperors but rather through the fact that he was apart of the Julio-Claudian dynasty (he was the great-nephew of Augustus). Nero, originally named Lucius Domitius Ahenobarbus, became the last Roman emperor of the Julio-Claudian dynasty. He was adopted by his great-uncle Claudius and became known as Nero Claudius Caesar Augustus Germanicus. Galba became the first emperor not not directly related to the Julii or the Julio-Claudian dynasty to assume the name “Caesar”, and passed it on to his son, which lead to it being used as a synonym for “emperor” Kaiser (the german word for emperor) is related to the title “Caesar”, and came from the althochdeutsch word “Keisar” which is directly borrowed from the latin “Caesar”. In slavic and cyrillic languages, Tzar also comes from the old slavic word “tsesari” which came from the latin “Caesar”. “Caesar” made its way into english as “Czar” (borrowed from russina) and essentially means an autocratic leader or someone in charge. (eg Drug Czar, someone emplyed by the gobernment to stop the illegal trade of drugs). Julius Caesar was such a cool dude that his cognomen eventually became synonymous with the word “Emperor” thousands of years later. </p>
     </div>
-    <div class="content" id="battleofgranicus">
+    <div class="content" id="battleofgranicus"><div class="bar">battleofgranicus.html</div><h2 class="backbtn">back</h2>
         <h1>battle of the granicus</h1>
         <p>In 334 bce, Alexander the Great embarked on a campaign to conquer the Persian Empire, claiming he was seeking revenge for Darius I’s invasion of his homeland during the persian wars. Alexander also claimed that he hoped to liberate the greek cities in the persian empire, however, upon arriving to Lampsacus, a major greek persian city, alexander and his army discovered that the civilians were quite content with being apart of the persian empire and and favoured the Persians. In response, Alexander threatened to kill the people, prompting them to request Anaximenes of Lampsacus to mediate on their behalf. Alexander knew of this, and swore on the Gods to do the opposite of whatever Anaximenes said. Anaximenes asked Alexander to enslave the woman and children, and to burn the temples to the ground. Bound by his oath, Alexander furiously ordered his men to retreat while they formulated their next plan. Along the way, many smaller regions surrendered to him, however, they were no use as the Macedonians direly needed to conquer a bigger city for both resources, time and ultimately a victory against the persians.
             In the midst of this, a council meeting was held at Zeleia by the Persians where they would  deliberate how to handle the Macedonian invasion.
@@ -84,8 +84,19 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        if(window.location.hash) {
+                var hash = window.location.hash.substring(1);
+                console.log(hash)
+                var contents = document.querySelectorAll('.content');
+                contents.forEach(function (content) {
+                        content.classList.remove('active');
+                });
+                document.getElementById(hash).classList.add('active');
+            }
+
         var posts = document.querySelectorAll('.blogpost');
         var contents = document.querySelectorAll('.content');
+        var backbtns = document.querySelectorAll('.backbtn');
 
         posts.forEach(function (post) {
             post.addEventListener('click', function () {
@@ -93,13 +104,24 @@
                 console.log(targetId)
 
                 contents.forEach(function (content) {
-                    if (content.id !== 'main') {
                         content.classList.remove('active');
-                    }
                 });
-                document.getElementById(targetId).classList.add('active');
+                var bfrhagh = window.location.href.split('#')[0];
+console.log(bfrhagh)
+history.pushState(null, null, bfrhagh + "#" + targetId);
+document.getElementById(targetId).classList.add('active');
+
             });
         });
+    
+        backbtns.forEach(function (backbtn) {
+    backbtn.addEventListener('click', function () {
+        contents.forEach(function (content) {
+            content.classList.remove('active');
+            document.getElementById('main').classList.add('active');
+        });
+    });
+});
     });
 </script>
 </html>
