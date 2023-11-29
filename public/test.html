@@ -3,56 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Replace Text with Images</title>
+    <title>Weather Widget</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #weather-widget {
+            display: inline-block;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
-<style>
-    body {
-        background-color: black;
-        color: white;
-    }
-
-</style>
 <body>
-
-    <div id="welcomeText">welcome! :happy: :excited: :barf: :sick: :kirby:</div>
-    <div><span class="grey-sender"><span style="color: DimGrey; font-size: smaller;"></span><span style="color:red;">sep: </span></span>hah i added some emotes!! :happy:</div>
+    <div id="weather-widget">
+        <h2>Weather where webmaster is:</h2>
+        <p id="temperature"></p>
+        <p id="humidity"></p>
+        <p id="apparent-temperature"></p>
+        <p id="rain"></p>
+        <p id="wind-speed"></p>
+        <p id="sunrise"></p>
+        <p id="sunset"></p>
+    </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const replacementMap = {
-                ":bored:": "/images/emoticons/bored.png",
-                ":excited:": "/images/emoticons/excited.png",
-                ":exclamation:": "/images/emoticons/exclamation.png",
-                ":happy:": "/images/emoticons/happy.png",
-                ":kirby:": "/images/emoticons/kirby.png",
-                ":kiwi:": "/images/emoticons/kiwi.png",
-                ":pout:": "/images/emoticons/pout.png",
-                ":question:": "/images/emoticons/question.png",
-                ":rain:": "/images/emoticons/rain.png",
-                ":barf:": "/images/emoticons/sick.png",
-                ":sick:": "/images/emoticons/sick2.png",
-                ":surprised:": "/images/emoticons/suprise.png",
-                ":US:": "/images/emoticons/US.png",
-                ":weary:": "/images/emoticons/weary.png",
-            };
-            const welcomeTextElement = document.getElementById("welcomeText");
+        const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=-39.0667&longitude=174.0833&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,rain,wind_speed_10m&daily=sunrise,sunset&timezone=Pacific%2FAuckland&forecast_days=1';
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const current = data.current;
+                const daily = data.daily;
 
-            Object.entries(replacementMap).forEach(([text, imageUrl]) => {
-                const imageElement = document.createElement("img");
-                imageElement.src = imageUrl;
-                imageElement.alt = text;
-
-                welcomeTextElement.innerHTML = welcomeTextElement.innerHTML.replace(
-                    new RegExp(escapeRegExp(text), "g"),
-                    imageElement.outerHTML
-                );
-            });
-
-            function escapeRegExp(string) {
-                return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-            }
-        });
+                document.getElementById('temperature').innerText = `Temperature: ${current.temperature_2m}°C`;
+                document.getElementById('humidity').innerText = `Humidity: ${current.relative_humidity_2m}%`;
+                document.getElementById('apparent-temperature').innerText = `Feels Like: ${current.apparent_temperature}°C`;
+                document.getElementById('rain').innerText = `Rain: ${current.rain}mm`;
+                document.getElementById('wind-speed').innerText = `Wind Speed: ${current.wind_speed_10m}km/h`;
+                document.getElementById('sunrise').innerText = `Sunrise: ${daily.sunrise[0]}`;
+                document.getElementById('sunset').innerText = `Sunset: ${daily.sunset[0]}`;
+            })
+            .catch(error => console.error('Error fetching data:', error));
     </script>
-
 </body>
 </html>
