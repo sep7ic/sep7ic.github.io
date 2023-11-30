@@ -20,7 +20,10 @@
         width: 130px;
         height: 130px;
         object-fit: cover;  
+        opacity: 0.5;
     }
+    .half {height: 70px; position: relative;} .half>img{height: 45px; object-fit: cover;}
+    .stacked {position: absolute; width: 150px; height: 150px; display: inline-block; margin-left: 7px;}
     .postbox > h2 {
         position: absolute;
         bottom: 1px;
@@ -54,7 +57,10 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Spithridates_attacking_Alexander_from_behind_at_the_Battle_of_Granicus.jpg/220px-Spithridates_attacking_Alexander_from_behind_at_the_Battle_of_Granicus.jpg" style="opacity: 0.5;">
             <h2>battle of the granicus</h2>
         </div>
-        <div data-target="microblog" class="blogpost"><h2>de microblog</h2></div>
+        <div class="stacked">
+        <div data-target="demicroblog" class="postbox half blogpost"><img src="https://www.thoughtco.com/thmb/aJkmajF05rj0ZTOZUmWk6YGXSEU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-595913035-58b5a1663df78cdcd87de8f1.jpg" alt=""><h2>de microblog</h2></div>
+        <div data-target="enmicroblog" class="postbox half blogpost"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/800px-Flag_of_New_Zealand.svg.png" alt=""><h2>en microblog</h2></div>
+    </div>
     </div>
 
     <div class="content" id="wordlorecaesar"><div class="bar">wordlorecaesar.html</div><h2 class="backbtn">back</h2>
@@ -82,10 +88,19 @@
             </p>
     </div>
 
-    <div class="content" id="microblog"><div class="bar">microblog.de</div><h2 class="backbtn">back</h2>
+    <div class="content" id="demicroblog"><div class="bar">microblog.de</div><h2 class="backbtn">back</h2>
     <hr>
-    <span>29.11.23 / 11:36</span>
+    <span>30.11.23 / 16:13</span>
+    <p>heute habe ich TDAS zu ende zugeschaut. il duncan!! das ist alles, ich bin sehrrr müde und gelangweilt. das bin ich raus.</p>
+    <img src="/images/duncan.jpg" style="width: 50%;">
+    <hr>
+    <span>29.11.23 / 23:36</span>
     <p> hallo, willkommen in meinem microblog. hier schreib ich über mein leben, allerdings auf deutsch. ich entschuldig mich für die grammatikfehler, meine deutschkenntnisse im schreiben sind schrecklich (meine deutschkenntnisse im lesen sind veillllll besser :D). ich möchte nur praktizieren. heute hab ich nichts gemacht, außer spiele zu spielen und an meiner webseite zuarbeiten. ich hab ein neues wetter widget hinzugefügt, das die temperatur anzeigt. jetzt melde ich mich ab!</p>
+    </div>
+    <div class="content" id="enmicroblog"><div class="bar">microblog.en</div><h2 class="backbtn">back</h2>
+    <hr>
+    <span>30.11.23 / 16:47</span>
+    <p>hey!! welcome to my english microblog!! i will try to update everyday, but no worries if i cant. </p>
     </div>
 
 </body>
