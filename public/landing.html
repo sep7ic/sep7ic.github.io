@@ -60,6 +60,28 @@
   transform: scale(1.3);
  }
 }
+.tint > a {
+  position: relative;
+  float: left;
+  cursor: pointer;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.tint > a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: brown;
+  mix-blend-mode: hue;
+}
+.tint >a:hover::before {
+    background: transparent;
+}
         </style>
     </head>
     <body>
@@ -99,25 +121,17 @@
 <img src="/images/kirby_cancel_right.gif" style="position:absolute; bottom:3; right: 200px;">
 
     </div>
-    <a href="https://web.archive.org/web/20090803155741/http://geocities.com/NapaValley/2950/halloween/halloween.htm"><img src="https://web.archive.org/web/20090803155741im_/http://geocities.com/NapaValley/2950/halloween/bdlineani.gif" style="width: 100%;"></a>
-    <marquee onmouseover="this.stop();" onmouseout="this.start();" direction="right" behavior="alternate">
-        <img src="images/sep.png" alt="">
-        <a href="https://starlocked.neocities.org" target="_blank"><img src="https://tinyurl.com/yxwzze34"></a>
-       <a href="http://keatongamer1248.neocities.org"><img src="http://keatongamer1248.neocities.org/img/keatonad.gif"></a>
-        <a href="https://snals.neocities.org"><img src="https://snals.neocities.org/snals/snals/buttons/buttonwip.png"></a>
-        <a href="https://ghostingpen.neocities.org/"><img src="/images/buttons/ghostingpen.gif"></a>
-        <a title="sou's house" href='https://soouaho.neocities.org' target="_blank"><img src='https://soouaho.neocities.org/stampy.gif' width=81px></a>
-        <a href="https://parkaction.neocities.org/"><img src="https://parkaction.neocities.org/button.gif"></a>
-        <a href='https://blinkies.cafe' target='_blank'><img src='https://blinkies.cafe/b/display/blinkiesCafe-badge.gif' alt='blinkies.cafe | make your own blinkies!'></a>
-        <a href="https://moodlemcdoodle.neocities.org/"><img src="images/buttons/moodlebutton1.gif" alt=""></a>
-        <a href="https://honeybread.neocities.org/links"><img src="/images/buttons/breadsfirstbutton.gif" alt=""></a>
-        <a href="https://olliveen.neocities.org/" target="_blank"><img src="https://olliveen.neocities.org/img/button.gif"></a>
-        <a href="https://cidoku.net/"><img src="images/buttons/cidokunet.gif" alt=""></a>
-        <a href="https://bensect.neocities.org/coolsites"><img src="/images/buttons/bensect.png" alt=""></a>
-        <a href="https://sanguinariacanadensis.neocities.org/"><img src="/images/buttons/sanguinaria.png" alt=""></a>
-        <img src="images/buttons/wooper.gif" alt="">
-    </marquee>
     
+    <div style="margin-bottom: 51px;">
+        <div class="tint">
+            <a href="http://www.futurama-area.de/"><img src="/images/buddie_88_31_05.gif" alt=""></a>
+            <a href="https://nohomers.net/"><img src="/images/b_nohomers.gif" alt=""></a>
+            <a href="https://www.gotfuturama.com/"><img src="/images/b_cgef.gif" alt=""></a>
+            <a href="https://web.archive.org/web/20150929203510/http://www.futurama-il.tk/"><img src="/images/b_futurama-il.gif" alt=""></a>
+            <a href="http://www.futurama-area.de/content/supportus.php"><img src="/images/banner_409_59_02.png" style="height: 31;"></a>
+        </div>
+    </div>
+
     <div class="contentleft" style="height: 311px; position: relative">
         <div class="bar">about.txt</div>
         <a href="/pages/about.html" target="Display"><h1>ÜBER MICH</h1></a><br>
@@ -135,6 +149,7 @@
             
 <img src="images/born2die.png" style="margin-top: -8px;">
     </div>
+
     <div class="contentright" style="position:relative; height: 311px;">
         <div class="bar">chat.js</div>
         <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
@@ -150,6 +165,24 @@
         <div id="chat" style="height: 150px; overflow-y: auto; word-wrap: break-word"></div>
         <span>use "/colour [COLOUR HERE]" to change your name colour.</span>
     </div>
+
+    <marquee onmouseover="this.stop();" onmouseout="this.start();" direction="right" behavior="alternate" class="buttons">
+        <img src="images/sep.png" alt="">
+        <a href="https://starlocked.neocities.org" target="_blank"><img src="https://tinyurl.com/yxwzze34"></a>
+       <a href="http://keatongamer1248.neocities.org"><img src="http://keatongamer1248.neocities.org/img/keatonad.gif"></a>
+        <a href="https://snals.neocities.org"><img src="https://snals.neocities.org/snals/snals/buttons/buttonwip.png"></a>
+        <a href="https://ghostingpen.neocities.org/"><img src="/images/buttons/ghostingpen.gif"></a>
+        <a title="sou's house" href='https://soouaho.neocities.org' target="_blank"><img src='https://soouaho.neocities.org/stampy.gif' width=81px></a>
+        <a href="https://parkaction.neocities.org/"><img src="https://parkaction.neocities.org/button.gif"></a>
+        <a href='https://blinkies.cafe' target='_blank'><img src='https://blinkies.cafe/b/display/blinkiesCafe-badge.gif' alt='blinkies.cafe | make your own blinkies!'></a>
+        <a href="https://moodlemcdoodle.neocities.org/"><img src="images/buttons/moodlebutton1.gif" alt=""></a>
+        <a href="https://honeybread.neocities.org/links"><img src="/images/buttons/breadsfirstbutton.gif" alt=""></a>
+        <a href="https://olliveen.neocities.org/" target="_blank"><img src="https://olliveen.neocities.org/img/button.gif"></a>
+        <a href="https://cidoku.net/"><img src="images/buttons/cidokunet.gif" alt=""></a>
+        <a href="https://bensect.neocities.org/coolsites"><img src="/images/buttons/bensect.png" alt=""></a>
+        <a href="https://sanguinariacanadensis.neocities.org/"><img src="/images/buttons/sanguinaria.png" alt=""></a>
+        <img src="images/buttons/wooper.gif" alt="">
+    </marquee>
 
     <div class="content"><div class="bar">kalender für oktober–dezember 2023</div>
         <style>
