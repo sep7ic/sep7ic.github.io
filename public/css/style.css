@@ -11,6 +11,12 @@
   font-family: fatboy;
   src: url(/fonts/2Credits.ttf);
 }
+:root {
+  --main: brown;
+  --span: brown;
+  --link: brown;
+  --reserved: #a31d1d;
+}
 * {
   box-sizing: border-box;
 }
@@ -46,7 +52,7 @@ td, th  {
       height: 1px;
   }
   h1 {
-    color: #a31d1d;
+    color: var(--main);
     font-size: 25px;
     margin: 0;
     font-family: fatboy;
@@ -54,10 +60,10 @@ td, th  {
     line-height: 18px;
 }
 a {
-  color: brown;
+  color: var(--link);
 }
 a:not(:has(img)) {
-  color: brown;
+  color: var(--link);
   text-decoration: none;
   display: inline-block;
   position: relative;
@@ -83,7 +89,7 @@ a:not(:has(img)):hover::after {
 }
 
 span {
-  color: brown;
+  color: var(--span);
 }
 marquee {
   margin-bottom: 10px;
@@ -99,7 +105,7 @@ marquee {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #a31d1d; 
+  background: var(--main); 
 }
 
 .content, .contentleft, .contentright {background-color: black;}
