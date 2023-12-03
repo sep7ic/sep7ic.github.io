@@ -1,0 +1,267 @@
+
+@font-face {
+  font-family: pixel;
+  src: url(/fonts/IsWasted.ttf);
+}
+@font-face {
+  font-family: pxl;
+  src: url(/fonts/pixelTF.woff);
+}
+@font-face {
+  font-family: jpn;
+  src: url(/fonts/Almost\ Japanese\ Comic.ttf);
+}
+:root {
+  --indexmain: brown;
+  --bg: black;
+}
+    body {
+        background-color: var(--bg);
+        background-image: url(/images/stars.gif);
+        font-family: pixel;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    h1 {
+        color: var(--indexmain);
+        font-size: 40px;
+        text-align: left;
+        margin: 0;
+  animation: anim 1s linear infinite alternate;
+    }
+    
+@keyframes anima {
+  from {text-shadow: 0px 0px 20px #dd3636;}
+  to {text-shadow: 0px 0px 35px #dd3636;}
+}
+    ::-webkit-scrollbar {
+  width: 1px;
+}
+::-webkit-scrollbar-track {
+  background: #000; 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--indexmain); 
+}
+    .container {
+  margin: 0 auto;
+  width: 800px;
+  position: relative;
+    }
+    .menu {
+        width: 20%;
+        height: 100%;
+    }
+    .main {
+        width: 80%;
+        float: right;
+    }
+    .cat:hover {
+  cursor: grab;
+}.cat:active {
+  cursor: grabbing;
+}
+.scanlines {
+  position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1000;
+    pointer-events: none;
+}
+h2 {
+  font-family: firearm;
+  color: var(--indexmain);
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 100px;
+}
+
+i{
+    position: absolute;
+    height: 100px;
+    background: linear-gradient(transparent, #fff);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    animation: animate 5s linear infinite;
+    z-index: -10000; 
+    rotate: 30deg;
+}
+i::after {
+    content: '\2605';
+    font-size: 15px;
+    color: var(--indexmain);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+i:nth-child(3n + 1){
+    background: linear-gradient(transparent, #ff000033);
+}
+i:nth-child(3n + 2){
+    background: linear-gradient(transparent, #ff000081);
+}
+i:nth-child(3n + 3){
+    background: linear-gradient(transparent, #ff0000da);
+}
+@keyframes animate{
+    0%{
+      top: -100vh;
+      transform: translateX(0);
+        opacity: 0;
+    }
+    5% {
+      opacity: 100;
+    }
+    60% {
+      opacity: 100;
+    }
+    100%{
+      top: -30vh;
+      transform: translateY(calc(200vh + 200px));
+        opacity: 0; 
+    }
+}
+
+.header{
+  border-radius: 2px 200px 2px 2px;
+    outline: 1px solid var(--indexmain);
+    margin: 8px;
+    height: 100px;
+    background-image: linear-gradient(0deg, #000000 0%, transparent 100%), linear-gradient(90deg, black 0%, transparent 50%), url(/images/fryburningthefuckoutofbendersshinymetalass.png);
+    background-position:  0 0 , 0 0, 50% 30%;
+    background-size: auto, auto, cover;
+    transition: outline 0.3s ease, box-shadow 0.3s ease;
+    pointer-events: auto;
+}
+.header:hover{
+  outline: 1px solid var(--indexmain);
+  box-shadow: 0px 0px 20px var(--indexmain);
+}
+
+.htint {
+  position: relative;
+  pointer-events: none;
+}
+
+.htint:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--indexmain);
+  mix-blend-mode: hue;
+}
+.mars {
+  box-shadow: 0px 0px 30px #dd3434;
+  border-radius: 50px;
+}
+.hiii {
+  font-family: MS Gothic, pxl;
+  font-size: 15px;
+  color: grey;
+  display: inline-block;
+  text-align: left;
+}
+
+#moon {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: transparent;
+      color: #000;
+      text-align: center;
+      line-height: 100px;
+      font-size: 16px;
+      z-index: -100000;
+    }
+
+.marquee {
+  position: relative;
+  width: 100vw;
+  height: 15px;
+  font-family: MS Gothic, pxl;
+  font-size: smaller;
+  max-width: 100%;
+  color: white;
+  overflow-x: hidden;
+}
+
+.track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes neonpulsate {
+  100% {
+    opacity: 1;
+  }
+ 77% {
+    opacity: 0.85;
+  }
+  76% {
+    opacity: 1;
+  }
+  
+  12% {
+    opacity: 0.82;
+  }
+  11% {
+    opacity: 1;
+  }
+}
+.blink{
+    animation:blinkingText 1.0s infinite;
+}
+.neon {
+  animation: neonpulsate 0.35s ease-in-out infinite alternate;
+  z-index:-1000;
+  text-shadow:
+      0 0 4px #fff,
+      0 0 11px brown,
+      0 0 10px #a52a2a7e,
+      0 0 15px #a52a2a7e,
+      0 0 20px #a52a2a7e,
+      0 0 30px #a52a2a7e,
+      0 0 35px #a52a2a7e,
+      0 0 40px #a52a2a7e;
+}
+
+@media screen and (prefers-reduced-motion) { 
+  .neon {
+    animation: none;
+  }
+}
+.bitemyass {
+  position: absolute;
+  left: -70px;
+}
+.bitemyass > h1 {
+  writing-mode: vertical-rl;
+  font-family: jpn;
+  letter-spacing: -10px;
+  font-size: 45px;
+  color: #ffb5b5;
+}
+.warning {
+  opacity: 0.6;
+}
+#hypnotoad:hover + .warning{
+  opacity: 1;
+}
+#hypnotoad:hover {
+  cursor: help;
+}
