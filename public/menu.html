@@ -62,6 +62,7 @@ ul > h1 {
   <ul>
     <li><a href="/landing.html" target="Display">home</a></li>
     <li><a href="/pages/about.html" target="Display">about</a></li>
+    <li><a href="/pages/quizzes.html" target="Display">quizzes</a></li>
     <li><a href="/pages/zines.html" target="Display">art</a></li>
     <li><a href="/pages/pixelclubs.html" target="Display">pixelclubs</a></li>
     <li><a href="/pages/blog.html" target="Display">blog</a></li>
@@ -108,8 +109,44 @@ ul > h1 {
   </div><script src="/js/status.js" defer></script>
 
   <a href="https://www.imood.com/users/septic"><img src="https://moods.imood.com/display/uname-septic/fg-A52A2A/bg-000/imood.gif" style="margin-top: 5px;" alt="The current mood of septic at www.imood.com" border="0"></a>
+<br><br>
+  <span style="color: white;">Watching:</span><br><br>
+  <span id="currentlyWatching" style="color: white;"></span>
+
+  <script>
+    function updateCurrentlyWatching() {
+        $.ajax({
+            url: 'https://heron-settled-absolutely.ngrok-free.app/getVlcStatus',
+            type: 'GET',
+            headers: {
+                "ngrok-skip-browser-warning":"any"
+            },
+            dataType: 'json',
+            success: function (data) {
+                if (
+                    data.information &&
+                    data.information.category &&
+                    data.information.category.meta
+                ) {
+                    var title = data.information.category.meta.title || 'Unknown Title';
+  
+                    $('#currentlyWatching').html(`${title}`);
+                } else {
+                    $('#currentlyWatching').text('Unknown Title');
+                }
+            },
+            error: function () {
+                $('#currentlyWatching').text('Nothing');
+            }
+        });
+    }
+  
+    setInterval(updateCurrentlyWatching, 10000);
+  
+    updateCurrentlyWatching();
+  </script>
 </div>
-      
+
 <!--LAST.FM-->
 <div class="content" style="position: relative;">
   <style>

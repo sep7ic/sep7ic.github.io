@@ -3,51 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Widget</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-
-        #weather-widget {
-            display: inline-block;
-            border: 1px solid #ccc;
-            padding: 15px;
-            border-radius: 10px;
-        }
-    </style>
+    <title>Currently Watching</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
 </head>
 <body>
-    <div id="weather-widget">
-        <h2>Weather where webmaster is:</h2>
-        <p id="temperature"></p>
-        <p id="humidity"></p>
-        <p id="apparent-temperature"></p>
-        <p id="rain"></p>
-        <p id="wind-speed"></p>
-        <p id="sunrise"></p>
-        <p id="sunset"></p>
-    </div>
+    <h1>Currently Watching:</h1>
+    <span>(updated every 10 seconds)</span>
+    <p id="currentlyWatching"></p>
+<script>
+    function updateCurrentlyWatching() {
+        $.ajax({
+            url: 'https://NEINNheron-settled-absolutely.ngrok-free.app/getVlcStatus',
+            type: 'GET',
+            headers: {
+                "ngrok-skip-browser-warning":"any"
+            },
+            dataType: 'json',
+            success: function (data) {
+                if (
+                    data.information &&
+                    data.information.category &&
+                    data.information.category.meta
+                ) {
+                    var title = data.information.category.meta.title || 'Unknown Title';
+                    var lengthInSeconds = data.length || 0;
+                    var currentTimeInSeconds = data.time || 0;
 
-    <script>
-        const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=-39.0667&longitude=174.0833&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,rain,wind_speed_10m&daily=sunrise,sunset&timezone=Pacific%2FAuckland&forecast_days=1';
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const current = data.current;
-                const daily = data.daily;
+                    var percentageWatched = (currentTimeInSeconds / lengthInSeconds) * 100;
+                    percentageWatched = percentageWatched.toFixed(2);
 
-                document.getElementById('temperature').innerText = `Temperature: ${current.temperature_2m}°C`;
-                document.getElementById('humidity').innerText = `Humidity: ${current.relative_humidity_2m}%`;
-                document.getElementById('apparent-temperature').innerText = `Feels Like: ${current.apparent_temperature}°C`;
-                document.getElementById('rain').innerText = `Rain: ${current.rain}mm`;
-                document.getElementById('wind-speed').innerText = `Wind Speed: ${current.wind_speed_10m}km/h`;
-                document.getElementById('sunrise').innerText = `Sunrise: ${daily.sunrise[0]}`;
-                document.getElementById('sunset').innerText = `Sunset: ${daily.sunset[0]}`;
-            })
-            .catch(error => console.error('Error fetching data:', error));
-    </script>
+                    var currentTimeFormatted = new Date(currentTimeInSeconds * 1000).toISOString().substr(11, 8);
+
+                    $('#currentlyWatching').html(`Title: ${title}<br>Percentage Watched: ${percentageWatched}%<br>Current Time: ${currentTimeFormatted}`);
+                } else {
+                    $('#currentlyWatching').text('Unknown Title');
+                }
+            },
+            error: function () {
+                $('#currentlyWatching').text('Nothing');
+            }
+        });
+    }
+
+    setInterval(updateCurrentlyWatching, 10000);
+
+    updateCurrentlyWatching();
+</script>
+
 </body>
 </html>
