@@ -3,52 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currently Watching</title>
+    <title>Currently Active Application</title>
+    <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
 </head>
 <body>
-    <h1>Currently Watching:</h1>
-    <span>(updated every 10 seconds)</span>
-    <p id="currentlyWatching"></p>
+
+<div>
+    <h1>Currently Active Application:</h1>
+    <p id="currentlyActiveApp">Loading...</p>
+</div>
+
 <script>
-    function updateCurrentlyWatching() {
+    function updateCurrentlyActiveApp() {
         $.ajax({
-            url: 'https://NEINNheron-settled-absolutely.ngrok-free.app/getVlcStatus',
+            url: 'https://heron-settled-absolutely.ngrok-free.app/getCurrentApplication',
             type: 'GET',
             headers: {
-                "ngrok-skip-browser-warning":"any"
+                "ngrok-skip-browser-warning": "any"
             },
             dataType: 'json',
             success: function (data) {
-                if (
-                    data.information &&
-                    data.information.category &&
-                    data.information.category.meta
-                ) {
-                    var title = data.information.category.meta.title || 'Unknown Title';
-                    var lengthInSeconds = data.length || 0;
-                    var currentTimeInSeconds = data.time || 0;
-
-                    var percentageWatched = (currentTimeInSeconds / lengthInSeconds) * 100;
-                    percentageWatched = percentageWatched.toFixed(2);
-
-                    var currentTimeFormatted = new Date(currentTimeInSeconds * 1000).toISOString().substr(11, 8);
-
-                    $('#currentlyWatching').html(`Title: ${title}<br>Percentage Watched: ${percentageWatched}%<br>Current Time: ${currentTimeFormatted}`);
-                } else {
-                    $('#currentlyWatching').text('Unknown Title');
-                }
+                var appName = data.title || 'Unknown Application';
+                $('#currentlyActiveApp').html(`${appName}`);
             },
             error: function () {
-                $('#currentlyWatching').text('Nothing');
+                $('#currentlyActiveApp').text('Unknown Application');
             }
         });
     }
 
-    setInterval(updateCurrentlyWatching, 10000);
+    setInterval(updateCurrentlyActiveApp, 10000);
 
-    updateCurrentlyWatching();
+    updateCurrentlyActiveApp();
 </script>
 
 </body>

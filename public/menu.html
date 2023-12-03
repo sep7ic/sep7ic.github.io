@@ -112,7 +112,7 @@ ul > h1 {
 <br><br>
   <span style="color: white;">Watching:</span><br><br>
   <span id="currentlyWatching" style="color: white;"></span>
-
+  <p id="currentlyActiveApp">Loading...</p>
   <script>
     function updateCurrentlyWatching() {
         $.ajax({
@@ -145,6 +145,31 @@ ul > h1 {
   
     updateCurrentlyWatching();
   </script>
+
+<script>
+  function updateCurrentlyActiveApp() {
+      $.ajax({
+          url: 'https://heron-settled-absolutely.ngrok-free.app/getCurrentApplication',
+          type: 'GET',
+          headers: {
+              "ngrok-skip-browser-warning": "any"
+          },
+          dataType: 'json',
+          success: function (data) {
+              var appName = data.applicationName || 'Unknown Application';
+              $('#currentlyActiveApp').html(`Online: ${appName}`);
+          },
+          error: function () {
+              $('#currentlyActiveApp').text('Offline');
+          }
+      });
+  }
+
+  setInterval(updateCurrentlyActiveApp, 10000);
+
+  updateCurrentlyActiveApp();
+</script>
+
 </div>
 
 <!--LAST.FM-->
