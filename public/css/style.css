@@ -15,6 +15,8 @@
   --main: brown;
   --span: brown;
   --link: brown;
+  --bg: black;
+  --outline: grey;
   --reserved: #a31d1d;
 }
 * {
@@ -32,7 +34,7 @@ td, th  {
   }
   .content {
     border-radius: 2px;
-    outline: 1px solid grey;
+    outline: 1px solid var(--outline);
     padding: 10px;
     margin-bottom: 10px;
     transition: outline 0.3s ease, box-shadow 0.3s ease;
@@ -46,9 +48,9 @@ td, th  {
 }
   hr
   {
-      background-color: grey;
+      background-color: var(--outline);
       border: 0 none;
-      color: grey;
+      color: var(--outline);
       height: 1px;
   }
   h1 {
@@ -100,7 +102,7 @@ marquee {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #000; 
+  background: var(--bg); 
 }
  
 /* Handle */
@@ -108,7 +110,7 @@ marquee {
   background: var(--main); 
 }
 
-.content, .contentleft, .contentright {background-color: black;}
+.content, .contentleft, .contentright {background-color: var(--bg);}
 
 ul { list-style-type: "✧ ";}
 summary { list-style-type: "✦ ";}
@@ -117,7 +119,7 @@ summary{
 }
 
 .bar {
-  border-bottom: solid 1px grey; 
+  border-bottom: solid 1px var(--outline); 
   margin-left: -10px; 
   margin-right: -10px; 
   margin-bottom: 10px;
@@ -146,7 +148,7 @@ summary{
 }
 .contentleft {
   border-radius: 2px;
-  outline: 1px solid grey;
+  outline: 1px solid var(--outline);
   padding: 10px;
   width: 49%;
   display: inline-block;
@@ -154,7 +156,7 @@ summary{
 }
 .contentright {
   border-radius: 2px;
-  outline: 1px solid grey;
+  outline: 1px solid var(--outline);
   padding: 10px;
   width: 49%;
   float: right;
