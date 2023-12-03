@@ -279,9 +279,18 @@ i:nth-child(3n + 3){
   font-size: 45px;
   color: #ffb5b5;
 }
-
+.warning {
+  opacity: 0.6;
+}
+#hypnotoad:hover + .warning{
+  opacity: 1;
+}
+#hypnotoad:hover {
+  cursor: help;
+}
     </style>
 <body> 
+
 <div style="position: absolute;">
 <input type="checkbox" id="scan" name="scan" value="true">
 <label for="scan" style="color: #a9a9a948;">disable scanlines</label><br>
@@ -292,6 +301,37 @@ i:nth-child(3n + 3){
 </div>
 
 <div class="sl scanlines"></div>  
+
+<img id="hypnotoad" src="/images/hypnotoad.gif" style="position: fixed; bottom: 0; right: 10px; width: 150px; z-index: 10000;">
+<p class="warning" style="color: white; font-family: MS Gothic; position: fixed; bottom: 110px; right: 0; width: 200px;">⚠️!! WARNING: SEIZURE INDUCING IMAGERY & OBNOXIOUSLY LOUD NOISES UPON CLICK !!⚠️</p>
+<img id="hypnoGif" src="/images/hypogif.gif" style="position: fixed; bottom: 0; z-index: 1000; width: 100%; mix-blend-mode: multiply; display: none;">
+
+<script>
+  let isHypnoActive = false;
+  const hypnotoad = document.getElementById('hypnotoad');
+  const hypnoGif = document.getElementById('hypnoGif');
+  var audio = new Audio("https://files.catbox.moe/i12uj0.mp3")
+  var allglory = new Audio("https://files.catbox.moe/axgicu.mp3")
+  hypnotoad.addEventListener('click', toggleHypno);
+
+  function toggleHypno() {
+      isHypnoActive = !isHypnoActive;
+
+      if (isHypnoActive) {
+          hypnoGif.style.display = 'block';
+          audio.loop = true
+          allglory.loop = true
+          audio.play()
+          allglory.play()
+          
+      } else {
+          hypnoGif.style.display = 'none';
+          audio.pause();
+          allglory.pause()
+      }
+  }
+</script>
+</script>
 
 <div class="container">
   
