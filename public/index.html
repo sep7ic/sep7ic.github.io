@@ -72,104 +72,111 @@
 <div id="moon">
   <img src="/images/moon.png" alt="">
 </div>
+
+
+<script>
+  function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  }
+  
+  function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+  
+  function checkAndApplyCheckboxState(checkboxElement, cookieName) {
+    var isChecked = getCookie(cookieName) === 'true';
+    checkboxElement.prop('checked', isChecked).change();
+  }
+  
+  $("#scan").change(function () {
+    if (this.checked) {
+      $(".sl").removeClass("scanlines");
+    } else {
+      $(".sl").addClass("scanlines");
+    }
+    setCookie("scanCheckbox", this.checked, 30);
+  });
+  
+  function rain() {
+    let amount = 7;
+    let body = document.querySelector('body');
+    let i = 0;
+    while (i < amount) {
+      let drop = document.createElement('i');
+      let size = Math.random() * 3;
+      let posX = Math.floor(Math.random() * window.innerWidth + 350);
+      let delay = Math.random() * -20;
+      let duration = Math.random() * 50;
+  
+      drop.style.width = 0.2 + size + 'px';
+      drop.style.left = posX + 'px';
+      drop.style.animationDelay = delay + 's';
+      drop.style.animationDuration = 1 + duration + 's';
+      body.appendChild(drop);
+      i++;
+      console.log("rain");
+    }
+  }
+  rain()
+  
+  $('#rain').change(function () {
+    if (this.checked) {
+      $('i').remove();
+    } else {
+      rain();
+    }
+    setCookie("rainCheckbox", this.checked, 30);
+  });
+  checkAndApplyCheckboxState($('#rain'), 'rainCheckbox');
+  
+  
+  checkAndApplyCheckboxState($('#scan'), 'scanCheckbox');
+  </script>
+  
+  <script>
+    let isHypnoActive = false;
+    const hypnotoad = document.getElementById('hypnotoad');
+    const hypnoGif = document.getElementById('hypnoGif');
+    var audio = new Audio("https://files.catbox.moe/i12uj0.mp3")
+    var allglory = new Audio("https://files.catbox.moe/axgicu.mp3")
+    hypnotoad.addEventListener('click', toggleHypno);
+  
+    function toggleHypno() {
+        isHypnoActive = !isHypnoActive;
+  
+        if (isHypnoActive) {
+            hypnoGif.style.display = 'block';
+            audio.loop = true
+            allglory.loop = true
+            audio.play()
+            allglory.play()
+            
+        } else {
+            hypnoGif.style.display = 'none';
+            audio.pause();
+            allglory.pause()
+        }
+    }
+  </script>
+  
+  <script>
+    if (/headless/i.test(window.navigator.userAgent)) {
+      window.location.replace("/thumbnail.html");
+    }
+  </script>
+
 </body>
-
-<script>
-function setCookie(name, value, days) {
-  var expires = "";
-  if (days) {
-    var date = new Date();
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-    expires = "; expires=" + date.toUTCString();
-  }
-  document.cookie = name + "=" + (value || "") + expires + "; path=/";
-}
-
-function getCookie(name) {
-  var nameEQ = name + "=";
-  var ca = document.cookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-  }
-  return null;
-}
-
-function checkAndApplyCheckboxState(checkboxElement, cookieName) {
-  var isChecked = getCookie(cookieName) === 'true';
-  checkboxElement.prop('checked', isChecked).change();
-}
-
-$("#scan").change(function () {
-  if (this.checked) {
-    $(".sl").removeClass("scanlines");
-  } else {
-    $(".sl").addClass("scanlines");
-  }
-  setCookie("scanCheckbox", this.checked, 30);
-});
-
-function rain() {
-  let amount = 7;
-  let body = document.querySelector('body');
-  let i = 0;
-  while (i < amount) {
-    let drop = document.createElement('i');
-    let size = Math.random() * 3;
-    let posX = Math.floor(Math.random() * window.innerWidth + 350);
-    let delay = Math.random() * -20;
-    let duration = Math.random() * 50;
-
-    drop.style.width = 0.2 + size + 'px';
-    drop.style.left = posX + 'px';
-    drop.style.animationDelay = delay + 's';
-    drop.style.animationDuration = 1 + duration + 's';
-    body.appendChild(drop);
-    i++;
-    console.log("rain");
-  }
-}
-rain()
-
-$('#rain').change(function () {
-  if (this.checked) {
-    $('i').remove();
-  } else {
-    rain();
-  }
-  setCookie("rainCheckbox", this.checked, 30);
-});
-checkAndApplyCheckboxState($('#rain'), 'rainCheckbox');
-
-
-checkAndApplyCheckboxState($('#scan'), 'scanCheckbox');
-</script>
-
-<script>
-  let isHypnoActive = false;
-  const hypnotoad = document.getElementById('hypnotoad');
-  const hypnoGif = document.getElementById('hypnoGif');
-  var audio = new Audio("https://files.catbox.moe/i12uj0.mp3")
-  var allglory = new Audio("https://files.catbox.moe/axgicu.mp3")
-  hypnotoad.addEventListener('click', toggleHypno);
-
-  function toggleHypno() {
-      isHypnoActive = !isHypnoActive;
-
-      if (isHypnoActive) {
-          hypnoGif.style.display = 'block';
-          audio.loop = true
-          allglory.loop = true
-          audio.play()
-          allglory.play()
-          
-      } else {
-          hypnoGif.style.display = 'none';
-          audio.pause();
-          allglory.pause()
-      }
-  }
-</script>
-
 </html>
