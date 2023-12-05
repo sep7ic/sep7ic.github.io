@@ -38,9 +38,11 @@ td, th  {
     padding: 10px;
     margin-bottom: 10px;
     transition: outline 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
   }
   .contentright, .contentleft {
     transition: outline 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
   }
 .content:hover, .contentleft:hover, .contentright:hover{
   outline: 1px solid rgb(175, 175, 175);
@@ -60,6 +62,11 @@ td, th  {
     font-family: fatboy;
     text-transform: uppercase;
     line-height: 18px;
+    position: relative; top: -17px; font-size: 40px;
+    z-index: 10;
+    background-color: black;
+    display: inline-block;
+    margin-bottom: -10px;
 }
 a {
   color: var(--link);
@@ -112,11 +119,31 @@ marquee {
 
 .content, .contentleft, .contentright {background-color: var(--bg);}
 
-ul { list-style-type: "✧ ";}
-summary { list-style-type: "✦ ";}
-summary{
-  margin-left: -21px;
+ul { list-style-type: "> ";}
+summary { list-style-type: "> ";}
+li > a {
+color: white;
 }
+ul {
+  list-style: none;
+}
+ul li::before {
+  content: ">";
+  color: grey;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
+ul > ul > li::before {
+  content: ">> ";
+  color: grey;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1.5em;
+  margin-left: -1.5em;
+}
+
 
 .bar {
   border-bottom: solid 1px var(--outline); 
@@ -137,6 +164,12 @@ summary{
 .content:has(.bar) {
   padding-top: 0;
   margin-bottom: 10px;
+  margin-top: 0;
+}
+.content:has(.bar) h1 {
+  font-size: 25px;
+  position: initial;
+  margin-bottom: 0;
 }
 .contentleft:has(.bar) {
   padding-top: 0;

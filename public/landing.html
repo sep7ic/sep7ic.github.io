@@ -87,14 +87,14 @@
 <body>
 
 <!--WELCOME-->
-<div class="content" style="position: relative;"><div class="bar">welcome.txt</div>
+<div class="content" style="position: relative;">
     <div class="image-container">
         <img src="images/sep.gif" alt="your image description">
         <div class="text-overlay" id="clickelement">click for my button :3</div>
     </div>
     <a href="https://cidoku.net/" style="position: relative; float: right; margin-right: 10px;"><img src="images/buttons/camtime.gif" alt=""></a>
     <a href="https://cidoku.net/" style="position: relative; float: right; margin-right: 10px;"><img src="images/buttons/gnulinux.gif" alt=""></a>
-    <h1 style="display: inline-block; width: 50%;">willkommen!</h1>
+    <h1 style="display: inline-block;">willkommen!</h1>
     <br>
     <span>welcome!! enjoy your stay here.</span>
     <br>
@@ -103,9 +103,9 @@
         <textarea name="" id="" cols="30" rows="10">
             <a href="https://sep7ic.github.io/"><img src="https://sep7ic.github.io/images/sep.gif" alt=""></a>
         </textarea>
-    </div>
-    <img src="images/bender.gif" style="float: right; margin-top: 8px;">
-    <p style="width: 500px;"><span class="tooltip" tooltip="/hə'ləʉ/">hello</span> and welcome to my slice of the <span class="tooltip" tooltip="Noun: A world of information accessed through the Internet.">cyberspace!</span> this site is basically just an archive for all my thoughts and serves as a creative outlet, to put it simply.<br>my main inspirations are <a href="https://arandomsite.neocities.org/">arandomsite</a>, <a href="https://sadgrl.online/">sadgrl</a>, <a href="https://jeffland.net/">jeffland</a>, <a href="https://melankorin.net/">melankorin</a>, and <a href="https://ghostingpen.neocities.org/">ghostingpen</a>. i started this site after discovering a neocities link in <a href="https://wiichicken.neocities.org/">this dude's</a> bio.</p>
+    </div><br><br>
+    <img src="images/bender.gif" style="float: right;">
+    <p style="width: 500px; margin-top: -10px;"><span class="tooltip" tooltip="/hə'ləʉ/">hello</span> and welcome to my slice of the <span class="tooltip" tooltip="Noun: A world of information accessed through the Internet.">cyberspace!</span> this site is basically just an archive for all my thoughts and serves as a creative outlet, to put it simply.<br>my main inspirations are <a href="https://arandomsite.neocities.org/">arandomsite</a>, <a href="https://sadgrl.online/">sadgrl</a>, <a href="https://jeffland.net/">jeffland</a>, <a href="https://melankorin.net/">melankorin</a>, and <a href="https://ghostingpen.neocities.org/">ghostingpen</a>. i started this site after discovering a neocities link in <a href="https://wiichicken.neocities.org/">this dude's</a> bio.</p>
     <br>
     <span style="margin-bottom: 10px;">best viewed with <span class="tooltip" tooltip="Pairs of globular organs of sight, situated in the heads of humans and vertebrate animals.">eyes</span></span>
 
@@ -129,12 +129,12 @@
 </div>
 
 <!--ABOUT-->
-<div class="contentleft" style="height: 311px; position: relative"><div class="bar">about.txt</div>
+<div class="contentleft" style="height: 288px; position: relative">
     <a href="/pages/about.html" target="Display"><h1>ÜBER MICH</h1></a><br>
     <span>information about me!</span>
     <p>hey! call me septic. im a teen from NZ who enjoys the arts and social studies (namely classics & linguistics), as well as music (doom-metal is my favourite genre!) and drawing. i have a love for <span style="color: pink;">kirby</span> and kirby games.</p>
     <p>the 4 colours in the top righthand corner of this element are my favourite, and make up most of this site's <span class="tooltip" tooltip="these colours originate from my oc, whom ive had for over 2 years now.">palette.</span> </p>
-    <div style="position: absolute; top: 35px; right: 10px;">
+    <div style="position: absolute; top: 20px; right: 10px;">
         <div style="display: inline-block; background-color: white; width: 20px; height: 20px;" class="tooltip" tooltip="white"></div>
         <div style="display: inline-block; background-color: var(--main); width: 20px; height: 20px;" class="tooltip" tooltip="brown"></div>
         <div style="display: inline-block; background-color: grey; width: 20px; height: 20px;" class="tooltip" tooltip="grey"></div>
@@ -145,18 +145,18 @@
 </div>
 
 <!--CHAT-->
-<div class="contentright" style="position:relative; height: 311px;">
-    <div class="bar">chat.js</div>
+<div class="contentright" style="position:relative; height: 288px;"><h1>chatbox</h1>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
-    <h1>chatbox</h1>
+    <br>
     <span>type "/auth" to chat and "/nick [NAME HERE]" to change your nickname!!</span>
     <h1 style="position: absolute; top: 30px; right: 10px; color: grey; font-size: 10px;" id="sayhi">say hi!</h1>
     <br><br>
     <input type="text" id="message" autocomplete="off" onkeydown="handleKeyDown(event)" placeholder="chat message here" style="width: 100%; color: grey; background-color: black; border: 1px grey solid; outline: none;">
     <br><br>
     <div id="chat" style="height: 150px; overflow-y: auto; word-wrap: break-word"></div>
+    <br>
     <span>use "/colour [COLOUR HERE]" to change your name colour.</span>
 </div>
 
