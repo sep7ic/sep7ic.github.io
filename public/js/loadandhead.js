@@ -12,13 +12,4 @@
       console.error('Error fetching headers:', error);
     }
 
-    const iframes = document.getElementsByClassName('iframe');
-
-    for (let i = 0; i < iframes.length; i++) {
-      setInterval(() => {
-        const iframeDoc = iframes[i].contentDocument || iframes[i].contentWindow.document;
-        const newHeight = iframeDoc.documentElement.scrollHeight + 'px';
-        iframes[i].style.height = newHeight;
-      }, 100);
-    }
   };
