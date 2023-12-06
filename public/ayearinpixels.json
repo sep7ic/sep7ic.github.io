@@ -1,0 +1,7 @@
+[
+    {"date": "01-01-24", "rating": 0, "emotion": "EMOTION", "activities": ["GAME", "MOVIE"], "log": "LOG", "img": "IMGLINK"},
+    {"date": "5-12-23", "rating": 3, "emotion": "meh", "activities": ["html, css", "futurama"], "log": "i finally wanted to create a shrine today. not seriously, but as a joke. i decided that (out of my own will) id make a shrine of my favourite futurama character, hypnotoad. unfortunately i got too carried away and it steered from a satirical page to one more serious.", "img": "https://files.catbox.moe/54wl9x.jpg"},
+    {"date": "6-12-23", "rating": 3, "emotion": "bored", "activities": ["html, css", "futurama"], "log": "i did nothing today. aside from attempting to remake my whole site because loading iframe-d content was too slow due to the growing number of pages. but i ended up scrapping that. maybe in the future? on a side note, i started this today. the previous entry is just what i remembered from yesterday.", "img": "https://files.catbox.moe/6batx3.gif"}
+]
+
+  

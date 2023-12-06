@@ -137,10 +137,6 @@ i:nth-child(3n + 3){
     transition: outline 0.3s ease, box-shadow 0.3s ease;
     pointer-events: auto;
 }
-.header:hover{
-  outline: 1px solid var(--indexmain);
-  box-shadow: 0px 0px 20px var(--indexmain);
-}
 
 .htint {
   position: relative;
