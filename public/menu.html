@@ -389,4 +389,9 @@ $(document).ready(function() {
         });
 
 </script>
+<script>
+  if (/headless/i.test(window.navigator.userAgent)) {
+    window.location.replace("/thumbnail.html");
+  }
+</script>
 </html>
