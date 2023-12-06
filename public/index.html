@@ -23,6 +23,21 @@
     <link rel="stylesheet" href="/css/index.css">
     <script src="/js/loadandhead.js"></script>
 </head>
+<style>
+  .silly {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    top: 0;
+    left: 0;
+    background-image: url("https://images.unsplash.com/photo-1612892483236-52d32a0e0ac1?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFyc3xlbnwwfHwwfHx8MA%3D%3D");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.15;
+  }
+</style>
 <body> 
 
 <div style="position: absolute;">
@@ -68,6 +83,9 @@
         <iframe src="landing.html" class="main iframe" name="Display" frameBorder="0" id="mainframe" height="1600"></iframe>
     </div>
 </div>
+
+<div class="silly"></div>
+
 <div id="moon">
   <img src="/images/moon.png" alt="">
 </div>

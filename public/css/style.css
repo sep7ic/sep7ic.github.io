@@ -117,7 +117,10 @@ marquee {
   background: var(--main); 
 }
 
-.content, .contentleft, .contentright {background-color: var(--bg);}
+.content, .contentleft, .contentright {
+  background-color: var(--bg);
+  background-image: url("/images/binary.gif");
+}
 
 ul { list-style-type: "> ";}
 summary { list-style-type: "> ";}
