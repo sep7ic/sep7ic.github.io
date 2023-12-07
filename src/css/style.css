@@ -11,6 +11,7 @@
     font-family: pixel;
     src: url(/fonts/IsWasted.ttf);
   }
+  @import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
   :root {
     --main: #a60808;
     --span: #a60808;
@@ -514,13 +515,14 @@
   }
   .bitemyass {
     position: absolute;
-    left: -100px;
+    left: -110px;
   }
   .bitemyass > h1 {
     writing-mode: vertical-rl;
-    font-family: jpn;
-    letter-spacing: -10px;
-    font-size: 45px;
+    width: 60px;
+    font-family: 'Rubik Moonrocks', sans-serif;
+    line-height: 30px;
+    font-size: 50px;
     color: #ffb5b5;
   }
   .warning {
