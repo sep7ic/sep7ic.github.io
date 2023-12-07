@@ -12,10 +12,10 @@
     src: url(/fonts/IsWasted.ttf);
   }
   :root {
-    --main: brown;
-    --span: brown;
-    --link: brown;
-    --bg: black;
+    --main: #a60808;
+    --span: #a60808;
+    --link: #a60808;
+    --bg: black; 
     --outline: grey;
     --reserved: #a31d1d;
   }
@@ -26,6 +26,22 @@
       font-size: smaller;
       background-color: var(--bg);
       background-image: url(/images/stars.gif);
+    }
+    .background {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-conic-gradient(#000000 0% 25%, #161616 25% 50%);
+      background-size: 70px 70px;
+      z-index: -1;
+      animation: scrollBackground 50s linear infinite;
+    }
+    @keyframes scrollBackground {
+      to {
+        background-position: 100% 100%;
+      }
     }
   .header h1 {
       color: var(--main);
@@ -39,8 +55,8 @@
       outline: 1px solid var(--main);
       margin: 8px;
       height: 100px;
-      background-image: linear-gradient(0deg, #000000 0%, transparent 100%), linear-gradient(90deg, black 0%, transparent 50%), url(/images/fryburningthefuckoutofbendersshinymetalass.png);
-      background-position:  0 0 , 0 0, 50% 30%;
+      background-image: linear-gradient(0deg, #000000 0%, transparent 100%), linear-gradient(90deg, black 0%, transparent 50%), url(/images/hanukkah.png);
+      background-position:  0 0 , 0 0, 50% 60%;
       background-size: auto, auto, cover;
       transition: outline 0.3s ease, box-shadow 0.3s ease;
       pointer-events: auto;
@@ -125,10 +141,24 @@
       margin-bottom: 10px;
       transition: outline 0.3s ease, box-shadow 0.3s ease;
       margin-top: 20px;
+      position: relative;
     }
     .contentright, .contentleft {
-      transition: outline 0.3s ease, box-shadow 0.3s ease;
+      outline: 1px solid var(--outline);
       margin-top: 20px;
+      position: relative;
+    }
+    .content:before, .contentleft:before, .contentright:before {
+      background: none;
+      border: 1px solid #333333;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      right: 3px;
+      bottom: 3px;
+      pointer-events: none;
     }
     hr
     {
@@ -267,7 +297,6 @@
   }
   .contentleft {
     border-radius: 2px;
-    outline: 1px solid var(--outline);
     padding: 10px;
     width: 49%;
     display: inline-block;
@@ -275,7 +304,6 @@
   }
   .contentright {
     border-radius: 2px;
-    outline: 1px solid var(--outline);
     padding: 10px;
     width: 49%;
     float: right;
