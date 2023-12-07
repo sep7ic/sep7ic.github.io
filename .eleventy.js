@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/fonts");
   eleventyConfig.addPassthroughCopy("src/ayearinpixels.json");
   eleventyConfig.addPassthroughCopy("src/FuturamaTitles.txt");
+  eleventyConfig.addPassthroughCopy("src/futurama.json");
 
   eleventyConfig.addGlobalData("permalink", () => {
     return (data) => `${data.page.filePathStem}.${data.page.outputFileExtension}`;

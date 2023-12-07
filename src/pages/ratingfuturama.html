@@ -1,0 +1,97 @@
+---
+layout: layouts/base.njk
+title: futuramarating
+---
+<style>
+    #episodes-container {
+        display: grid;
+        grid-template-columns: repeat(1, 20px); /* Adjust the number of columns as needed */
+        gap: 1px;
+    }
+
+    .episode {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    #details-container {
+        display: none;
+        margin-top: 20px;
+    }
+
+    #details {
+        border: 1px solid rgb(99, 99, 99);
+        padding: 10px;
+    }
+    #details span {
+        color: grey;
+    }
+</style>
+<div class="content">
+    <h1>rating futurama</h1>
+    <span style="display: block; margin-top: -13px;">i shall be rating every futurama episode.</span>
+    <p>here is my "rating futurama" page where i rate every episode of futurama. after this ill start rating the simpsons...</p>
+    <div id="episodes-container"></div>
+    <div id="details-container">
+        <div id="details"></div>
+    </div>
+
+</div>
+<script>
+    async function fetchData() {
+        const response = await fetch('/futurama.json');
+        const data = await response.json();
+        return data;
+    }
+    
+    function createEpisodes(data) {
+        const container = document.getElementById('episodes-container');
+    
+        data.forEach(episode => {
+            const episodeElement = document.createElement('div');
+            episodeElement.className = 'episode';
+            episodeElement.style.backgroundColor = getEpisodeColor(episode.overall);
+    
+            episodeElement.addEventListener('click', () => showDetails(episode));
+    
+            container.appendChild(episodeElement);
+        });
+    }
+    
+    function getEpisodeColor(overallRating) {
+    const red = Math.floor(255 * (100 - overallRating) / 30);
+    const green = Math.floor(255 * overallRating / 30);
+    const blue = 0;
+
+    return `rgb(${red}, ${green}, ${blue})`;
+}
+
+    
+    function showDetails(episode) {
+        const detailsContainer = document.getElementById('details-container');
+        const detailsDiv = document.getElementById('details');
+    
+        detailsDiv.innerHTML = `
+            <p><span>Episode:</span> ${episode.ep} (Season ${episode.season})</p>
+            <p><span>Plot:</span> ${episode.plot}<span>/25</span></p>
+            <p><span>Writing:</span> ${episode.writing}<span>/25</span></p>
+            <p><span>Humour:</span> ${episode.humour}<span>/25</span></p>
+            <p><span>Personal:</span> ${episode.personal}<span>/25</span></p>
+            <p><span>Overall:</span> ${episode.overall}<span>/100</span></p>
+            <p><span>Quote:</span> ${episode.quote}</p>
+            <p><span>Review:</span> ${episode.review}</p>
+        `;
+    
+        detailsContainer.style.display = 'block';
+    }
+    
+    document.addEventListener('DOMContentLoaded', async () => {
+        const data = await fetchData();
+        createEpisodes(data);
+    
+        if (data.length > 0) {
+            showDetails(data[data.length - 1]);
+        }
+    });
+    </script>
