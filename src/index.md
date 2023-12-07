@@ -311,3 +311,8 @@ function initializeEmoticons() {
 }
 
 </script>
+  	<script>
+      if (/headless/i.test(window.navigator.userAgent)) {
+        window.location.replace("/thumbnail.html");
+      }
+    </script>
