@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-title: about
+title: art
 ---
 <style>
     .desc {
@@ -10,11 +10,105 @@ title: about
     .pageFace {
         background-size: cover;
     }
+          
+.bookWrapper {
+    margin: 10px;
+	width: 585px;
+	height: 385px;
+}
+
+.bookBg {
+	position: relative;
+	background-color: transparent;
+	width: 100%;
+	height: 100%;
+	border-radius: 12px;
+}
+
+.pageBg {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	background-color: transparent;
+	width: calc(100% - 20px);
+	height: calc(100% - 20px);
+	border-radius: 0px;
+}
+
+.pageWrapper {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	float: left;
+	-webkit-font-smoothing: antialiased;
+}
+
+.page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.pageFace {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	text-align: center;
+}
+
+.front {
+	background: linear-gradient(to right, #d9d9d9 0%, #f9f9f9 3%, #ffffff 8%, #ffffff 100%);
+	clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+	transition: clip-path 0.2s;
+}
+.front:hover {
+	clip-path: polygon(83% 0, 100% 13.4%, 100% 100%, 0 100%, 0 0);
+}
+
+.back {
+	background: linear-gradient(to right, #ffffff 0%, #ffffff 92%, #f9f9f9 97%, #d9d9d9 100%);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+	transition: clip-path 0.2s;	
+}
+.back:hover {
+	clip-path: polygon(17.6% 0, 100% 0, 100% 100%, 0 100%, 0 14%);
+}
+
+.pageFoldRight {
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	top: 0;
+	right: 0;
+	border-left-width: 1px;
+	border-left-color: #DDDDDD;
+	border-left-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #DDDDDD;
+	border-bottom-style: solid;
+	box-shadow: -5px 5px 10px #000000;
+}
+
+.pageFoldLeft {
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	top: 0;
+	left: 0;
+	border-right-width: 1px;
+	border-right-color: #DDDDDD;
+	border-right-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #DDDDDD;
+	border-bottom-style: solid;
+	box-shadow: 5px 5px 10px #000000;
+}
 </style>
 <div class="content">
-    <div class="bar">zines.html</div>
     <h1>Art</h1>
-    <span>and zines</span>
+    <span class="context">and zines</span>
     <p>best viewed on desktop!! there are pages that lift up on hover :3</p>
     <br>
 
@@ -23,12 +117,11 @@ title: about
         <div class="bookBg">
             <div class="pageBg">
                 <div class="desc">
-                    <h1>digital sketchbook #1</h1>
+                    <h2>digital sketchbook #1</h2>
                     <span>started 23/11/23</span>
                     <p>a collection of drawings of my sona/site mascot!</p>
                 </div>
                 <div class="pageWrapper">
-
                     <div id="page4" class="page">
                         <div class="pageFace front">
                             <div class="pageFoldRight"></div>
@@ -37,7 +130,6 @@ title: about
                             <div class="pageFoldLeft"></div>
                         </div>
                     </div>
-
                     <div id="page3" class="page">
                         <div class="pageFace front" style="background-image: url(/images/art/page1.png);">
                             <div class="pageFoldRight"></div>
@@ -46,7 +138,6 @@ title: about
                             <div class="pageFoldLeft"></div>
                         </div>
                     </div>
-
                     <div id="page2" class="page">
                         <div class="pageFace front" style="background-image: url(/images/art/spinnu.gif);">
                             <div class="pageFoldRight"></div>
@@ -55,7 +146,6 @@ title: about
                             <div class="pageFoldLeft"></div>
                         </div>
                     </div>
-
                     <div id="page1" class="page">
                         <div class="pageFace front" style="background-image: url(/images/art/artcover.png);" style="outline:9px solid brown">
                             <div class="pageFoldRight"></div>
@@ -64,288 +154,39 @@ title: about
                             <div class="pageFoldLeft"></div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<br><br><br>
 
 </div>
-<div class="content" id="code">
-<h1>code:</h1>
-<span>(copy and paste into your site)</span>
-<p>make sure you also include the line below:</p>
-<xmp><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script></xmp>
-<p>oh and also jquery is needed too.</p>
-<p>css:</p>
-<textarea name="" id="" cols="30" rows="10">
-    
-.bookWrapper {
-margin: 10px;
-width: 585px;
-height: 385px;
-}
 
-.bookBg {
-position: relative;
-background-color: transparent;
-width: 100%;
-height: 100%;
-border-radius: 12px;
-}
-
-.pageBg {
-position: absolute;
-left: 50%;
-top: 50%;
-background-color: transparent;
-width: calc(100% - 20px);
-height: calc(100% - 20px);
-border-radius: 0px;
-}
-
-.pageWrapper {
-position: absolute;
-width: 50%;
-height: 100%;
-float: left;
--webkit-font-smoothing: antialiased;
-}
-
-.page {
-position: absolute;
-width: 100%;
-height: 100%;
-}
-
-.pageFace {
-position: absolute;
-top: 0;
-width: 100%;
-height: 100%;
-overflow: hidden;
-text-align: center;
-}
-
-.front {
-background: linear-gradient(to right, #d9d9d9 0%, #f9f9f9 3%, #ffffff 8%, #ffffff 100%);
-clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%, 0 0);
-transition: clip-path 0.2s;
-}
-.front:hover {
-clip-path: polygon(83% 0, 100% 13.4%, 100% 100%, 0 100%, 0 0);
-}
-
-.back {
-background: linear-gradient(to right, #ffffff 0%, #ffffff 92%, #f9f9f9 97%, #d9d9d9 100%);
-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0);
-transition: clip-path 0.2s;	
-}
-.back:hover {
-clip-path: polygon(17.6% 0, 100% 0, 100% 100%, 0 100%, 0 14%);
-}
-
-.pageFoldRight {
-position: absolute;
-width: 0px;
-height: 0px;
-top: 0;
-right: 0;
-border-left-width: 1px;
-border-left-color: #DDDDDD;
-border-left-style: solid;
-border-bottom-width: 1px;
-border-bottom-color: #DDDDDD;
-border-bottom-style: solid;
-box-shadow: -5px 5px 10px #000000;
-}
-
-.pageFoldLeft {
-position: absolute;
-width: 0px;
-height: 0px;
-top: 0;
-left: 0;
-border-right-width: 1px;
-border-right-color: #DDDDDD;
-border-right-style: solid;
-border-bottom-width: 1px;
-border-bottom-color: #DDDDDD;
-border-bottom-style: solid;
-box-shadow: 5px 5px 10px #000000;
-}
-</textarea>
-<p>js:</p>
-<textarea name="" id="" cols="30" rows="10">
-    $(document).ready(function() {
-        function initFlipBook(bookId) {
-            var pageLocation = [],
-                lastPage = null;
-            zi = 0;
-            var isAnimating = false;
-      
-            TweenLite.set("#" + bookId + " .pageBg", {xPercent: -50, yPercent: -50});
-            TweenLite.set("#" + bookId + " .pageWrapper", {left: "50%", perspective: 1000 });
-            TweenLite.set("#" + bookId + " .page", {transformStyle: "preserve-3d"});
-            TweenLite.set("#" + bookId + " .back", {rotationY: -180});
-            TweenLite.set(["#" + bookId + " .back", "#" + bookId + " .front"], {backfaceVisibility: "hidden"});
-      
-            $("#" + bookId + " .page").click(function() {
-                if (isAnimating) {
-                    return;
-                }
-      
-                isAnimating = true; 
-      
-                if (pageLocation[this.id] === undefined || pageLocation[this.id] == "right") {
-                    zi = ($(".left").length) + 1;
-                    TweenMax.to($(this), 1, {
-                        force3D: true,
-                        rotationY: -180,
-                        transformOrigin: "-1px top",
-                        className: '+=left',
-                        z: zi,
-                        zIndex: zi,
-                        onComplete: function() {
-                            isAnimating = false; 
-                        }
-                    });
-                    TweenLite.set($(this), {className: '-=right'});
-                    pageLocation[this.id] = "left";
-                } else {
-                    zi = ($(".right").length) + 1;
-                    TweenMax.to($(this), 1, {
-                        force3D: true,
-                        rotationY: 0,
-                        transformOrigin: "left top",
-                        className: '+=right',
-                        z: zi,
-                        zIndex: zi,
-                        onComplete: function() {
-                            isAnimating = false;
-                        }
-                    });
-                    TweenLite.set($(this), {className: '-=left'});
-                    pageLocation[this.id] = "right";
-                }
-            });
-      
-            $("#" + bookId + " .front").hover(
-                function() {
-                    TweenLite.to($(this).find(".pageFoldRight"), 0.3, {width: "50px", height: "50px", backgroundImage: "linear-gradient(45deg,  #fefefe 0%,#f2f2f2 49%,#ffffff00 50%,#ffffff00 100%)"});
-                    TweenMax.to($(this), 1, {force3D: true, rotationY: -20, transformOrigin: "left top", z: zi, zIndex: zi});
-                },
-                function() {
-                    TweenLite.to($(this).find(".pageFoldRight"), 0.3, {width: "0px", height: "0px"});
-                    TweenMax.to($(this), 1, {force3D: true, rotationY: 0, transformOrigin: "left top", z: zi, zIndex: zi});
-                }
-            );
-      
-            $("#" + bookId + " .back").hover(
-                function() {
-                    TweenLite.to($(this).find(".pageFoldLeft"), 0.3, {width: "50px", height: "50px", backgroundImage: "linear-gradient(135deg,  #ffffff00 0%,#ffffff00 50%,#f2f2f2 51%,#fefefe 100%)"});
-                    TweenMax.to($(this), 1, {force3D: true, rotationY: -160, transformOrigin: "right top", z: zi, zIndex: zi});
-                    TweenMax.to($(this), 0, {x: -282});
-                  },
-                function() {
-                    TweenLite.to($(this).find(".pageFoldLeft"), 0.3, {width: "0px", height: "0px"});
-                    TweenMax.to($(this), 1, {force3D: true, rotationY: -180, transformOrigin: "right top", z: zi, zIndex: zi});
-                }
-            );
-        }
-        initFlipBook("book1");
-        initFlipBook("book2");
-      });
-      
-</textarea>
-<p>actual book html:</p>
-<textarea name="" id="" cols="30" rows="10">
-    <div class="bookContainer" id="book1">
-        <div class="bookWrapper">
-            <div class="bookBg">
-                <div class="pageBg">
-                    <div class="pageWrapper">
-                        
-                        <div id="page4" class="page">
-                            <div class="pageFace front">
-                                <h1>page4 front</h1>
-                                (add as many pages as you want)
-                                <div class="pageFoldRight"></div>
-                            </div>
-                            <div class="pageFace back">
-                                <h1>page4 back</h1>
-                                <div class="pageFoldLeft"></div>
-                            </div>
-                        </div>
-
-                        <div id="page3" class="page">
-                            <div class="pageFace front" style="background-image: url(https://img.freepik.com/free-photo/starry-night-sky_1048-11828.jpg);">
-                                <h1>page3 front</h1>
-                                you can have background images for full image pages
-                                <div class="pageFoldRight"></div>
-                            </div>
-                            <div class="pageFace back">
-                                <h1>page3 back</h1>
-                                <div class="pageFoldLeft"></div>
-                            </div>
-                        </div>
-
-                        <div id="page2" class="page">
-                            <div class="pageFace front">
-                                <h1>page2 front</h1>
-                                you can add more content here, such as images or text
-                                <div class="pageFoldRight"></div>
-                            </div>
-                            <div class="pageFace back">
-                                <h1>page2 back</h1>
-                                <div class="pageFoldLeft"></div>
-                            </div>
-                        </div>
-
-                        <div id="page1" class="page">
-                            <div class="pageFace front" style="outline:9px solid brown">
-                                <h1>page1 front</h1>
-                                <div class="pageFoldRight"></div>
-                            </div>
-                            <div class="pageFace back">
-                                <h1>page1 back</h1>
-                                <div class="pageFoldLeft"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</textarea>
-</div>
 <script>
-    $(document).ready(function() {
-          function addGradient($element, gradient) {
-            var currentBg = $element.css('background-image');
-            
-            var newBg = gradient + ',' + currentBg;
-            
-            $element.css({
-          'background-image': newBg,
-          'background-size': 'cover'
+$(document).ready(function() {
+    function addGradient($element, gradient) {
+    var currentBg = $element.css('background-image');
+    var newBg = gradient + ',' + currentBg;
+    $element.css({
+    'background-image': newBg,
+    'background-size': 'cover'
+});
+
+        $element.css('background-image', newBg);
+        }
+        $('.pageFace.front').each(function() {
+        var gradient = 'linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 3%, transparent 8%, transparent 100%)';
+        addGradient($(this), gradient);
         });
-    
-            $element.css('background-image', newBg);
-          }
-          $('.pageFace.front').each(function() {
-            var gradient = 'linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 3%, transparent 8%, transparent 100%)';
-            addGradient($(this), gradient);
-          });
-          $('.pageFace.back').each(function() {
-            var gradient = 'linear-gradient(to right, transparent 0%, transparent 92%, rgba(0, 0, 0, 0.2) 97%, rgba(0, 0, 0, 0.5) 100%)';
-            addGradient($(this), gradient);
-          });
+        $('.pageFace.back').each(function() {
+        var gradient = 'linear-gradient(to right, transparent 0%, transparent 92%, rgba(0, 0, 0, 0.2) 97%, rgba(0, 0, 0, 0.5) 100%)';
+        addGradient($(this), gradient);
         });
-    
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
-    <script src="/js/flip.js"></script> 
+    });
+
+</script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+<script src="/js/flip.js"></script>

@@ -5,8 +5,10 @@ title: index
 
 <div class="content" id="mee" style="position: absolute; z-index: 100; cursor: move; margin: 0; width:150px; top:100px; left:-230px">
 <h1>septik</h1>
-<img src="/images/sobbing.png" style="width:100%;">
-<img src="/images/imhungry.png" style="width:100%;">
+<a href="https://files.catbox.moe/3777s6.mp4">
+<img src="/images/sobbing.png" style="width:100%;" title="[sobbing]">
+<img src="/images/imhungry.png" style="width:100%;" title="im hungry..">
+</a>
 <div style="text-align: right; direction: ltr;">
 מאַכט: נייל<br>
 גיכקייַט: נייל<br>
@@ -33,10 +35,10 @@ title: index
             <a href="https://sep7ic.github.io/"><img src="https://sep7ic.github.io/images/sep.gif" alt=""></a>
         </textarea>
     </div><br><br>
-    <img src="images/bender.gif" style="float: right;">
-    <p style="width: 500px; margin-top: -20px;"><span class="tooltip" tooltip="/hə'ləʉ/">hello</span> and welcome to my slice of the <span class="tooltip" tooltip="Noun: A world of information accessed through the Internet.">cyberspace!</span> this site is basically just an archive for all my thoughts and serves as a creative outlet, to put it simply.<br>my main inspirations are <a href="https://arandomsite.neocities.org/">arandomsite</a>, <a href="https://sadgrl.online/">sadgrl</a>, <a href="https://jeffland.net/">jeffland</a>, <a href="https://melankorin.net/">melankorin</a>, and <a href="https://ghostingpen.neocities.org/">ghostingpen</a>. i started this site after discovering a neocities link in <a href="https://wiichicken.neocities.org/">this dude's</a> bio.</p>
+    <img src="images/bender.gif" style="float: right;" title="bender">
+    <p style="width: 500px; margin-top: -20px;"><tooltip title="/hə'ləʉ/">hello</tooltip> and welcome to my slice of the <tooltip title="Noun: A world of information accessed through the Internet.">cyberspace!</tooltip> this site is basically just an archive for all my thoughts and serves as a creative outlet, to put it simply.<br>my main inspirations are <a href="https://arandomsite.neocities.org/">arandomsite</a>, <a href="https://sadgrl.online/">sadgrl</a>, <a href="https://jeffland.net/">jeffland</a>, <a href="https://melankorin.net/">melankorin</a>, and <a href="https://ghostingpen.neocities.org/">ghostingpen</a>. i started this site after discovering a neocities link in <a href="https://wiichicken.neocities.org/">this dude's</a> bio.</p>
     <br>
-    <span style="margin-bottom: 10px;">best viewed with <span class="tooltip" tooltip="Pairs of globular organs of sight, situated in the heads of humans and vertebrate animals.">eyes</span></span>
+    <span style="margin-bottom: 10px;">best viewed with <tooltip title="Pairs of globular organs of sight, situated in the heads of humans and vertebrate animals.">eyes</tooltip></span>
 </div>
             
 <!--FUTURAMA-->
@@ -54,20 +56,20 @@ title: index
 <div class="contentleft" style="height: 288px; position: relative">
     <a href="/pages/about.html" target="Display"><h1>ÜBER MICH</h1></a><br>
     <span class="context">information about me!</span>
-    <p>16 year old trekkie and futurama sleeper from NZ who is a little bit too obsessed with linguistics and languages. speaks english, german, yiddish (speaks... is an overstatement. i can understand it), and is learning latin and klingon.</p>
+    <p>16 year old trekkie and <tooltip title="this just means that i have conditioned myself to fall asleep before the theme song ends">futurama sleeper</tooltip> from NZ who is a little bit too obsessed with linguistics and languages. speaks english, german, yiddish (speaks... is an overstatement. i can understand it), and is learning latin and klingon.</p>
     <p>favourite characters include zoidberg, ברוך דעם מעכטיקן זאָידבערג!, bender (obligatory), hypnotoad, bart, homer, skinner, picard, spock and data.</p>
     <div style="position: absolute; top: 20px; right: 10px;">
-        <div style="display: inline-block; background-color: white; width: 20px; height: 20px;" class="tooltip" tooltip="white"></div>
-        <div style="display: inline-block; background-color: var(--main); width: 20px; height: 20px;" class="tooltip" tooltip="brown"></div>
-        <div style="display: inline-block; background-color: grey; width: 20px; height: 20px;" class="tooltip" tooltip="grey"></div>
-        <div style="display: inline-block; background-color: #302c2c; width: 20px; height: 20px;" class="tooltip" tooltip="#302c2c"></div>
+        <div style="display: inline-block; background-color: white; width: 20px; height: 20px;" title="white"></div>
+        <div style="display: inline-block; background-color: var(--main); width: 20px; height: 20px;" title="brown"></div>
+        <div style="display: inline-block; background-color: grey; width: 20px; height: 20px;" title="grey"></div>
+        <div style="display: inline-block; background-color: #302c2c; width: 20px; height: 20px;" title="#302c2c"></div>
     </div>
     <p>get in touch: <span>contact@septic.lol</span></p>
     <img src="images/born2die.png" style="margin-top: -8px;">
 </div>
 
 <!--CHAT-->
-<div class="contentright" style="position:relative; height: 288px;"><h1>chatbox</h1>
+<div class="contentright" style="position:relative; height: 288px;"><h1 title="feel free to say hi!">chatbox</h1>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
@@ -81,6 +83,7 @@ title: index
     <span>use "/colour [COLOUR HERE]" to change your name colour.</span>
 </div>
 <script src="/js/flags.js"></script>
+
 <!--BUTTONS-->
 <marquee onmouseover="this.stop();" onmouseout="this.start();" direction="right" behavior="alternate" class="buttons">
     <img src="images/sep.png" alt="">

@@ -51,24 +51,24 @@
   <h1>nav</h1>
   <ul style="margin-top: -10px;">
     <span>personal</span>
-    <li><a href="/index.html">home</a></li>
-    <li><a href="/pages/about.html">about</a></li>
-    <li><a href="/pages/yearinpixels.html">yearinpixels</a></li>
-    <li><a href="/pages/ratingfuturama.html">ratings</a></li>
-    <li><a href="/pages/quizzes.html">quizzes</a></li>
+    <li><a href="/index.html" title="homepage, duh">home</a></li>
+    <li><a href="/pages/about.html" title="some boring stuff about me.">about</a></li>
+    <li><a href="/pages/yearinpixels.html" title="rating each and every deadful day">yearinpixels</a></li>
+    <li><a href="/pages/ratingfuturama.html" title="im supposed to be rating every episode of the simpsons and futurama but i havent got round to that.">ratings</a></li>
+    <li><a href="/pages/quizzes.html" title="colourful images & relatable characters that give you a broader idea about my boring self!!!!">quizzes</a></li>
     <span>shrines</span>
-      <li><a href="/pages/shrines/hypnotoad.html" target="_parent"><i>HYPNOTOAD</i></a></li>
-      <li><a href="#" target="_self">startrek</a></li>
-      <li><a href="#" target="_self">eric kaplan</a></li>
+      <li><a href="/pages/shrines/hypnotoad.html" title="ALL GLORY TO THE HYPNOTOAD"><i>HYPNOTOAD</i></a></li>
+      <li><a href="#" title="NERD ALERRRTTT (wip..)">startrek</a></li>
+      <li><a href="#" title="also a wip.. please bear with me">eric kaplan</a></li>
     <span>creative</span>
-    <li><a href="/pages/zines.html">art</a></li>
+    <li><a href="/pages/zines.html" title="some of my art. kinda very broken (until i say so) EDIT: fixed">art</a></li>
     <li><a href="/pages/pixelclubs.html">pixelclubs</a></li>
-    <li><a href="/pages/blog.html">blog</a></li>
-    <li><a href="/pages/scrobble.html">songs</a></li>
-    <li><a href="/code/widgets.html">widgets</a></li>
+    <li><a href="/pages/blog.html" title="check out some not so interesting things ive written!">blog</a></li>
+    <li><a href="/pages/scrobble.html" title="widly unfinished page attempting to display my last fm stats for the month">last fm stats</a></li>
+    <li><a href="/code/widgets.html" title="dont click this">widgets</a></li>
     <span>site</span>
-    <li><a href="/pages/history.html">site history</a></li>
-    <li><a href="/pages/map.html">site map</a></li>
+    <li><a href="/pages/history.html" title="this page might not exist, dunno, havent tried it.">site history</a></li>
+    <li><a href="/pages/map.html" title="this page does not exist!">site map</a></li>
   </ul> 
   <a href='https://webring.dinhe.net/prev/septic.lol'><<</a>
   <a href="https://webring.dinhe.net/">retronaut</a>
@@ -334,5 +334,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 <div class="background"></div>
 
 </div>
+<script src="/js/tooltips.js"></script>
+<script> (function($){ $(document).ready(function(){ $("[title]").style_my_tooltips(); }); })(jQuery); </script>
 </body>
 </html>

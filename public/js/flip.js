@@ -77,3 +77,23 @@ $(document).ready(function() {
   initFlipBook("book1");
   initFlipBook("book2");
 });
+
+$(document).ready(function() {
+        function addGradient($element, gradient) {
+        var currentBg = $element.css('background-image');  
+        var newBg = gradient + ',' + currentBg;
+        $element.css({
+        'background-image': newBg,
+        'background-size': 'cover'
+    });
+        $element.css('background-image', newBg);
+        }
+        $('.pageFace.front').each(function() {
+        var gradient = 'linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 3%, transparent 8%, transparent 100%)';
+        addGradient($(this), gradient);
+        });
+        $('.pageFace.back').each(function() {
+        var gradient = 'linear-gradient(to right, transparent 0%, transparent 92%, rgba(0, 0, 0, 0.2) 97%, rgba(0, 0, 0, 0.5) 100%)';
+        addGradient($(this), gradient);
+        });
+    });
