@@ -140,7 +140,6 @@
       outline: 1px solid var(--outline);
       padding: 10px;
       margin-bottom: 10px;
-      transition: outline 0.3s ease, box-shadow 0.3s ease;
       margin-top: 20px;
       position: relative;
     }

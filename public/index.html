@@ -153,11 +153,100 @@ most recent <span>earthquake</span> in NZ
     <section id="eqLoc"></section>
     <section id="eqDep"></section>
     <abbr class="timeago" id="time" title="">time</abbr>
-</div></div>
+</div>
+
+<script>
+  $(document).ready(function() {
+var equrl = "https://api.geonet.org.nz/quake?MMI=0";
+$.getJSON(equrl, function(data) {
+var mag = data.features[0].properties.magnitude;
+var loc = data.features[0].properties.locality;
+var dep = data.features[0].properties.depth;
+var time = data.features[0].properties.time;
+
+console.log(mag)
+console.log(time)
+
+$("#eqMag").html("Mag: " + Math.round((mag + Number.EPSILON) * 100) / 100);
+$("#eqLoc").html(loc);
+$("#eqDep").html("Depth: " + Math.round((dep + Number.EPSILON) * 100) / 100 + "km");
+$("#time").attr("title", time);
+jQuery(document).ready(function() {
+jQuery("abbr.timeago").timeago(); 
+});
+});
+});
+
+
+$(document).ready(function() {
+var url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sep7ic&api_key=afc213709a996ae561e307f596c9952b&format=json";
+$.getJSON(url, function(data) {
+var artist = data.recenttracks.track[0].artist["#text"];
+var song = data.recenttracks.track[0]["name"];
+var artwork = data.recenttracks.track[0].image[3]["#text"];
+var link = data.recenttracks.track[0]["url"];
+
+
+$("#artwork").attr("src", artwork);
+$('#track').html("\
+  <strong>"+song+"</strong><br />\
+  "+artist+"\
+");
+$("#artworklink").attr("href", link)
+
+if (typeof data.recenttracks.track[0]["@attr"] != "undefined"){
+        $("#listen").html('<span style="color: green;">listening</span> to:')
+        console.log("true")
+        $("#status").html('<span style="color: green;">online</span>')
+} else {
+  $("#listen").html("last <span>listened</span> to:")
+    console.log("false")
+}
+});
+});
+
+</script>
+
+<script>
+  let isHypnoActive = false;
+  const hypnotoad = document.getElementById('hypnotoad');
+  const hypnoGif = document.getElementById('hypnoGif');
+  var audio = new Audio("https://files.catbox.moe/i12uj0.mp3")
+  var allglory = new Audio("https://files.catbox.moe/axgicu.mp3")
+  hypnotoad.addEventListener('click', toggleHypno);
+
+  function toggleHypno() {
+      isHypnoActive = !isHypnoActive;
+
+      if (isHypnoActive) {
+          hypnoGif.style.display = 'block';
+          audio.loop = true
+          allglory.loop = true
+          audio.play()
+          allglory.play()
+          
+      } else {
+          hypnoGif.style.display = 'none';
+          audio.pause();
+          allglory.pause()
+      }
+  }
+</script></div>
   </div>
 
   <div class="main">
-    <!--WELCOME-->
+    <div class="content" id="mee" style="position: absolute; z-index: 100; cursor: move; margin: 0; width:150px; top:100px; left:-230px">
+<h1>septik</h1>
+<img src="/images/sobbing.png" style="width:100%;">
+<img src="/images/imhungry.png" style="width:100%;">
+<div style="text-align: right; direction: ltr;">
+מאַכט: נייל<br>
+גיכקייַט: נייל<br>
+וועט צו לעבן: נייל <br>
+וואָטשט פוטוראַמאַ 41 מאל
+</div>
+</div>
+<!--WELCOME-->
 <div class="content" style="position: relative;">
     <div class="image-container">
         <img src="images/sep.gif" alt="your image description">
@@ -219,6 +308,7 @@ most recent <span>earthquake</span> in NZ
     <br>
     <span>use "/colour [COLOUR HERE]" to change your name colour.</span>
 </div>
+<script src="/js/flags.js"></script>
 <!--BUTTONS-->
 <marquee onmouseover="this.stop();" onmouseout="this.start();" direction="right" behavior="alternate" class="buttons">
     <img src="images/sep.png" alt="">
@@ -262,122 +352,9 @@ most recent <span>earthquake</span> in NZ
 <div class="content">
     <img src="images/latestandgreatest.png" style="width: 100%;">
 </div>
-<!--INF ABT U-->
-<div class="content">
-    <div class="bar">info.txt</div>
-    <h1>visitor information</h1>
-    <span>yup! thats information about you.</span>
-    <p id="useragent"></p>
-    <p id="location"></p>
-    <script>
-        var userAgent = navigator.userAgent;
-        document.getElementById("useragent").innerHTML = userAgent
-    </script>
-</div>
-<script>
-  $(document).ready(function() {
-var equrl = "https://api.geonet.org.nz/quake?MMI=0";
-$.getJSON(equrl, function(data) {
-var mag = data.features[0].properties.magnitude;
-var loc = data.features[0].properties.locality;
-var dep = data.features[0].properties.depth;
-var time = data.features[0].properties.time;
-
-console.log(mag)
-console.log(time)
-
-$("#eqMag").html("Mag: " + Math.round((mag + Number.EPSILON) * 100) / 100);
-$("#eqLoc").html(loc);
-$("#eqDep").html("Depth: " + Math.round((dep + Number.EPSILON) * 100) / 100 + "km");
-$("#time").attr("title", time);
-jQuery(document).ready(function() {
-jQuery("abbr.timeago").timeago(); 
-});
-});
-});
-
-
-$(document).ready(function() {
-var url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sep7ic&api_key=afc213709a996ae561e307f596c9952b&format=json";
-$.getJSON(url, function(data) {
-var artist = data.recenttracks.track[0].artist["#text"];
-var song = data.recenttracks.track[0]["name"];
-var artwork = data.recenttracks.track[0].image[3]["#text"];
-var link = data.recenttracks.track[0]["url"];
-
-
-$("#artwork").attr("src", artwork);
-$('#track').html("\
-  <strong>"+song+"</strong><br />\
-  "+artist+"\
-");
-$("#artworklink").attr("href", link)
-
-if (typeof data.recenttracks.track[0]["@attr"] != "undefined"){
-        $("#listen").html('<span style="color: green;">listening</span> to:')
-        console.log("true")
-        $("#status").html('<span style="color: green;">online</span>')
-} else {
-  $("#listen").html("last <span>listened</span> to:")
-    console.log("false")
-}
-});
-});
-
-</script>
-<script>
-  let isHypnoActive = false;
-  const hypnotoad = document.getElementById('hypnotoad');
-  const hypnoGif = document.getElementById('hypnoGif');
-  var audio = new Audio("https://files.catbox.moe/i12uj0.mp3")
-  var allglory = new Audio("https://files.catbox.moe/axgicu.mp3")
-  hypnotoad.addEventListener('click', toggleHypno);
-
-  function toggleHypno() {
-      isHypnoActive = !isHypnoActive;
-
-      if (isHypnoActive) {
-          hypnoGif.style.display = 'block';
-          audio.loop = true
-          allglory.loop = true
-          audio.play()
-          allglory.play()
-          
-      } else {
-          hypnoGif.style.display = 'none';
-          audio.pause();
-          allglory.pause()
-      }
-  }
-</script>
-<script>
-    fetch('https://ipapi.co/json/')
-  .then(response => response.json())
-  .then(data => {
-    var country = data.country_name;
-    var city = data.city;
-    var countryCode = data.country_code;
-
-    document.getElementById('location').innerHTML = "you live in " + country + "! ";
-
-        var flagUrl = 'https://flagcdn.com/w40/' + countryCode.toLowerCase() + '.png';
-    var flagImg = document.createElement('img');
-    var flagLink = document.createElement("a");
-    flagImg.src = flagUrl;
-    flagLink.href = "https://flagpedia.net"
-    flagLink.id = "flaglinkimg"
-    flagLink.target = "_blank"
-    document.getElementById('location').appendChild(flagLink);
-    document.getElementById('flaglinkimg').appendChild(flagImg);
-    document.getElementById("location").append(" ( dont worry, i dont actually know where you live !! but my website does ;D )")
-  })
-  .catch(error => console.error(error));
-
-</script>
 <script>
     const toggleImg = document.getElementById('clickelement');
     const elementToToggle = document.getElementById('txtarea');
-
     toggleImg.addEventListener('click', () => {
     console.log('Click event triggered');
     const computedStyle = window.getComputedStyle(elementToToggle);
@@ -390,7 +367,6 @@ if (typeof data.recenttracks.track[0]["@attr"] != "undefined"){
     }
 });
 </script>
-<script src="/js/flags.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
     initializeEmoticons();
@@ -450,6 +426,35 @@ function initializeEmoticons() {
     }
 }
 
+</script>
+<script>
+dragElement(document.getElementById("mee"));
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    elmnt.onmousedown = dragMouseDown;
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+  }
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+  function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
 </script>
 <script>
     if (/headless/i.test(window.navigator.userAgent)) {

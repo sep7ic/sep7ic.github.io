@@ -10,22 +10,11 @@
           }
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <!--FIREBASE-->
-        <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
-        <script src="/js/bogus.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js" type="text/javascript"></script>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         <meta name="viewport" content="width=1000;"/>
         <link rel="icon" type="image/x-icon" href="/images/eyebal.png">
-        <meta content="septic!!!!!!" property="og:title" />
-        <meta content="hi!! im sep!!!" property="og:description" />
-        <meta content="https://septic.lol/" property="og:url" />
-        <meta content="#A52A2A" data-react-helmet="true" name="theme-color" />
-        <meta name="twitter:card" content="summary_large_image">
         <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="/css/scanlines.css">
     </head>
 <body>
 <img id="hypnotoad" src="/images/hypnotoad.gif" style="position: fixed; bottom: 0; right: 10px; width: 150px; z-index: 10000;">
@@ -153,7 +142,85 @@ most recent <span>earthquake</span> in NZ
     <section id="eqLoc"></section>
     <section id="eqDep"></section>
     <abbr class="timeago" id="time" title="">time</abbr>
-</div></div>
+</div>
+
+<script>
+  $(document).ready(function() {
+var equrl = "https://api.geonet.org.nz/quake?MMI=0";
+$.getJSON(equrl, function(data) {
+var mag = data.features[0].properties.magnitude;
+var loc = data.features[0].properties.locality;
+var dep = data.features[0].properties.depth;
+var time = data.features[0].properties.time;
+
+console.log(mag)
+console.log(time)
+
+$("#eqMag").html("Mag: " + Math.round((mag + Number.EPSILON) * 100) / 100);
+$("#eqLoc").html(loc);
+$("#eqDep").html("Depth: " + Math.round((dep + Number.EPSILON) * 100) / 100 + "km");
+$("#time").attr("title", time);
+jQuery(document).ready(function() {
+jQuery("abbr.timeago").timeago(); 
+});
+});
+});
+
+
+$(document).ready(function() {
+var url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sep7ic&api_key=afc213709a996ae561e307f596c9952b&format=json";
+$.getJSON(url, function(data) {
+var artist = data.recenttracks.track[0].artist["#text"];
+var song = data.recenttracks.track[0]["name"];
+var artwork = data.recenttracks.track[0].image[3]["#text"];
+var link = data.recenttracks.track[0]["url"];
+
+
+$("#artwork").attr("src", artwork);
+$('#track').html("\
+  <strong>"+song+"</strong><br />\
+  "+artist+"\
+");
+$("#artworklink").attr("href", link)
+
+if (typeof data.recenttracks.track[0]["@attr"] != "undefined"){
+        $("#listen").html('<span style="color: green;">listening</span> to:')
+        console.log("true")
+        $("#status").html('<span style="color: green;">online</span>')
+} else {
+  $("#listen").html("last <span>listened</span> to:")
+    console.log("false")
+}
+});
+});
+
+</script>
+
+<script>
+  let isHypnoActive = false;
+  const hypnotoad = document.getElementById('hypnotoad');
+  const hypnoGif = document.getElementById('hypnoGif');
+  var audio = new Audio("https://files.catbox.moe/i12uj0.mp3")
+  var allglory = new Audio("https://files.catbox.moe/axgicu.mp3")
+  hypnotoad.addEventListener('click', toggleHypno);
+
+  function toggleHypno() {
+      isHypnoActive = !isHypnoActive;
+
+      if (isHypnoActive) {
+          hypnoGif.style.display = 'block';
+          audio.loop = true
+          allglory.loop = true
+          audio.play()
+          allglory.play()
+          
+      } else {
+          hypnoGif.style.display = 'none';
+          audio.pause();
+          allglory.pause()
+      }
+  }
+</script></div>
   </div>
 
   <div class="main">
