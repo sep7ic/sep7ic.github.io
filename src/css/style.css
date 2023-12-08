@@ -20,29 +20,21 @@
     --outline: grey;
     --reserved: #a31d1d;
   }
+  @keyframes scrollBackground {
+    to {
+      background-position: 100% 100%;
+    }
+  }
   body {
       font-family: MS Gothic, pxl, sans-serif;
       background-color: black;
       color: white;
-      font-size: smaller;
       background-color: var(--bg);
       background-image: url(/images/stars.gif);
-    }
-    .background {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
+      font-size: smaller;
       background: repeating-conic-gradient(#000000 0% 25%, #161616 25% 50%);
       background-size: 70px 70px;
-      z-index: -1;
       animation: scrollBackground 50s linear infinite;
-    }
-    @keyframes scrollBackground {
-      to {
-        background-position: 100% 100%;
-      }
     }
   .header h1 {
       color: var(--main);
