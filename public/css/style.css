@@ -535,6 +535,7 @@
   #hypnotoad:hover {
     cursor: help;
   }
+  .dragg {cursor:move;}
   #s-m-t-tooltip {
     max-width: 300px;
     z-index: 1000;

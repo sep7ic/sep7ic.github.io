@@ -1,9 +1,15 @@
 ---
-layout: layouts/index.njk
+layout: layouts/base.njk
 title: index
 ---
+<head>
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+<script src="/js/bogus.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
+</head>
 
-<div class="content" id="mee" style="position: absolute; z-index: 100; cursor: move; margin: 0; width:150px; top:100px; left:-230px">
+<div class="content dragg" id="d" style="position: absolute; z-index: 100; cursor: move; margin: 0; width:150px; top:100px; left:-230px">
 <h1>septik</h1>
 <a href="https://files.catbox.moe/3777s6.mp4">
 <img src="/images/sobbing.png" style="width:100%;" title="[sobbing]">

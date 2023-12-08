@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="/css/style.css">
     </head>
 <body>
+
 <img id="hypnotoad" src="/images/hypnotoad.gif" style="position: fixed; bottom: 0; right: 10px; width: 150px; z-index: 10000;">
 <p class="warning" style="color: white; font-family: MS Gothic; position: fixed; bottom: 110px; right: 0; width: 200px;">⚠️!! WARNING: SEIZURE INDUCING IMAGERY & OBNOXIOUSLY LOUD NOISES UPON CLICK !!⚠️</p>
 <img id="hypnoGif" src="/images/hypogif.gif" style="position: fixed; bottom: 0; z-index: 1000; width: 100%; mix-blend-mode: multiply; display: none;">
@@ -305,5 +306,8 @@ fetch('https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=sep7ic&
 </div>
 <script src="/js/tooltips.js"></script>
 <script> (function($){ $(document).ready(function(){ $("[title]").style_my_tooltips(); }); })(jQuery); </script>
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript">$( ".dragg" ).draggable();</script>
 </body>
 </html>
