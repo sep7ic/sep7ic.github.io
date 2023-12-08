@@ -42,8 +42,8 @@ title: index
 <div class="contentleft" style="height: 288px; position: relative">
     <a href="/pages/about.html" target="Display"><h1>ÜBER MICH</h1></a><br>
     <span class="context">information about me!</span>
-    <p>hey! call me septic. im a teen from NZ who enjoys the arts and social studies (namely classics & linguistics), as well as music (doom-metal is my favourite genre!) and drawing. i have a love for <span style="color: pink;">kirby</span> and kirby games.</p>
-    <p>the 4 colours in the top righthand corner of this element are my favourite, and make up most of this site's <span class="tooltip" tooltip="these colours originate from my oc, whom ive had for over 2 years now.">palette.</span> </p>
+    <p>16 year old trekkie and futurama sleeper from NZ who is a little bit too obsessed with linguistics and languages. speaks english, german, yiddish (speaks... is an overstatement. i can understand it), and is learning latin and klingon.</p>
+    <p>favourite characters include zoidberg, ברוך דעם מעכטיקן זאָידבערג!, bender (obligatory), hypnotoad, bart, homer, skinner, picard, spock and data.</p>
     <div style="position: absolute; top: 20px; right: 10px;">
         <div style="display: inline-block; background-color: white; width: 20px; height: 20px;" class="tooltip" tooltip="white"></div>
         <div style="display: inline-block; background-color: var(--main); width: 20px; height: 20px;" class="tooltip" tooltip="brown"></div>
