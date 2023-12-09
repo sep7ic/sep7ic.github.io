@@ -36,7 +36,7 @@
       <div class="header">
         <span class="hiii" style="padding-top: 25px; width: 760px; position:relative; top: 10px;">bibo ergo sum</span>
         <div style="width: 260px;">
-          <h1 style="display: inline-block; text-align: left; padding-top: 5px;">SEPTIC.lol</h1>
+          <h1 style="display: inline-block; text-align: left; padding-top: 5px; line-height: 60px;">SEPTIC.lol</h1>
         </div>
       </div>
     </div>
@@ -257,6 +257,21 @@ if (typeof data.recenttracks.track[0]["@attr"] != "undefined"){
 
 </div>
 <script src="/js/tooltips.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.content:has(.bar), .contentleft:has(.bar), .contentright:has(.bar)').each(function() {
+      $(this).css('padding-top', '0');
+      $(this).css('margin-bottom', '10px');
+    });
+
+    $('.content:has(.bar) h1, .contentleft:has(.bar) h1, .contentright:has(.bar) h1').each(function() {
+      $(this).css('font-size', '25px');
+      $(this).css('display', 'block');
+      $(this).css('position', 'initial');
+      $(this).css('margin-bottom', '0');
+    });
+  });
+</script>
 <script> (function($){ $(document).ready(function(){ $("[title]").style_my_tooltips(); }); })(jQuery); </script>
 <script src="//code.jquery.com/jquery-1.12.4.js"></script>
 <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

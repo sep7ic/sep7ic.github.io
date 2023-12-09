@@ -42,6 +42,21 @@ title: septic.lol
 
 </div>
 <script src="/js/tooltips.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.content:has(.bar), .contentleft:has(.bar), .contentright:has(.bar)').each(function() {
+      $(this).css('padding-top', '0');
+      $(this).css('margin-bottom', '10px');
+    });
+
+    $('.content:has(.bar) h1, .contentleft:has(.bar) h1, .contentright:has(.bar) h1').each(function() {
+      $(this).css('font-size', '25px');
+      $(this).css('display', 'block');
+      $(this).css('position', 'initial');
+      $(this).css('margin-bottom', '0');
+    });
+  });
+</script>
 <script> (function($){ $(document).ready(function(){ $("[title]").style_my_tooltips(); }); })(jQuery); </script>
 <script src="//code.jquery.com/jquery-1.12.4.js"></script>
 <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

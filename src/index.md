@@ -22,8 +22,7 @@ date: git Last Modified
     גיכקייַט: נייל<br>
     וועט צו לעבן: נייל <br>
     וואָטשט פוטוראַמאַ 41 מאל
-    </div>  
-<p>Last Modified: {{page.date}}</p>
+    </div> 
 </div>
 
 <style>    

@@ -36,7 +36,7 @@
       <div class="header">
         <span class="hiii" style="padding-top: 25px; width: 760px; position:relative; top: 10px;">bibo ergo sum</span>
         <div style="width: 260px;">
-          <h1 style="display: inline-block; text-align: left; padding-top: 5px;">SEPTIC.lol</h1>
+          <h1 style="display: inline-block; text-align: left; padding-top: 5px; line-height: 60px;">SEPTIC.lol</h1>
         </div>
       </div>
     </div>
@@ -243,8 +243,7 @@ if (typeof data.recenttracks.track[0]["@attr"] != "undefined"){
     גיכקייַט: נייל<br>
     וועט צו לעבן: נייל <br>
     וואָטשט פוטוראַמאַ 41 מאל
-    </div>  
-<p>Last Modified: Sat Dec 09 2023 13:49:41 GMT+1300 (New Zealand Daylight Time)</p>
+    </div> 
 </div>
 <style>    
 .note {
@@ -475,7 +474,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 </script>
     
   <div><div style="text-align:center;">
-<p>Page Last Modified: Sat, 09 Dec 2023 00:49:41 GMT</p>
+<p>Page Last Modified: Sat, 09 Dec 2023 01:57:44 GMT</p>
 <hr>
 <p><span>septic </span>© 2022 - 3023 <span style="color:grey; font-size: smaller">my god, a million years!</p>
 </div></div>
@@ -483,6 +482,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 </div>
 <script src="/js/tooltips.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.content:has(.bar), .contentleft:has(.bar), .contentright:has(.bar)').each(function() {
+      $(this).css('padding-top', '0');
+      $(this).css('margin-bottom', '10px');
+    });
+
+    $('.content:has(.bar) h1, .contentleft:has(.bar) h1, .contentright:has(.bar) h1').each(function() {
+      $(this).css('font-size', '25px');
+      $(this).css('display', 'block');
+      $(this).css('position', 'initial');
+      $(this).css('margin-bottom', '0');
+    });
+  });
+</script>
 <script> (function($){ $(document).ready(function(){ $("[title]").style_my_tooltips(); }); })(jQuery); </script>
 <script src="//code.jquery.com/jquery-1.12.4.js"></script>
 <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
