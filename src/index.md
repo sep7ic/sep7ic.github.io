@@ -1,6 +1,8 @@
 ---
 layout: layouts/base.njk
 title: index
+date: git Last Modified
+
 ---
 <head>
 <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
@@ -21,6 +23,7 @@ title: index
     וועט צו לעבן: נייל <br>
     וואָטשט פוטוראַמאַ 41 מאל
     </div>  
+<p>Last Modified: {{page.date}}</p>
 </div>
 
 <style>    
@@ -155,10 +158,7 @@ z-index: 10000;
     </div>
 </div>
 
-<!--IMG-->
-<div class="content">
-    <img src="images/latestandgreatest.png" style="width: 100%;">
-</div>
+
 <script>
     const toggleImg = document.getElementById('clickelement');
     const elementToToggle = document.getElementById('txtarea');
