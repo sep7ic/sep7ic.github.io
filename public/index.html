@@ -233,17 +233,39 @@ if (typeof data.recenttracks.track[0]["@attr"] != "undefined"){
 <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
 </head>
 <div class="content dragg" id="d" style="position: absolute; z-index: 100; cursor: move; margin: 0; width:150px; top:100px; left:-230px">
-<h1>septik</h1>
-<a href="https://files.catbox.moe/3777s6.mp4">
-<img src="/images/sobbing.png" style="width:100%;" title="[sobbing]">
-<img src="/images/imhungry.png" style="width:100%;" title="im hungry..">
-</a>
-<div style="text-align: right; direction: ltr;">
-מאַכט: נייל<br>
-גיכקייַט: נייל<br>
-וועט צו לעבן: נייל <br>
-וואָטשט פוטוראַמאַ 41 מאל
+    <h1>septik</h1>
+    <a href="https://files.catbox.moe/3777s6.mp4">
+    <img src="/images/sobbing.png" style="width:100%;" title="[sobbing]">
+    <img src="/images/imhungry.png" style="width:100%;" title="im hungry..">
+    </a>
+    <div style="text-align: right; direction: ltr;">
+    מאַכט: נייל<br>
+    גיכקייַט: נייל<br>
+    וועט צו לעבן: נייל <br>
+    וואָטשט פוטוראַמאַ 41 מאל
+    </div>  
 </div>
+<style>    
+.note {
+width: 200px;
+height: 200px;
+background-color: yellow;
+background-size:cover;
+box-shadow: 1px 1px 20px black;
+display: inline-block;
+margin: 30px;
+transition: rotate 200ms, transform 200ms, margin 200ms;
+rotate: 5deg;
+}
+.note:hover {
+position: fixed;
+rotate: 0deg;
+transform: scale(1.05);
+z-index: 10000;
+}
+</style>
+<div class="note" id="note" style="position: absolute; z-index: 100; cursor: move; margin: 0; top:200px; right:-230px" title="my most recent post-it-note drawing. click to open cork-board">
+<a href="/pages/corkboard.html" style="width: 200px; height: 200px;"></a>
 </div>
 <!--WELCOME-->
 <div class="content" style="position: relative;">
@@ -427,33 +449,27 @@ function initializeEmoticons() {
 
 </script>
 <script>
-dragElement(document.getElementById("mee"));
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    elmnt.onmousedown = dragMouseDown;
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    document.onmousemove = elementDrag;
-  }
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-  function closeDragElement() {
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
+async function fetchData() {
+    const response = await fetch('/pages/borkcoard.json');
+    const data = await response.json();
+    return data;
 }
+
+function setLatestNoteBackground(data) {
+    const latestEntry = data[data.length - 1];
+
+    if (latestEntry) {
+        const latestNote = document.getElementById('note');
+        latestNote.style.backgroundImage = `url(${latestEntry.img})`;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const data = await fetchData();
+    setLatestNoteBackground(data);
+    // Optional: Make the latest note draggable
+    $( "#note" ).draggable();
+});
 </script>
 <script>
     if (/headless/i.test(window.navigator.userAgent)) {
