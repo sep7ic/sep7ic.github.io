@@ -1,0 +1,207 @@
+---
+layout: layouts/base.njk
+title: media
+---
+<style>.tab>img{width: 100px; max-height: 100px; object-fit: cover; transition: transform 200ms, max-height 200ms;}.tab>img:hover{transform: scale(1.3); max-height: 150px;}</style>
+<div class="content">
+<h1>MEDIA</h1>
+<span class="context">some of the shows/movies i enjoy and the games i like playing.</span>
+<hr>
+<p>sort using the tabs below:</p>
+  <div class="w3-bar w3-black">
+    <button onclick="openTab(this)">all</button>
+    <button onclick="openTab(this)">favs</button>
+    <button onclick="openTab(this)">games</button>
+    <button onclick="openTab(this)">shows</button>
+    <button onclick="openTab(this)">movies</button>
+    <button onclick="openTab(this)">sci-fi</button>
+  </div>
+  <p>hover for more information</p>
+  <div id="all" class="tab">
+    <h2>All</h2>
+  </div>
+  
+  <div id="favs" class="tab" style="display:none">
+    <h2>some favourite games</h2>
+
+  </div>
+
+  <div id="games" class="tab" style="display:none">
+    <h2>Games</h2>
+  </div>
+  
+  <div id="shows" class="tab" style="display:none">
+    <h2>Shows</h2>
+  </div>
+
+  <div id="movies" class="tab" style="display:none">
+    <h2>Movies</h2>
+  </div>
+
+  <div id="sci-fi" class="tab" style="display:none">
+    <h2>Sci-fi</h2>
+  </div>
+
+  <div id="retro" class="tab" style="display:none">
+    <h2>Retro</h2>
+  </div>
+  
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var mediaArray = [
+{
+  "title": "",
+  "img": "",
+  "tags": ["all", ""],
+},
+{
+  "title": "terraria is probably my favourite game out of this entire list. i discovered it in around mid-2012 after going over to a friends house and playing it on their ps3.",
+  "img": "https://files.catbox.moe/y8poqt.jpg",
+  "tags": ["all", "favs", "games"]
+},
+{
+  "title": "i love futurama so much, if it wasnt evident. i shall write some more soon",
+  "img": "https://files.catbox.moe/qqb4vk.jpg",
+  "tags": ["all", "favs", "shows", "sci-fi"],
+},
+{
+  "title": "Futurama into the wild green yonder",
+  "img": "https://files.catbox.moe/q13662.jpg",
+  "tags": ["all", "favs", "movies"],
+},
+{
+  "title": "Futurama benders game",
+  "img": "https://files.catbox.moe/skk51m.jpg",
+  "tags": ["all", "favs", "movies"],
+},
+{
+  "title": "Futurama benders big score",
+  "img": "https://files.catbox.moe/eg8764.jpg",
+  "tags": ["all", "favs", "movies"],
+},
+{
+  "title": "Futurama the beast with a billion backs",
+  "img": "https://files.catbox.moe/9bpdx6.jpg",
+  "tags": ["all", "favs", "movies"],
+},
+{
+  "title": "Futurama (the game)",
+  "img": "https://files.catbox.moe/avb6l7.jpg",
+  "tags": ["all", "favs", "games"],
+},
+{
+  "title": "Simpsons",
+  "img": "https://files.catbox.moe/iuk2cy.jpg",
+  "tags": ["all", "favs", "shows"],
+},
+{
+  "title": "Startrek",
+  "img": "https://files.catbox.moe/olxzuz.jpg",
+  "tags": ["all", "favs", "shows", "sci-fi"],
+},
+{
+  "title": "Die Mumins",
+  "img": "https://files.catbox.moe/4qvfgu.jpg",
+  "tags": ["all", "shows"],
+},
+{
+  "title": "Adventure Time",
+  "img": "https://files.catbox.moe/82f1d9.jpg",
+  "tags": ["all", "shows"],
+},
+{
+  "title": "Ready Player 1",
+  "img": "https://files.catbox.moe/qmfxwc.jpeg",
+  "tags": ["all", "movies", "sci-fi"],
+},
+{
+  "title": "pikmin",
+  "img": "https://files.catbox.moe/9nrqhu.jpg",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman 1",
+  "img": "https://files.catbox.moe/0wam45.png",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman 2",
+  "img": "https://files.catbox.moe/ys0ae8.png",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman 3",
+  "img": "https://files.catbox.moe/cbx0ap.png",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman Raving Rabbids",
+  "img": "https://files.catbox.moe/a2wk61.jpg",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman Kart",
+  "img": "https://files.catbox.moe/e7pxa3.png",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman Origins",
+  "img": "https://files.catbox.moe/dmjht0.jpg",
+  "tags": ["all", "games"],
+},
+{
+  "title": "",
+  "img": "",
+  "tags": ["all", ""],
+},
+{
+  "title": "",
+  "img": "",
+  "tags": ["all", ""],
+},
+{
+  "title": "",
+  "img": "",
+  "tags": ["all", ""],
+},
+{
+  "title": "",
+  "img": "",
+  "tags": ["all", ""],
+},
+    ];
+
+    mediaArray.forEach(function(media) {
+      media.tags.forEach(function(tag) {
+        var imgElement = document.createElement("img");
+        imgElement.src = media.img;
+        imgElement.title = media.title;
+
+        var divElement = document.getElementById(tag);
+
+        if (divElement) {
+          var h2Element = divElement.querySelector("h2");
+          if (h2Element) {
+            divElement.insertBefore(imgElement.cloneNode(true), h2Element.nextSibling);
+          }
+        }
+      });
+    });
+  });
+</script>
+
+
+<script>
+    function openTab(tabName) {
+      console.log(tabName.textContent)
+      var i;
+      var x = document.getElementsByClassName("tab");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      document.getElementById(tabName.textContent).style.display = "block";  
+    }
+    </script>
+

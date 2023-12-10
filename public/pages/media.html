@@ -227,30 +227,213 @@ if (typeof data.recenttracks.track[0]["@attr"] != "undefined"){
   </div>
 
   <div class="main">
-    <div class="content"><div class="bar">quizzes.html</div>
-    <h1>aw man i love takign quizzes</h1>
-    <br>
-    <div align="center">
-        <a href="https://www.nerdtests.com/mq/uttake.php?id=58843">
-        <img src="https://www.nerdtests.com/mq/testimages/58843r_8f611efb420e175670ef.jpg" border="0" alt="Futurama Personality Test -- Create and Take a Fun Quiz @ NerdTests.com's User Tests!" title="Futurama Personality Test Test -- Make and Take a Fun Quiz @ NerdTests.com's User Tests!">
-        </a><br/><span style="font-size:10px; ">My Category: Fry</span><br/><span style="font-size:10px; ">-= <a href="https://www.nerdtests.com/mq/uttake.php?id=58843">click to take @ NerdTests.com</a> =-</span>
-        </div>
-    <p align=center><a target=_blank href=https://www.nodiatis.com/personality.htm><img border=0 src=https://www.nodiatis.com/pub/21.jpg></a></p>
-    <a href="https://www.dragonflycave.com/quizzes/what-type-are-you/fighting"><img src="https://www.dragonflycave.com/typequiz/fighting.png" alt="Fighting" title="I am a Fighting-type!"></a>
-    <div class="results" style="width: 200px;background-color: #fff;color: #000;display: block;padding: 10px;border: 1px solid;margin: 0 auto;font-family: 'times';font-size: '15pt';">
-        <p style="margin: 0">This page is protected by a</p>
-        <h1 class="title" style="margin: 0">HEDGEHOG</h1>
-        <img class="image" style="max-width: 160px;border: 1px solid" alt="HEDGEHOG" src="https://i.ibb.co/7yb0DDj/hedgehog.jpg">
-        <p class="description">Hedgehogs are lactose intolerant.</p>
-        <small>
-          <a href="https://hekate.neocities.org">Want your own? Visit hekate.neocities.org!</a>
-        </small>
-      </div>
-<p></div></p>
+    <style>.tab>img{width: 100px; max-height: 100px; object-fit: cover; transition: transform 200ms, max-height 200ms;}.tab>img:hover{transform: scale(1.3); max-height: 150px;}</style>
+<div class="content">
+<h1>MEDIA</h1>
+<span class="context">some of the shows/movies i enjoy and the games i like playing.</span>
+<hr>
+<p>sort using the tabs below:</p>
+  <div class="w3-bar w3-black">
+    <button onclick="openTab(this)">all</button>
+    <button onclick="openTab(this)">favs</button>
+    <button onclick="openTab(this)">games</button>
+    <button onclick="openTab(this)">shows</button>
+    <button onclick="openTab(this)">movies</button>
+    <button onclick="openTab(this)">sci-fi</button>
+  </div>
+  <p>hover for more information</p>
+  <div id="all" class="tab">
+    <h2>All</h2>
+  </div>
+  
+  <div id="favs" class="tab" style="display:none">
+    <h2>some favourite games</h2>
+
+  </div>
+
+  <div id="games" class="tab" style="display:none">
+    <h2>Games</h2>
+  </div>
+  
+  <div id="shows" class="tab" style="display:none">
+    <h2>Shows</h2>
+  </div>
+
+  <div id="movies" class="tab" style="display:none">
+    <h2>Movies</h2>
+  </div>
+
+  <div id="sci-fi" class="tab" style="display:none">
+    <h2>Sci-fi</h2>
+  </div>
+
+  <div id="retro" class="tab" style="display:none">
+    <h2>Retro</h2>
+  </div>
+  
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var mediaArray = [
+{
+  "title": "",
+  "img": "",
+  "tags": ["all", ""],
+},
+{
+  "title": "terraria is probably my favourite game out of this entire list. i discovered it in around mid-2012 after going over to a friends house and playing it on their ps3.",
+  "img": "https://files.catbox.moe/y8poqt.jpg",
+  "tags": ["all", "favs", "games"]
+},
+{
+  "title": "i love futurama so much, if it wasnt evident. i shall write some more soon",
+  "img": "https://files.catbox.moe/qqb4vk.jpg",
+  "tags": ["all", "favs", "shows", "sci-fi"],
+},
+{
+  "title": "Futurama into the wild green yonder",
+  "img": "https://files.catbox.moe/q13662.jpg",
+  "tags": ["all", "favs", "movies"],
+},
+{
+  "title": "Futurama benders game",
+  "img": "https://files.catbox.moe/skk51m.jpg",
+  "tags": ["all", "favs", "movies"],
+},
+{
+  "title": "Futurama benders big score",
+  "img": "https://files.catbox.moe/eg8764.jpg",
+  "tags": ["all", "favs", "movies"],
+},
+{
+  "title": "Futurama the beast with a billion backs",
+  "img": "https://files.catbox.moe/9bpdx6.jpg",
+  "tags": ["all", "favs", "movies"],
+},
+{
+  "title": "Futurama (the game)",
+  "img": "https://files.catbox.moe/avb6l7.jpg",
+  "tags": ["all", "favs", "games"],
+},
+{
+  "title": "Simpsons",
+  "img": "https://files.catbox.moe/iuk2cy.jpg",
+  "tags": ["all", "favs", "shows"],
+},
+{
+  "title": "Startrek",
+  "img": "https://files.catbox.moe/olxzuz.jpg",
+  "tags": ["all", "favs", "shows", "sci-fi"],
+},
+{
+  "title": "Die Mumins",
+  "img": "https://files.catbox.moe/4qvfgu.jpg",
+  "tags": ["all", "shows"],
+},
+{
+  "title": "Adventure Time",
+  "img": "https://files.catbox.moe/82f1d9.jpg",
+  "tags": ["all", "shows"],
+},
+{
+  "title": "Ready Player 1",
+  "img": "https://files.catbox.moe/qmfxwc.jpeg",
+  "tags": ["all", "movies", "sci-fi"],
+},
+{
+  "title": "pikmin",
+  "img": "https://files.catbox.moe/9nrqhu.jpg",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman 1",
+  "img": "https://files.catbox.moe/0wam45.png",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman 2",
+  "img": "https://files.catbox.moe/ys0ae8.png",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman 3",
+  "img": "https://files.catbox.moe/cbx0ap.png",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman Raving Rabbids",
+  "img": "https://files.catbox.moe/a2wk61.jpg",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman Kart",
+  "img": "https://files.catbox.moe/e7pxa3.png",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman Origins",
+  "img": "https://files.catbox.moe/dmjht0.jpg",
+  "tags": ["all", "games"],
+},
+{
+  "title": "",
+  "img": "",
+  "tags": ["all", ""],
+},
+{
+  "title": "",
+  "img": "",
+  "tags": ["all", ""],
+},
+{
+  "title": "",
+  "img": "",
+  "tags": ["all", ""],
+},
+{
+  "title": "",
+  "img": "",
+  "tags": ["all", ""],
+},
+    ];
+
+    mediaArray.forEach(function(media) {
+      media.tags.forEach(function(tag) {
+        var imgElement = document.createElement("img");
+        imgElement.src = media.img;
+        imgElement.title = media.title;
+
+        var divElement = document.getElementById(tag);
+
+        if (divElement) {
+          var h2Element = divElement.querySelector("h2");
+          if (h2Element) {
+            divElement.insertBefore(imgElement.cloneNode(true), h2Element.nextSibling);
+          }
+        }
+      });
+    });
+  });
+</script>
+
+
+<script>
+    function openTab(tabName) {
+      console.log(tabName.textContent)
+      var i;
+      var x = document.getElementsByClassName("tab");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      document.getElementById(tabName.textContent).style.display = "block";  
+    }
+    </script>
+
 
     
   <div><div style="text-align:center;">
-<p>Page Last Modified: Thu, 07 Dec 2023 03:20:49 GMT</p>
+<p>Page Last Modified: Sun, 10 Dec 2023 03:14:46 GMT</p>
 <hr>
 <p><span>septic </span>© 2022 - 3023 <span style="color:grey; font-size: smaller">my god, a million years!</p>
 </div></div>
