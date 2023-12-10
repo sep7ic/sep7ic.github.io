@@ -2,12 +2,12 @@
 layout: layouts/base.njk
 title: media
 ---
-<style>.tab>img{width: 100px; max-height: 100px; object-fit: cover; transition: transform 200ms, max-height 200ms;}.tab>img:hover{transform: scale(1.3); max-height: 150px;}</style>
+<style>.tab>img{width: 100px; max-height: 100px; object-fit: cover; transition: transform 200ms, max-height 200ms;}.tab>img:hover{transform: scale(1.3); max-height: 150px;} star{display:inline-block} star::before{content: "★"; color: yellow; display:inline-block}</style>
 <div class="content">
 <h1>MEDIA</h1>
-<span class="context">some of the shows/movies i enjoy and the games i like playing.</span>
+<span class="context">some of the shows/movies i enjoy and the games i like playing. im probably gonna seperate the games and shows once i expand the list</span>
 <hr>
-<p>sort using the tabs below:</p>
+<p>my gear for games are > ipad pro 11 inch 2022, magic keyboard, raspberry pi 5, Xbox series controller, 8bitdo pro 2 (SOON!), travel mate b3 spin (laptop), ps3 slim jailbroken, iphone 6s</p>
   <div class="w3-bar w3-black">
     <button onclick="openTab(this)">all</button>
     <button onclick="openTab(this)">favs</button>
@@ -15,6 +15,7 @@ title: media
     <button onclick="openTab(this)">shows</button>
     <button onclick="openTab(this)">movies</button>
     <button onclick="openTab(this)">sci-fi</button>
+    <button onclick="openTab(this)">playnext</button>
   </div>
   <p>hover for more information</p>
   <div id="all" class="tab">
@@ -45,6 +46,89 @@ title: media
   <div id="retro" class="tab" style="display:none">
     <h2>Retro</h2>
   </div>
+
+  <div id="playnext" class="tab" style="display: none;">
+    <h2>playnext</h2>
+    <span>some games i wanna play next (i am trying to play and finish all star trek games this holidays if it isnt obvious). also, i list the majority of the kirby games here despite having played them quite a while ago. i just want to replay them.</span>
+    <p>games with <star></star> next to them are games i want to play first</p>
+    <style>li{color:var(--main)}</style>
+    <ul>
+      <span>GB, GBC, GBA & GG</span>
+      <li>Altered Space: A 3-D Alien Adventure</li>
+      <li>Alien 3</li>
+      <li>Amazing Penguin</li>
+      <li>Asteroids</li>
+      <li>Bart Simpson's Escape from Camp Deadly</li>
+      <li>Battletoads <star></star></li>
+      <li>Battletoads in Ragnarok's World</li>
+      <li>Battletoads-Double Dragon</li>
+      <li>Bomberman GB</li>
+      <li>Centipede (Accolade) <star></star></li>
+      <li>Centipede (Majesco) <star></star></li>
+      <li>Contra: The Alien Wars</li>
+      <li>Cosmo Tank</li>
+      <li>Felix the Cat</li>
+      <li>Metroid: Zero Mission <star></star></li>
+      <li>Metroid Fusion</li>
+      <li>Kirby's Dream Land</li>
+      <li>Kirby's Dream Land 2</li>
+      <li>Kirby: Nightmare in Dream Land</li>
+      <li>Kirby & the Amazing Mirror</li>
+      <li>Scurge:Hive</li>
+      <li>Star Trek <star></star></li>
+      <li>Star Trek Generations: Beyond the Nexus</li>
+
+      <span>SNES & NES</span>
+      <li>Star Trek: 25th Anniversary</li>
+      <li>Star Trek V: The Final Frontier</li>
+      <li>Star Trek: Deep Space Nine - Crossroads of Time</li>
+      <li>Kirby's Adventure</li>
+      <li>Kirby Super Star</li>
+      <li>Kirby's Dream Land 3</li>
+
+      <span>N64</span>
+      <li>Kirby 64: The Crystal Shards</li>
+
+      <span>DS & 3DS</span>
+      <li>Kirby Canvas Curse </li>
+      <li>Kirby Squeak Squad</li>
+      <li>Kirby Super Star Ultra</li>
+      <li>Kirby Mass Attack</li>
+
+      <span>MS-DOS</span>
+      <li>Star Trek: First Contact</li>
+      <li>Star Trek V: The Final Frontier</li>
+
+      <span>PS1, 2, & 3</span>
+      <li>Star Trek <star></star></li>
+      <li>Star Trek: Conquest</li>
+      <li>Star Trek: Encounters</li>
+      <li>Star Trek: Invasion</li>
+      <li>Star Trek: Shattered Universe</li>
+      <li>Simpsons Skateboarding <star></star></li>
+      <li>Simpsons Hit & Run<star></star></li>
+
+      <span>PSP</span>
+      <li></li>
+
+      <span>Windows</span>
+      <li>Star Trek: Klingon</li>
+      <li>Star Trek: Borg</li>
+      <li>Star Trek: Starship Creator</li>
+
+      <span>Xbox One, Xbox 360, PS4</span>
+      <li>Star Trek Online</li>
+      <li>Star Trek: Bridge Crew</li>
+
+      <span>unsorted</span>
+      <li>Star Trek (text game)</li>
+      <li>Star Trek: Voyager – The Arcade Game</li>
+      <li>Super Star Trek</li>
+      <li>Trek73</li>
+      <li>Netrek</li>
+
+    </ul>
+</div>
   
 </div>
 

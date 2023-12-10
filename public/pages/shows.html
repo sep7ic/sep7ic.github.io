@@ -227,81 +227,297 @@ if (typeof data.recenttracks.track[0]["@attr"] != "undefined"){
   </div>
 
   <div class="main">
-    <style>
-
-    #top3Artists {
-        width: 49%;
-        display: inline-block;
-    }
-    #otherArtists {
-        width: 49%;
-        display: inline-block;
-        height: 150px;
-        overflow-y: auto;
-    }
-    #hash1 {
-    font-size: 20px;
-    }
-    #hash1, #hash2, #hash3 {
-        display: inline-block;
-        text-decoration: none;
-    }
-    #playc{
-        display: inline-block;
-    }
-    #artistlink {
-        text-decoration: none;
-    }
-    </style>
-
+    <style>.tab>img{width: 100px; max-height: 100px; object-fit: cover; transition: transform 200ms, max-height 200ms;}.tab>img:hover{transform: scale(1.3); max-height: 150px;} star{display:inline-block} star::before{content: "★"; color: yellow; display:inline-block}</style>
 <div class="content">
-    <div class="bar">scrobble.html</div>
-    
-<h1>Monthly Top Artists</h1>
-<div id="top3Artists">
-<h2>TOP 3</h2>
+<h1>MEDIA</h1>
+<span class="context">some of the shows/movies i enjoy and the games i like playing. im probably gonna seperate the games and shows once i expand the list</span>
+<hr>
+<p>my gear for games are > ipad pro 11 inch 2022, magic keyboard, raspberry pi 5, Xbox series controller, 8bitdo pro 2 (SOON!), travel mate b3 spin (laptop), ps3 slim jailbroken, iphone 6s</p>
+  <div class="w3-bar w3-black">
+    <button onclick="openTab(this)">all</button>
+    <button onclick="openTab(this)">favs</button>
+    <button onclick="openTab(this)">games</button>
+    <button onclick="openTab(this)">shows</button>
+    <button onclick="openTab(this)">movies</button>
+    <button onclick="openTab(this)">sci-fi</button>
+    <button onclick="openTab(this)">playnext</button>
+  </div>
+  <p>hover for more information</p>
+  <div id="all" class="tab">
+    <h2>All</h2>
+  </div>
+  
+  <div id="favs" class="tab" style="display:none">
+    <h2>some favourite games</h2>
+
+  </div>
+
+  <div id="games" class="tab" style="display:none">
+    <h2>Games</h2>
+  </div>
+  
+  <div id="shows" class="tab" style="display:none">
+    <h2>Shows</h2>
+  </div>
+
+  <div id="movies" class="tab" style="display:none">
+    <h2>Movies</h2>
+  </div>
+
+  <div id="sci-fi" class="tab" style="display:none">
+    <h2>Sci-fi</h2>
+  </div>
+
+  <div id="retro" class="tab" style="display:none">
+    <h2>Retro</h2>
+  </div>
+
+  <div id="playnext" class="tab" style="display: none;">
+    <h2>playnext</h2>
+    <span>some games i wanna play next (i am trying to play and finish all star trek games this holidays if it isnt obvious). also, i list the majority of the kirby games here despite having played them quite a while ago. i just want to replay them.</span>
+    <p>games with <star></star> next to them are games i want to play first</p>
+    <style>li{color:var(--main)}</style>
+    <ul>
+      <span>GB, GBC, GBA & GG</span>
+      <li>Altered Space: A 3-D Alien Adventure</li>
+      <li>Alien 3</li>
+      <li>Amazing Penguin</li>
+      <li>Asteroids</li>
+      <li>Bart Simpson's Escape from Camp Deadly</li>
+      <li>Battletoads <star></star></li>
+      <li>Battletoads in Ragnarok's World</li>
+      <li>Battletoads-Double Dragon</li>
+      <li>Bomberman GB</li>
+      <li>Centipede (Accolade) <star></star></li>
+      <li>Centipede (Majesco) <star></star></li>
+      <li>Contra: The Alien Wars</li>
+      <li>Cosmo Tank</li>
+      <li>Felix the Cat</li>
+      <li>Metroid: Zero Mission <star></star></li>
+      <li>Metroid Fusion</li>
+      <li>Kirby's Dream Land</li>
+      <li>Kirby's Dream Land 2</li>
+      <li>Kirby: Nightmare in Dream Land</li>
+      <li>Kirby & the Amazing Mirror</li>
+      <li>Scurge:Hive</li>
+      <li>Star Trek <star></star></li>
+      <li>Star Trek Generations: Beyond the Nexus</li>
+
+      <span>SNES & NES</span>
+      <li>Star Trek: 25th Anniversary</li>
+      <li>Star Trek V: The Final Frontier</li>
+      <li>Star Trek: Deep Space Nine - Crossroads of Time</li>
+      <li>Kirby's Adventure</li>
+      <li>Kirby Super Star</li>
+      <li>Kirby's Dream Land 3</li>
+
+      <span>N64</span>
+      <li>Kirby 64: The Crystal Shards</li>
+
+      <span>DS & 3DS</span>
+      <li>Kirby Canvas Curse </li>
+      <li>Kirby Squeak Squad</li>
+      <li>Kirby Super Star Ultra</li>
+      <li>Kirby Mass Attack</li>
+
+      <span>MS-DOS</span>
+      <li>Star Trek: First Contact</li>
+      <li>Star Trek V: The Final Frontier</li>
+
+      <span>PS1, 2, & 3</span>
+      <li>Star Trek <star></star></li>
+      <li>Star Trek: Conquest</li>
+      <li>Star Trek: Encounters</li>
+      <li>Star Trek: Invasion</li>
+      <li>Star Trek: Shattered Universe</li>
+      <li>Simpsons Skateboarding <star></star></li>
+      <li>Simpsons Hit & Run<star></star></li>
+
+      <span>PSP</span>
+      <li></li>
+
+      <span>Windows</span>
+      <li>Star Trek: Klingon</li>
+      <li>Star Trek: Borg</li>
+      <li>Star Trek: Starship Creator</li>
+
+      <span>Xbox One, Xbox 360, PS4</span>
+      <li>Star Trek Online</li>
+      <li>Star Trek: Bridge Crew</li>
+
+      <span>unsorted</span>
+      <li>Star Trek (text game)</li>
+      <li>Star Trek: Voyager – The Arcade Game</li>
+      <li>Super Star Trek</li>
+      <li>Trek73</li>
+      <li>Netrek</li>
+
+    </ul>
+</div>
+  
 </div>
 
-<div id="otherArtists">
-<h2>HONORABLE MENTIONS</h2>
-</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var mediaArray = [
+{
+  "title": "",
+  "img": "",
+  "tags": ["all", ""],
+},
+{
+  "title": "terraria is probably my favourite game out of this entire list. i discovered it in around mid-2012 after going over to a friends house and playing it on their ps3.",
+  "img": "https://files.catbox.moe/y8poqt.jpg",
+  "tags": ["all", "favs", "games"]
+},
+{
+  "title": "i love futurama so much, if it wasnt evident. i shall write some more soon",
+  "img": "https://files.catbox.moe/qqb4vk.jpg",
+  "tags": ["all", "favs", "shows", "sci-fi"],
+},
+{
+  "title": "Futurama into the wild green yonder",
+  "img": "https://files.catbox.moe/q13662.jpg",
+  "tags": ["all", "favs", "movies"],
+},
+{
+  "title": "Futurama benders game",
+  "img": "https://files.catbox.moe/skk51m.jpg",
+  "tags": ["all", "favs", "movies"],
+},
+{
+  "title": "Futurama benders big score",
+  "img": "https://files.catbox.moe/eg8764.jpg",
+  "tags": ["all", "favs", "movies"],
+},
+{
+  "title": "Futurama the beast with a billion backs",
+  "img": "https://files.catbox.moe/9bpdx6.jpg",
+  "tags": ["all", "favs", "movies"],
+},
+{
+  "title": "Futurama (the game)",
+  "img": "https://files.catbox.moe/avb6l7.jpg",
+  "tags": ["all", "favs", "games"],
+},
+{
+  "title": "Simpsons",
+  "img": "https://files.catbox.moe/iuk2cy.jpg",
+  "tags": ["all", "favs", "shows"],
+},
+{
+  "title": "Startrek",
+  "img": "https://files.catbox.moe/olxzuz.jpg",
+  "tags": ["all", "favs", "shows", "sci-fi"],
+},
+{
+  "title": "Die Mumins",
+  "img": "https://files.catbox.moe/4qvfgu.jpg",
+  "tags": ["all", "shows"],
+},
+{
+  "title": "Adventure Time",
+  "img": "https://files.catbox.moe/82f1d9.jpg",
+  "tags": ["all", "shows"],
+},
+{
+  "title": "Ready Player 1",
+  "img": "https://files.catbox.moe/qmfxwc.jpeg",
+  "tags": ["all", "movies", "sci-fi"],
+},
+{
+  "title": "pikmin",
+  "img": "https://files.catbox.moe/9nrqhu.jpg",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman 1",
+  "img": "https://files.catbox.moe/0wam45.png",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman 2",
+  "img": "https://files.catbox.moe/ys0ae8.png",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman 3",
+  "img": "https://files.catbox.moe/cbx0ap.png",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman Raving Rabbids",
+  "img": "https://files.catbox.moe/a2wk61.jpg",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman Kart",
+  "img": "https://files.catbox.moe/e7pxa3.png",
+  "tags": ["all", "games"],
+},
+{
+  "title": "Rayman Origins",
+  "img": "https://files.catbox.moe/dmjht0.jpg",
+  "tags": ["all", "games"],
+},
+{
+  "title": "",
+  "img": "",
+  "tags": ["all", ""],
+},
+{
+  "title": "",
+  "img": "",
+  "tags": ["all", ""],
+},
+{
+  "title": "",
+  "img": "",
+  "tags": ["all", ""],
+},
+{
+  "title": "",
+  "img": "",
+  "tags": ["all", ""],
+},
+    ];
 
+    mediaArray.forEach(function(media) {
+      media.tags.forEach(function(tag) {
+        var imgElement = document.createElement("img");
+        imgElement.src = media.img;
+        imgElement.title = media.title;
+
+        var divElement = document.getElementById(tag);
+
+        if (divElement) {
+          var h2Element = divElement.querySelector("h2");
+          if (h2Element) {
+            divElement.insertBefore(imgElement.cloneNode(true), h2Element.nextSibling);
+          }
+        }
+      });
+    });
+  });
+</script>
 
 
 <script>
-fetch('https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=sep7ic&period=1month&api_key=afc213709a996ae561e307f596c9952b&format=json')
-.then(response => response.json())
-.then(data => {
-    const artists = data.topartists.artist;
+    function openTab(tabName) {
+      console.log(tabName.textContent)
+      var i;
+      var x = document.getElementsByClassName("tab");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      document.getElementById(tabName.textContent).style.display = "block";  
+    }
+    </script>
 
-    const top3Artists = artists.slice(0, 3);
-    const otherArtists = artists.slice(3, 10);
 
-    const top3ArtistsHTML = top3Artists.map(artist => `
-        <div class="${artist['@attr'].rank} ranks">
-            <a href="${artist.url}" target="_blank" id="artistlink">
-                <span id="hash${artist['@attr'].rank}"> #${artist['@attr'].rank} ${artist.name}</span>
-            </a>
-            <p id="playc">Playcount: ${artist.playcount}</p>
-        </div>
-    `).join('');
-
-    const otherArtistsHTML = otherArtists.map(artist => `
-        <div>
-            <a href="${artist.url}" target="_blank" id="artistlink">
-            <span>#${artist['@attr'].rank} ${artist.name}</span>  </a>
-            <p id="playc">Playcount: ${artist.playcount}</p>
-        </div>
-    `).join('');
-
-    document.getElementById('top3Artists').innerHTML += top3ArtistsHTML;
-    document.getElementById('otherArtists').innerHTML += otherArtistsHTML;
-})
-.catch(error => console.error('Error fetching data:', error));
-</script>
     
   <div><div style="text-align:center;">
-<p>Page Last Modified: Thu, 07 Dec 2023 03:20:49 GMT</p>
+<p>Page Last Modified: Sun, 10 Dec 2023 09:53:12 GMT</p>
 <hr>
 <p><span>septic </span>© 2022 - 3023 <span style="color:grey; font-size: smaller">my god, a million years!</p>
 </div></div>
