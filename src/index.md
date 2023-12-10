@@ -258,9 +258,3 @@ document.addEventListener('DOMContentLoaded', async () => {
     $( "#note" ).draggable();
 });
 </script>
-
-<script>
-    if (/headless/i.test(window.navigator.userAgent)) {
-    window.location.replace("/thumbnail.html");
-    }
-</script>
