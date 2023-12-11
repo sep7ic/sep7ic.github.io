@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>XMB - GAMES</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons|Roboto'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<iframe class="bg" src="bg.html"></iframe>
+<div class="background"></div>
+<div id="xmb-contain">
+  <div id="xmb">
+    <ul>
+      <li class="column" v-for="column,index in columns" v-bind:class="{active:column.active}" v-bind:style="{transform: `translateX(${column.position.x+'px'})`}">
+        <div class="cell" v-bind:class="{active:column.active}" v-on:click="highlightCell(column.index,0)">
+          
+          <img v-bind:src="column.icon" class="xmb-icon" alt="{{column.title}}">
+          <label>{{column.title}}</label>
+        </div>
+        <ul>
+          <li class="cell submenu" v-for="item,itemIndex in column.items" v-bind:class="{active:item.active}" v-bind:style="{transform: `translateY(${item.position.y+'px'})`}" v-on:click="highlightCell(column.index,itemIndex)">           
+            <a v-bind:href="item.active?item.href||'#missinglink':'#'">
+              <img v-bind:src="item.icon" class="xmb-icon" alt="{{item.title}}">
+              <label class="itemtitle">{{item.title}}
+                <label class="subtitle">{{item.subtitle}}</label>
+              </label></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
