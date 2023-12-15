@@ -36,7 +36,8 @@ title: ayearinpixels
     <h1>a year in pixels</h1>
     <span style="display: block; margin-top: -13px;">AAAH I DUNNO WHADDA PUT HERE!!!!!!!</span>
     <p>welcome to my "a year in pixels" page!! this is essentially a fancified microblog. click on a pixel to get its entire entry.</p>
-    <span>im going to make an attempt to submit an entry at the end of every single day for the entire year, to hopefully keep me motivated on my entire site.</span><br><br>
+    <span>im going to make an attempt to submit an entry at the end of every single day for the entire year, to hopefully keep me motivated on my entire site.</span>
+    <p>the more saturated and vibrant the pixel, the higher that day scored out of 5</p>
 
 <div id="pixels-container"></div>
 <div id="details-container">
@@ -65,12 +66,12 @@ function createPixels(data) {
 }
 function getPixelColor(rating) {
     switch (rating) {
-        case 1: return 'red';
-        case 2: return 'orange';
-        case 3: return 'yellow';
-        case 4: return 'green';
-        case 5: return 'blue';
-        default: return 'gray';
+        case 1: return '#808080';
+        case 2: return '#866E6E';
+        case 3: return '#8f5050';
+        case 4: return '#973838';
+        case 5: return '#a60808';
+        default: return '#808080';
     }
 }
 function formatDate(dateString) {

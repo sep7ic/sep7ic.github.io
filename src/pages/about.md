@@ -11,7 +11,7 @@ title: about
         <h1>About me</h1>
         <span class="context">get to know the webmaster a lil better.</span>
         <br>
-        <img src="/images/webmaster.png" style="width: 110px; display: inline-block; margin-bottom: 40px;">Λ me
+        <img src="/images/webmaster/eel.gif" style="width: 110px; display: inline-block; margin-bottom: 40px;">Λ me
         <div class="white" style="display: inline-block;">
     Name :	Maxwell
     Nick Name :	Max
@@ -41,4 +41,9 @@ title: about
     Movie :	I dont really watch movies.
     
         </div>
+<img src="/images/webmaster/eel.gif" title="14/12/2023, me sticking my phone in the water to film an eel??? dunno lmao" style="width: 45%; display: inline-block;">
+<img src="/images/webmaster/pikmin.gif" title="halloween october 31st, 2023, i went as the red piikmin. only one person recognised me and that was when we were in the haunted house." style="width: 45%; display: inline-block;">
+<img src="/images/webmaster/napoleon.gif" title="this was also halloween, i really like napoleon" style="width: 45%; display: inline-block;">
+
+
         </div>
