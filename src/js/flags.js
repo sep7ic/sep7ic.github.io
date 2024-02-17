@@ -124,7 +124,7 @@ function updateColor(color) {
 }
 
 function getUserColor(uid) {
-  const defaultColor = "white"; 
+  const defaultColor = "grey"; 
   const messagesRef = firebase.database().ref("chat");
   let userColor = defaultColor;
 
@@ -152,7 +152,7 @@ function displayMessage(senderName, text, date, time, senderUid, color, approved
   const messageElement = document.createElement("div");
 
   const senderElement = document.createElement("span");
-  senderElement.innerHTML = '<span style="color: DimGrey; font-size: smaller;">' + "</span>" + '<span style="color:' + color + ';">' + senderName + ": </span>";
+  senderElement.innerHTML = "<hr class='smallgrey'>" + '<span style="color: DimGrey; font-size: smaller;">' + "</span>" + '<span style="color:' + color + ';"> [' + senderName + "]: </span> ";
 
   if (verifiedusers.includes(senderUid)) {
     senderElement.classList.add("red-sender");

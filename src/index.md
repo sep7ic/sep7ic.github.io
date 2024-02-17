@@ -86,7 +86,9 @@ z-index: 10000;
     <img src="images/born2die.png" style="margin-top: -8px;">
 </div>
 
+
 <!--CHAT-->
+<style>#chat span {padding-top: 1px;}</style>
 <div class="contentright" style="position:relative; height: 288px;"><h1 title="feel free to say hi!">chatbox</h1>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
