@@ -74,8 +74,8 @@ z-index: 10000;
 <div class="contentleft" style="height: 288px; position: relative">
     <a href="/pages/about.html" target="Display"><h1>ÜBER MICH</h1></a><br>
     <span class="context">information about me!</span>
-    <p>16 year old trekkie and <tooltip title="this just means that i have conditioned myself to fall asleep before the theme song ends">futurama sleeper</tooltip> from NZ who is a little bit too obsessed with linguistics and languages. speaks english, german, yiddish (speaks... is an overstatement. i can understand it), and is learning latin and klingon.</p>
-    <p>favourite characters include zoidberg, ברוך דעם מעכטיקן זאָידבערג!, bender (obligatory), hypnotoad, bart, homer, skinner, picard, spock and data.</p>
+    <p>16 year old trekkie and <tooltip title="this just means that i have conditioned myself to fall asleep before the theme song ends">futurama sleeper</tooltip> from NZ who is enjoys chess, tetris, art, speed-cubing, and programming.</p>
+    <p>favourite characters include zoidberg, ברוך דעם מעכטיקן זאָידבערג!, bender (obligatory), hypnotoad, bart, homer, skinner, picard, spock, data, odo, worf, boimler, rutherford, picard (i could go on... and on)</p>
     <div style="position: absolute; top: 20px; right: 10px;">
         <div style="display: inline-block; background-color: white; width: 20px; height: 20px;" title="white"></div>
         <div style="display: inline-block; background-color: var(--main); width: 20px; height: 20px;" title="brown"></div>
@@ -85,7 +85,6 @@ z-index: 10000;
     <p>get in touch: <span>contact@septic.lol</span></p>
     <img src="images/born2die.png" style="margin-top: -8px;">
 </div>
-
 
 <!--CHAT-->
 <style>#chat span {padding-top: 1px;}</style>
