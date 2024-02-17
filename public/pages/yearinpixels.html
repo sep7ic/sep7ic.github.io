@@ -269,10 +269,30 @@ if (typeof data.recenttracks.track[0]["@attr"] != "undefined"){
 </div>
 <script>
 async function fetchData() {
-    const response = await fetch('/ayearinpixels.json');
-    const data = await response.json();
-    return data;
+    const sheetUrl = 'https://docs.google.com/spreadsheets/d/1-tYhL5vt3FCqejAPspktpBXyvwQKaUi1qf1ZKGJM9Io/export?format=csv'; // Updated URL to export as CSV
+    const response = await fetch(sheetUrl);
+    const data = await response.text();
+
+    // Split CSV into rows
+    const rows = data.split('\n');
+    
+    // Extract header and data
+    const headers = rows[0].split(',');
+    const rowData = rows.slice(1);
+
+    // Process data
+    const processedData = rowData.map(row => {
+        const columns = row.split(',');
+        return {
+            date: columns[0],
+            rating: parseInt(columns[1]), // Assuming rating is in the second column
+            log: columns[2] // Assuming log is in the third column
+        };
+    });
+
+    return processedData;
 }
+
 function createPixels(data) {
     const container = document.getElementById('pixels-container');
 
@@ -309,11 +329,7 @@ function showDetails(entry) {
     detailsDiv.innerHTML = `
         <p><span>DATE:</span> ${formatDate(entry.date)}</p>
         <p><span>RATING:</span> ${entry.rating}/5</p>
-        <p><span>EMOTION:</span> ${entry.emotion}</p>
-        <p><span>ACTIVITIES:</span> ${entry.activities.join(', ')}</p>
         <p><span>LOG:</span> ${entry.log}</p>
-        <p><span>IMAGE OF THE DAY:</span></p>
-        <img src="${entry.img}" alt="Image">
     `;
 
     detailsContainer.style.display = 'block';
