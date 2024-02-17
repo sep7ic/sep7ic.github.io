@@ -6,6 +6,11 @@
     font-family: fatboy;
     src: url(/fonts/2Credits.ttf);
   }
+
+  @font-face {
+    font-family: pxl;
+    src: url(/fonts/pixelTF.woff);
+  }
   
   @font-face {
     font-family: pixel;
@@ -14,8 +19,8 @@
   @import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
   :root {
     --main: #a60808;
-    --span: #a60808;
-    --link: #a60808;
+    --span: var(--main);
+    --link: var(--main);
     --bg: black; 
     --outline: grey;
     --reserved: #a31d1d;
