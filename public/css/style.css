@@ -219,7 +219,6 @@
         background-color: var(--outline);
         border: 0 none;
         color: var(--outline);
-        padding: 0;
         height: 1px;
     }
     .smallgrey {background-color: #333333; color: #333333;}
