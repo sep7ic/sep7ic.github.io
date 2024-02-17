@@ -64,8 +64,8 @@ async function fetchData() {
         const columns = row.split(',');
         return {
             date: columns[0],
-            rating: parseInt(columns[1]), // Assuming rating is in the second column
-            log: columns[2] // Assuming log is in the third column
+            rating: parseInt(columns[1]), 
+            log: columns[2] 
         };
     });
 
@@ -78,6 +78,7 @@ function createPixels(data) {
     data.forEach(entry => {
         const pixel = document.createElement('div');
         pixel.className = 'pixel';
+        pixel.dataset.date = entry.date;
         pixel.style.backgroundColor = getPixelColor(entry.rating);
 
         pixel.addEventListener('click', () => showDetails(entry));
@@ -85,6 +86,7 @@ function createPixels(data) {
         container.appendChild(pixel);
     });
 }
+
 function getPixelColor(rating) {
     switch (rating) {
         case 1: return '#808080';
@@ -105,6 +107,16 @@ function showDetails(entry) {
     const detailsContainer = document.getElementById('details-container');
     const detailsDiv = document.getElementById('details');
 
+    // Remove border from all pixels
+    const pixels = document.querySelectorAll('.pixel');
+    pixels.forEach(pixel => {
+        pixel.style.border = 'none';
+    });
+
+    // Add border to the selected pixel
+    const selectedPixel = document.querySelector(`.pixel[data-date="${entry.date}"]`);
+    selectedPixel.style.border = '1px solid white';
+
     detailsDiv.innerHTML = `
         <p><span>DATE:</span> ${formatDate(entry.date)}</p>
         <p><span>RATING:</span> ${entry.rating}/5</p>
@@ -113,6 +125,7 @@ function showDetails(entry) {
 
     detailsContainer.style.display = 'block';
 }
+
 
 document.addEventListener('DOMContentLoaded', async () => {
     const data = await fetchData();
