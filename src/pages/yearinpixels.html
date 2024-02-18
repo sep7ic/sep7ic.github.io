@@ -47,28 +47,32 @@ title: ayearinpixels
 
 </div>
 <script>
+
 async function fetchData() {
     const sheetUrl = 'https://docs.google.com/spreadsheets/d/1-tYhL5vt3FCqejAPspktpBXyvwQKaUi1qf1ZKGJM9Io/export?format=csv'; // Updated URL to export as CSV
     const response = await fetch(sheetUrl);
     const data = await response.text();
 
     const rows = data.split('\n');
-    
+
     const headers = rows[0].split(',');
     const rowData = rows.slice(1);
 
     const processedData = rowData.map(row => {
-        const columns = row.split(',');
+        // Split row using regex to properly handle quoted strings
+        const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
         return {
             date: columns[0],
             rating: parseInt(columns[1]), 
-            log: columns.slice(2).join(',');
+            // Remove surrounding quotes from log, if any
+            log: columns[2].replace(/^"(.*)"$/, '$1')
         };
     });
 
     return processedData;
 }
-
+    
+    
 function createPixels(data) {
     const container = document.getElementById('pixels-container');
 
