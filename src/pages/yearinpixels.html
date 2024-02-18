@@ -54,18 +54,16 @@ async function fetchData() {
     const data = await response.text();
 
     const rows = data.split('\n');
-
+    
     const headers = rows[0].split(',');
     const rowData = rows.slice(1);
 
     const processedData = rowData.map(row => {
-        // Split row using regex to properly handle quoted strings
-        const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+        const columns = row.split(',');
         return {
             date: columns[0],
             rating: parseInt(columns[1]), 
-            // Remove surrounding quotes from log, if any
-            log: columns[2].replace(/^"(.*)"$/, '$1')
+            log: columns[2]
         };
     });
 
