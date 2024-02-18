@@ -52,20 +52,17 @@ async function fetchData() {
     const response = await fetch(sheetUrl);
     const data = await response.text();
 
-    // Split CSV into rows
     const rows = data.split('\n');
     
-    // Extract header and data
     const headers = rows[0].split(',');
     const rowData = rows.slice(1);
 
-    // Process data
     const processedData = rowData.map(row => {
         const columns = row.split(',');
         return {
             date: columns[0],
             rating: parseInt(columns[1]), 
-            log: columns[2] 
+            log: columns.slice(2).join(',');
         };
     });
 
@@ -107,13 +104,11 @@ function showDetails(entry) {
     const detailsContainer = document.getElementById('details-container');
     const detailsDiv = document.getElementById('details');
 
-    // Remove border from all pixels
     const pixels = document.querySelectorAll('.pixel');
     pixels.forEach(pixel => {
         pixel.style.border = 'none';
     });
 
-    // Add border to the selected pixel
     const selectedPixel = document.querySelector(`.pixel[data-date="${entry.date}"]`);
     selectedPixel.style.border = '1px solid white';
 
