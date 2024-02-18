@@ -229,81 +229,18 @@ if (typeof data.recenttracks.track[0]["@attr"] != "undefined"){
   </div>
 
   <div class="main">
-    <style>
-
-    #top3Artists {
-        width: 49%;
-        display: inline-block;
-    }
-    #otherArtists {
-        width: 49%;
-        display: inline-block;
-        height: 150px;
-        overflow-y: auto;
-    }
-    #hash1 {
-    font-size: 20px;
-    }
-    #hash1, #hash2, #hash3 {
-        display: inline-block;
-        text-decoration: none;
-    }
-    #playc{
-        display: inline-block;
-    }
-    #artistlink {
-        text-decoration: none;
-    }
-    </style>
-
+    <div class="content">
+    <h1>Trek Tuesdays</h1>
+    <span class="context">hi</span>
+    <p>welcome to trek tuesdays!! here youll find various things about trek. i hope to post here every tuesday!! ill also be setting up an rss feed :)</p>
+</div>
 <div class="content">
-    <div class="bar">scrobble.html</div>
-    
-<h1>Monthly Top Artists</h1>
-<div id="top3Artists">
-<h2>TOP 3</h2>
+<h2>the unveiling</h2>
+<p>the 'unveiling' (first post) will be revealed next tuesday!! stay tuned!</p>
 </div>
-
-<div id="otherArtists">
-<h2>HONORABLE MENTIONS</h2>
-</div>
-
-
-
-<script>
-fetch('https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=sep7ic&period=1month&api_key=afc213709a996ae561e307f596c9952b&format=json')
-.then(response => response.json())
-.then(data => {
-    const artists = data.topartists.artist;
-
-    const top3Artists = artists.slice(0, 3);
-    const otherArtists = artists.slice(3, 10);
-
-    const top3ArtistsHTML = top3Artists.map(artist => `
-        <div class="${artist['@attr'].rank} ranks">
-            <a href="${artist.url}" target="_blank" id="artistlink">
-                <span id="hash${artist['@attr'].rank}"> #${artist['@attr'].rank} ${artist.name}</span>
-            </a>
-            <p id="playc">Playcount: ${artist.playcount}</p>
-        </div>
-    `).join('');
-
-    const otherArtistsHTML = otherArtists.map(artist => `
-        <div>
-            <a href="${artist.url}" target="_blank" id="artistlink">
-            <span>#${artist['@attr'].rank} ${artist.name}</span>  </a>
-            <p id="playc">Playcount: ${artist.playcount}</p>
-        </div>
-    `).join('');
-
-    document.getElementById('top3Artists').innerHTML += top3ArtistsHTML;
-    document.getElementById('otherArtists').innerHTML += otherArtistsHTML;
-})
-.catch(error => console.error('Error fetching data:', error));
-</script>
     
   <div><div style="text-align:center;">
-<p>Page Last Modified: Sat, 17 Feb 2024 05:56:26 GMT</p>
+<p>Page Last Modified: Sun, 18 Feb 2024 01:08:39 GMT</p>
 <hr>
 <p><span>septic </span>© 2022 - 3024 <span style="color:grey; font-size: smaller">my god, a million years!</p>
 </div></div>
