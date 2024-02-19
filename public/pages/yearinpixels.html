@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>𝚜𝚎𝚙𝚝𝚒𝚌.𝚕𝚘𝚕</title>
@@ -15,7 +14,7 @@
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         
         <link rel="icon" type="image/x-icon" href="/images/eyebal.png">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="/css/style.css">
     </head>
 <body>
 
@@ -275,31 +274,30 @@ if (typeof data.recenttracks.track[0]["@attr"] != "undefined"){
 
 </div>
 <script>
+
 async function fetchData() {
     const sheetUrl = 'https://docs.google.com/spreadsheets/d/1-tYhL5vt3FCqejAPspktpBXyvwQKaUi1qf1ZKGJM9Io/export?format=csv'; // Updated URL to export as CSV
     const response = await fetch(sheetUrl);
     const data = await response.text();
 
-    // Split CSV into rows
     const rows = data.split('\n');
     
-    // Extract header and data
     const headers = rows[0].split(',');
     const rowData = rows.slice(1);
 
-    // Process data
     const processedData = rowData.map(row => {
         const columns = row.split(',');
         return {
             date: columns[0],
             rating: parseInt(columns[1]), 
-            log: columns[2] 
+            log: columns[2]
         };
     });
 
     return processedData;
 }
-
+    
+    
 function createPixels(data) {
     const container = document.getElementById('pixels-container');
 
@@ -335,13 +333,11 @@ function showDetails(entry) {
     const detailsContainer = document.getElementById('details-container');
     const detailsDiv = document.getElementById('details');
 
-    // Remove border from all pixels
     const pixels = document.querySelectorAll('.pixel');
     pixels.forEach(pixel => {
         pixel.style.border = 'none';
     });
 
-    // Add border to the selected pixel
     const selectedPixel = document.querySelector(`.pixel[data-date="${entry.date}"]`);
     selectedPixel.style.border = '1px solid white';
 
@@ -364,9 +360,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 </script>
+
     
   <div><div style="text-align:center;">
-<p>Page Last Modified: Sun, 18 Feb 2024 08:59:54 GMT</p>
+<p>Page Last Modified: Mon, 19 Feb 2024 06:12:41 GMT</p>
 <hr>
 <p><span>septic </span>© 2022 - 3024 <span style="color:grey; font-size: smaller">my god, a million years!</p>
 </div></div>
