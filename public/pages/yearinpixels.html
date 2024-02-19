@@ -274,28 +274,35 @@ if (typeof data.recenttracks.track[0]["@attr"] != "undefined"){
 
 </div>
 <script>
-
 async function fetchData() {
-    const sheetUrl = 'https://docs.google.com/spreadsheets/d/1-tYhL5vt3FCqejAPspktpBXyvwQKaUi1qf1ZKGJM9Io/export?format=csv'; // Updated URL to export as CSV
+    const sheetUrl = 'https://docs.google.com/spreadsheets/d/1-tYhL5vt3FCqejAPspktpBXyvwQKaUi1qf1ZKGJM9Io/export?format=csv';
     const response = await fetch(sheetUrl);
     const data = await response.text();
 
-    const rows = data.split('\n');
-    
-    const headers = rows[0].split(',');
-    const rowData = rows.slice(1);
+    const processedData = [];
 
-    const processedData = rowData.map(row => {
-        const columns = row.split(',');
-        return {
-            date: columns[0],
-            rating: parseInt(columns[1]), 
-            log: columns[2]
-        };
+    const csvRegex = /(?:^|,)(?:"([^"]*(?:""[^"]*)*)"|([^",]*))/g;
+
+    data.split('\n').forEach(row => {
+        const columns = [];
+        let match;
+
+        while ((match = csvRegex.exec(row)) !== null) {
+            columns.push(match[1] !== undefined ? match[1] : match[2]);
+        }
+
+        if (columns.length >= 3) {
+            const date = columns[0];
+            const rating = parseInt(columns[1]);
+            const log = columns[2];
+
+            processedData.push({ date, rating, log });
+        }
     });
 
     return processedData;
 }
+
     
     
 function createPixels(data) {
