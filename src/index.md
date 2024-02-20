@@ -54,13 +54,13 @@ z-index: 10000;
         </textarea>
     </div><br><br>
     <img src="images/bender.gif" style="float: right;" title="bender">
-    <p style="width: 500px; margin-top: -20px;"><tooltip title="/hə'ləʉ/">hello</tooltip> and welcome to my slice of the <tooltip title="Noun: A world of information accessed through the Internet.">cyberspace!</tooltip> this site is basically just an archive for all my thoughts and serves as a creative outlet, to put it simply.<br>my main inspirations are <a href="https://arandomsite.neocities.org/">arandomsite</a>, <a href="https://sadgrl.online/">sadgrl</a>, <a href="https://jeffland.net/">jeffland</a>, <a href="https://melankorin.net/">melankorin</a>, and <a href="https://ghostingpen.neocities.org/">ghostingpen</a>. i started this site after discovering a neocities link in <a href="https://wiichicken.neocities.org/">this dude's</a> bio.</p>
+    <p style="width: 500px; margin-top: -20px;"><tooltip title="/hə'ləʉ/">hello</tooltip> and welcome to my slice of the <tooltip title="Noun: A world of information accessed through the Internet.">cyberspace!</tooltip> this site is basically just an archive for all my thoughts and serves as a creative outlet, to put it simply.<br>my main inspirations are <a href="https://arandomsite.neocities.org/">arandomsite</a>, <a href="https://sadgrl.online/">sadgrl</a>, <a href="https://jeffland.net/">jeffland</a>, <a href="https://dimden.dev/">dimden</a>, and <a href="https://ghostingpen.neocities.org/">ghostingpen</a>. i started this site after discovering a neocities link in <a href="https://wiichicken.neocities.org/">this dude's</a> bio.</p>
     <br>
     <span style="margin-bottom: 10px;">best viewed with <tooltip title="Pairs of globular organs of sight, situated in the heads of humans and vertebrate animals.">eyes</tooltip></span>
 </div>
             
 <!--FUTURAMA-->
-<div style="margin-bottom: 51px;">
+<div style="margin-bottom: -10px;">
     <div class="tint">
         <a href="http://www.futurama-area.de/"><img src="/images/buddie_88_31_05.gif" alt=""></a>
         <a href="https://nohomers.net/"><img src="/images/b_nohomers.gif" alt=""></a>
@@ -104,7 +104,7 @@ z-index: 10000;
 <script src="/js/flags.js"></script>
 
 <!--BUTTONS-->
-<marquee onmouseover="this.stop();" onmouseout="this.start();" direction="right" behavior="alternate" class="buttons">
+<marquee onmouseover="this.stop();" onmouseout="this.start();" direction="right" behavior="alternate" class="buttons" style="margin-bottom: -10px">
     <img src="images/sep.png" alt="">
     <a href="https://starlocked.neocities.org" target="_blank"><img src="https://tinyurl.com/yxwzze34"></a>
     <a href="http://keatongamer1248.neocities.org"><img src="http://keatongamer1248.neocities.org/img/keatonad.gif"></a>
@@ -122,17 +122,6 @@ z-index: 10000;
     <img src="images/buttons/wooper.gif" alt="">
 </marquee>
 
-<!--KALENDER-->
-<div class="content"><div class="bar">kalender für oktober–dezember 2023</div>
-    <style>
-        td {
-            border: none;
-        }
-    </style>
-    <h1>Gesetzliche Feiertage, Stille Tage und Feste</h1><span>kalender für oktober-dezember 2023</span>
-    <table><tbody><tr><td class="vt"><table class="cht lpad"><tbody><tr><td><span class="co1">23. Okt</span></td><td>Tag der Arbeit</td></tr><tr><td>5. Nov</td><td>Guy Fawkes Nacht</td></tr></tbody></table></td><td class="chb">&nbsp;</td><td>&nbsp;</td><td class="vt"><table class="cht lpad"><tbody><tr><td>24. Dez</td><td>Heiligabend</td></tr><tr><td><span class="co1">25. Dez</span></td><td>Erster Weihnachtstag</td></tr></tbody></table></td><td class="chb">&nbsp;</td><td>&nbsp;</td><td class="vt"><table class="cht lpad"><tbody><tr><td><span class="co1">26. Dez</span></td><td>Zweiter Weihnachtstag</td></tr><tr><td>31. Dez</td><td>Silvester</td></tr></tbody></table></td></tr></tbody></table>
-    <div class="c">Kalender erstellt auf <a href="https://www.timeanddate.de/kalender/">www.timeanddate.de/kalender</a></div>
-</div>
 
 <!--BIG RINGS-->
 <div class="content">
@@ -143,6 +132,11 @@ z-index: 10000;
         <script type="text/javascript" src="https://nickolox.neocities.org/pikring/pikring-variables.js"></script>
         <script type="text/javascript" src="/js/pikring.js"></script>
     </div>
+</div>
+
+<!--trek stuf-->
+<div class="content"><div class="bar">kalender für oktober–dezember 2023</div>
+    
 </div>
 
 

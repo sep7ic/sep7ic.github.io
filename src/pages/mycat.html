@@ -1,0 +1,42 @@
+---
+layout: layouts/base.njk
+title: mycat
+---
+<style>
+    .imgcont > a, .imgcont > a > img{
+        object-fit: cover;
+  width: 55px;
+  height: 55px;
+    }
+    </style>
+<div class="content">
+<h1>my cat</h1>
+<span class="context">206 images of my cat.</span>
+<p>click for full image/to enlarge</p>
+<div id="imageContainer" class="imgcont"></div>
+</div>
+
+<script>
+
+const folderPath = "/images/mycat/";
+
+const numberOfImages = 206;
+const imageContainer = document.getElementById("imageContainer");
+
+for (let i = 1; i <= numberOfImages; i++) {
+    const linkElement = document.createElement("a");
+
+    linkElement.href = folderPath + i + ".jpeg"; 
+
+    const imgElement = document.createElement("img");
+
+    imgElement.src = folderPath + i + ".jpeg"; 
+
+    imgElement.alt = "Image " + i; 
+
+    linkElement.appendChild(imgElement);
+
+    imageContainer.appendChild(linkElement);
+}
+
+</script>
