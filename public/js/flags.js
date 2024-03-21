@@ -67,7 +67,7 @@ function sendMessage() {
         time: time,
         color: color,
         timestamp: timestamp,
-        approved: false
+        approved: true
       });
       document.getElementById("message").value = "";
     }
