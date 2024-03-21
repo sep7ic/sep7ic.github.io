@@ -44,11 +44,6 @@ function sendMessage() {
           console.log(error.message);
         });
     } else {
-      if (!auth.currentUser){
-        const authinit = document.createElement("span");
-        authinit.innerHTML = '<span style="color: DimGrey;">you must first run /auth</span><br>';
-        chat.insertBefore(authinit, chat.firstChild);
-    } else {
       const msgsent = document.createElement("span");
       msgsent.innerHTML = '<span style="color: DimGrey;">message sent!</span><br>';
         chat.insertBefore(msgsent, chat.firstChild);
