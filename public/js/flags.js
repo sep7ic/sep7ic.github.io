@@ -44,6 +44,11 @@ function sendMessage() {
           console.log(error.message);
         });
     } else {
+      if (!auth.currentUser){
+        const authinit = document.createElement("span");
+        authinit.innerHTML = '<span style="color: DimGrey;">you must first run /auth</span><br>';
+        chat.insertBefore(authinit, chat.firstChild);
+    } else {
       const msgsent = document.createElement("span");
       msgsent.innerHTML = '<span style="color: DimGrey;">message sent!</span><br>';
         chat.insertBefore(msgsent, chat.firstChild);
@@ -62,7 +67,7 @@ function sendMessage() {
         time: time,
         color: color,
         timestamp: timestamp,
-        approved: true
+        approved: false
       });
       document.getElementById("message").value = "";
     }
@@ -138,10 +143,6 @@ function getUserColor(uid) {
 let verifiedusers = ["vHnehfBgx1UiBkJu40Qu2CBAxsP2", "cyaT5DGKLAa1UwVD3DEz37ddqgg2"];
 
 function displayMessage(senderName, text, date, time, senderUid, color, approved) {
-
-  if (!approved) {
-    return;
-  }
 
   const chat = document.getElementById("chat");
   const messageElement = document.createElement("div");
