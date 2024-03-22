@@ -11,6 +11,16 @@ const database = firebase.database();
 const chatRef = database.ref("chat");
 const auth = firebase.auth();
 
+window.onload = () => {
+  auth.signInAnonymously()
+    .then(() => {
+      console.log("User signed in anonymously");
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+};
+
 chatRef.on("child_added", function(snapshot) {
   const message = snapshot.val();
   displayMessage(message.senderName, message.text, message.date, message.time, message.sender, message.color, message.approved);
@@ -33,16 +43,6 @@ function sendMessage() {
     } else if (message.startsWith("/colour ") || message.startsWith("/color ")) {
       const color = message.substr(message.indexOf(" ") + 1).trim();
       updateColor(color);
-    } else if (message.startsWith("/auth")) {
-      auth.signInAnonymously()
-        .then(() => {
-          console.log("User signed in anonymously");
-          document.getElementById("message").value = "";
-          location.reload();
-        })
-        .catch((error) => {
-          console.log(error.message);
-        });
     } else {
       if (!auth.currentUser){
         const authinit = document.createElement("span");
